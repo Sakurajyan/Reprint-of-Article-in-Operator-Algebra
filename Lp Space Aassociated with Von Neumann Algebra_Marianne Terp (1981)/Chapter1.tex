@@ -1,0 +1,61 @@
+% \documentclass[12pt]{report}
+% \usepackage{geometry}
+%  \geometry{
+%  a4paper,
+%  total={170mm,257mm},
+%  left=20mm,
+%  top=20mm,
+%  }
+% \usepackage[hidelinks]{hyperref}
+% \usepackage{tikz-cd}
+% \usepackage{amsthm}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsfonts}
+% \usepackage{xcolor}
+% \usepackage{physics}
+% \usepackage{mathrsfs}
+% \usepackage{bbm}
+
+% \tikzcdset{every label/.append style = {font = \normalsize}}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{definition}[theorem]{Definition}
+% \theoremstyle{definition}
+% \newtheorem{example}[theorem]{Example}
+% \newcommand{\inner}[1]{\langle#1\rangle}
+% \newcommand{\Sp}{\operatorname{Sp}}
+% \begin{document}
+% \tableofcontents
+\chapter{Measurable Operators with Respect to a Trace}
+In this chapter, we define the notion of measurability with respect to a trace $\tau$ on a von Neumann algebra $M$ and show that the set $M$ of $\tau$-measurable operators is a complete topological *-algebra. Our presentation is a modified version of that given by E. Nelson [13].\par
+Let $M$ be a - necessarily semifinite - von Neumann algebra acting on a Hilbert space $H$ and let $\tau$ be a normal faithful semifinite trace on $M$.\par
+For the convenience of the reader, we immediately give the definition of $\tau$-measurability and state the main theorem about $\tau$-measurable operators.\par
+\bigskip
+Definition 14: A closed densely defined operator $a$ affiliated with $M$ is called $\tau$-measurable if for all $\delta\in \mathbb{R}_+$ there exists a projection $p\in M$ such that
+\[
+pH\subset D(a)\text{ and } \tau(1-p)\leq \delta
+\]
+For a characterization of $\tau$-measurable operators in terms of the spectral projections of their absolute value, see Proposition 21 below.\par
+We denote by $\widetilde{M}$ the set of $\tau$-measurable closed densely defined operators.\par
+Theorem 28. 1) $\widetilde{M}$ is a *-algebra with respect to strong sum, strong product, and adjoint operation.\par
+2) The sets
+\[
+    N(\epsilon,\delta)=\{a\in \widetilde{M}|\exists p\in M_{\text{proj}}:pH\subset D(a),\norm{ap}\leq \epsilon,\tau(1-p)\leq \delta\},
+\]
+where $\epsilon,\delta\in \mathbb{R}_+$, form a basis for the neighbourhoods of $0$ for a topology on $\widetilde{M}$ that turns $\widetilde{M}$ into a topological vector space. \par
+3) $\widetilde{M}$ is a complete Hausdorff topological * -algebra and M is a dense subset of $\widetilde{M}$.\par
+\bigskip
+Once this theorem has been proven, we can freely add and multiply operators from $\widetilde{M}$, the operations being understood in the strong sense (see the definition below). Until then, we have to deal with unbounded operators in the usual careful way.\par
+Although we are mainly interested in closed densely defined opera tors it will be convenient for us to work with more general kinds of unbounded operators. We therefore start by recalling some basic facts on arbitrary unbounded operators. Next, we recall some properties of the lattice $M_{\text{proj}}$ of projections in $M$. After this, we go on to develop the theory of $\tau$-measurability.\par
+\bigskip
+\section*{Preliminaries on unbounded operators.}\par
+Recall that for any (linear) operators $a$ and $b$ on $H$ we can define the sum $a+b$ and the product $ab$ as operators on $H$ with domains
+\begin{equation}
+    D(a+b)=D(a)\cap D(b),
+\end{equation}
+\begin{equation}
+    D(ab)=\{\xi\in D(b)|b\xi\in D(a)\}.
+\end{equation}
+% \end{document}

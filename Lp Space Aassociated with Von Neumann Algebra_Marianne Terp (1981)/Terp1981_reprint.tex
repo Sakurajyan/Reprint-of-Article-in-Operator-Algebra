@@ -18,6 +18,9 @@
 \usepackage{bbm}
 
 \tikzcdset{every label/.append style = {font = \normalsize}}
+% \numberwithin{equation}{chapter}
+\usepackage{chngcntr}
+\counterwithout{equation}{chapter}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -29,7 +32,7 @@
 \begin{document}
 \tableofcontents
 \input{Introduction}
-% \input{Chapter1}
+\input{Chapter1}
 % \input{Chapter2}
 % \input{Chapter7-8}
 % \bibliography{reference}
