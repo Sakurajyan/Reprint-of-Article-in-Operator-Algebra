@@ -23,12 +23,17 @@
 \counterwithout{equation}{chapter}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}[theorem]{Definition}
-\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+% \theoremstyle{definition}
 \newtheorem{example}[theorem]{Example}
+\counterwithout{theorem}{chapter}
 \newcommand{\inner}[1]{\langle#1\rangle}
 \newcommand{\Sp}{\operatorname{Sp}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rsupp}{\operatorname{r}}
 \begin{document}
 \tableofcontents
 \input{Introduction}

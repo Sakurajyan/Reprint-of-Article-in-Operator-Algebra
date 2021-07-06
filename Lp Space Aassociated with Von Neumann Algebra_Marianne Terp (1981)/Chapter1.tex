@@ -39,6 +39,7 @@ pH\subset D(a)\text{ and } \tau(1-p)\leq \delta
 \]
 For a characterization of $\tau$-measurable operators in terms of the spectral projections of their absolute value, see Proposition 21 below.\par
 We denote by $\widetilde{M}$ the set of $\tau$-measurable closed densely defined operators.\par
+% \newpage
 Theorem 28. 1) $\widetilde{M}$ is a *-algebra with respect to strong sum, strong product, and adjoint operation.\par
 2) The sets
 \[
@@ -58,4 +59,103 @@ Recall that for any (linear) operators $a$ and $b$ on $H$ we can define the sum 
 \begin{equation}
     D(ab)=\{\xi\in D(b)|b\xi\in D(a)\}.
 \end{equation}
+% \newpage
+These operations are associative so that $a+b+c$ and $abc$ are well-defined operators. Furthermore, for all $a$, $b$ and $c$ we have
+\begin{equation}
+    (a+b)c = ac + bc \text{ and } c(a+b)\supset ca + cb
+\end{equation}
+(with equality if $D(c)=H$).\par
+We shall use the following terminology: an operator $a$ on $H$ is closed if its graph $G(a)$ is closed in $H\otimes H$; $a$ is preclosed if the closure $\overline{G(a)}$ of its graph is the graph of some - necessarily closed - operator (the closure of $a$, denoted $[a]$; $a$ is densely defined if $D(a)$ is dense in $H$.\par
+If $a$, $b$ and $ab$ are densely defined, then
+\begin{equation}
+    (ab)^*\supset b^*a^*
+\end{equation}
+with equality if $a$ is bounded and everywhere defined.\par
+A closed densely defined operator $a$ has a unique polar decomposition
+\begin{equation}
+    a = u\abs{a}
+\end{equation}
+where $\abs{a}$ is a positive self-adjoint operator and $u$ a partial isometry with $\supp(a)$ as its initial projection and $r(a)$, the projection onto the closure of the range of $a$, as its final projection.\par
+If the sum $a+b$ of two closed densely defined operators $a$ and $b$ is preclosed and densely defined, then the closure $[a+b]$ is called the strong sum of $a$ and $b$. Similarly, the strong product is the closure $[ab]$ if $ab$ is preclosed and densely defined.\par
+% \newpage
+We shall write
+\[
+    \norm{a}=\sup\{\norm{a\xi}| \norm{\xi}\leq 1\}  
+\]
+for all everywhere defined operators $a$ on $H$, bounded or not.For all such operators, the usual norm estimates hold:
+\[
+    \norm{a+b}\leq \norm{a}+\norm{b}, \norm{ab}\leq \norm{a}\norm{b}.
+\]
+Denote by $M'$ the commutant of $M$.\par
+\begin{definition}
+    A linear operator $a$ on $H$ is said to be affiliated with $M$ (and we write $a\eta H$) if
+\begin{equation}
+    \forall y\in M':ya\subset ay
+\end{equation}
+\end{definition} 
+\begin{remark}
+    Using (3), (4) and (5) one easily verifies that
+\end{remark}
+\begin{enumerate}
+    \item if $a,b\eta M$, then $a+b\eta M$ and $ab\eta H$;
+    \item if $a$ is preclosed, resp. densely defined, and $a\eta M$, then $[a] \eta M$, resp. $a^*\eta M$;
+    \item if $a$ is a closed densely defined operator with polar decomposition $a=u\abs{a}$, then $a\eta M$ if and only if $u\in M$.
+\end{enumerate}
+Notation. We denote by $\overline{M}$ the set of closed densely defined operators affiliated with $M$.\par
+\bigskip
+\section*{Preliminaries on projections.}
+We denote by $M_{\text{proj}}$ the lattice of (orthogonal) projections in $M$. For a family $(p_i)_{i\in I}$ of projections in $M$, $\wedge_{i\in I}p_i$ (resp. $\vee_{i\in I}p_i$) is the projection onto $\cap_{i\in I}p_iH$ (resp. $\overline{\cup_{i\in I}p_iH}$).\par
+Recall that
+\begin{equation}
+    (\wedge_{i\in I}p_i)^\perp=\vee_{i\in I}p_i^\perp, (\vee_{i\in I}p_i)^\perp=\wedge_{i\in I}p_i^\perp
+\end{equation}
+where $p^\perp=1-p$ is the projection orthogonal to $p$\par
+Two projections $p$ and $q$ are equivalent if $p=u^*u$ and $q=uu^*$ for some $u\in M$. We denote equivalence by $\sim$. Equivalent projections have the same trace.\par
+By the polar decomposition theorem, we have
+\begin{lemma}
+    Let $a$ be a closed densely defined operator affiliated
+with $M$. Then
+\[
+    \supp(a)\sim \rsupp(a)
+\]
+where $\rsupp(a)$ denotes the projection onto the closure of the range of $a$.
+\end{lemma}
+For any projections $p,q\in M$ we have
+\begin{equation}\label{(8)}
+    (p\vee q)-p\sim q-(p\wedge q).
+\end{equation}
+It follows that
+\begin{equation}\label{(9)}
+    \tau(p\vee q)\leq \tau(p)+\tau(q).
+\end{equation}
+More generally,
+\begin{equation}
+    \tau(\vee_{i\in I}p_i)\leq \sum_{i\in I}\tau(p_i)
+\end{equation}
+for any family $(p_i)_{i\in I}$ of projections in $M$ (if I is finite, this follows by induction from \eqref{(9)}; for the general case, use the normality of $\tau$).\par
+Another consequence of \eqref{(8)} is this:
+\begin{equation}
+    \forall p,q\in M_{\text{proj}}: p\wedge q=0\Rightarrow p\lesssim 1-q
+\end{equation}
+(where $\lesssim$ means: "is equivalent to a subprojection of"). Indeed,
+\[
+    p=1-p^\perp=(p\wedge q)^\perp-p^\perp=(p^\perp\vee q^\perp)-p^\perp\sim q^\perp-(p^\perp \wedge q^\perp)\leq q^\perp=1-q.
+\]
+\section*{The theory of $\tau$-measurable operators.}
+\begin{definition}
+   Let $\epsilon,\delta\in \mathbb{R}_+$. Then we denote by $D(\epsilon,\delta)$ the set of all operators $a\eta M$ for which there exists a projection $p\in M$ such that
+   \begin{enumerate}
+       \item $pH \subset D(a)$ and $\norm{ap}\leq \epsilon$ and
+       \item $\tau(1-p)\leq \delta$.
+   \end{enumerate}
+\end{definition}
+When $pH\subset D(a)$, the operator $ap$ is everywhere defined. The requirement $\norm{ap}\leq \epsilon$ in particular implies that $ap$ is bounded.\par
+Note that we do not require $a$ to be densely defined, closed or preclosed.
+\begin{proposition}
+    Let $\epsilon_1,\epsilon_2,\delta_1,\delta_2\in \mathbb{R}_+$. Then 
+    \begin{enumerate}
+        \item $D(\epsilon_1,\delta_1)+D(\epsilon_2,\delta_2)\subset D(\epsilon_1+\epsilon_2,\delta_1+\delta_2)$,
+        \item $D(\epsilon_1,\delta_1)D(\epsilon_2,\delta_2)\subset D(\epsilon_1\epsilon_2,\delta_1+\delta_2)$.
+    \end{enumerate}
+\end{proposition}
 % \end{document}
