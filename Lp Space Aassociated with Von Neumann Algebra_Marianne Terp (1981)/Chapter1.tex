@@ -134,7 +134,7 @@ More generally,
 \end{equation}
 for any family $(p_i)_{i\in I}$ of projections in $M$ (if I is finite, this follows by induction from \eqref{(9)}; for the general case, use the normality of $\tau$).\par
 Another consequence of \eqref{(8)} is this:
-\begin{equation}
+\begin{equation}\label{(11)}
     \forall p,q\in M_{\text{proj}}: p\wedge q=0\Rightarrow p\lesssim 1-q
 \end{equation}
 (where $\lesssim$ means: "is equivalent to a subprojection of"). Indeed,
@@ -158,4 +158,154 @@ Note that we do not require $a$ to be densely defined, closed or preclosed.
         \item $D(\epsilon_1,\delta_1)D(\epsilon_2,\delta_2)\subset D(\epsilon_1\epsilon_2,\delta_1+\delta_2)$.
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    (1) Let $a\in D(\epsilon_1,\delta_1)$ and $b\in D(\epsilon_2,\delta_2)$. Then there exist projections $p,q\in M$ such that
+    \[
+      \begin{split}
+          pH\subset D(a),\norm{ap}\leq \epsilon_1,\text{ and } \tau(1-p)\leq \delta_1,\\
+            qH\subset D(b),\norm{bq}\leq \epsilon_2,\text{ and } \tau(1-q)\leq \delta_2.
+      \end{split}  
+    \]
+    Put $r=p\wedge q$. Then
+      \[
+          rH=pH\cap qH\subset D(a)\cap D(b)=D(a+b)
+      \]
+      and
+      \[
+          \norm{(a+b)r}=\norm{ar+br}\leq\norm{ar}+\norm{br}\leq \norm{ap}+\norm{bq}\leq \epsilon_1+\epsilon_2
+      \]
+    Furthermore,
+    \[
+        \tau(1-r)=\tau((p\wedge q)^\perp)=\tau(p^\perp\vee q^\perp)\leq \tau(1-p)+\tau(1-q)\leq \delta_1+\delta_2
+    \]
+    This proves (1).\par
+    To prove (2), let $a\in D(\epsilon_1,\delta_1)$, $b\in D(\epsilon_2,\delta_2)$ and take $p,q\in M_{\text{proj}}$ as above. Then $bq$, and hence $(1-p)bq$, is bounded. Denote by $s$ the projection onto its null space:
+    \[
+        sH=N((1-p)bq).
+    \]
+    Then $bq\xi\in pH\subset D(a)$ for all $\xi\in sH$, so that $sH\subset D(abq)$ and hence
+    \[
+    (q\wedge s)H\subset D(ab)      
+    \]
+    Also, $abqs=apbqs$ so that
+    \[
+        ab(q\wedge s)=abqs(q\wedge s)=apbq(q\wedge s)
+    \]
+    and thus 
+    \[
+        \norm{ab(q\wedge s)}\leq\norm{ap}\norm{bq}\leq \epsilon_1\epsilon_2. 
+    \]
+    On the other hand, using that
+    \[
+        1-s=\supp((1-p)bq)\sim \rsupp((1-p)bq)\leq 1-p,
+    \]
+    we have
+    \[
+        \begin{split}
+            \tau(1-(q\wedge s))=\tau((1-q)\vee (1-s))\leq& \tau(1-q)+\tau(1-s)\\
+            \leq &\tau(1-q)+\tau(1-p)\leq \delta_1+\delta_2.
+        \end{split}
+    \]
+    This completes the proof.
+\end{proof}
+\begin{proposition}
+    Let $\epsilon,\delta\in \mathbb{R}_+$.
+    \begin{enumerate}
+        \item Let $a$ be a preclosed operator. Then
+        \[
+            a\in D(\epsilon,\delta)\Rightarrow [a]\in D(\epsilon,\delta).
+        \]
+        \item Let a be a closed densely defined operator with polar decomposition $a=u\abs{a}$. Then
+        \[
+            a\in D(\epsilon,\delta)\Leftrightarrow u\in M\text{ and }\abs{a}\in D(\epsilon,\delta).
+        \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (1): trivial. (2): trivial, since $a=u\abs{a}$, $\abs{a}=u^*a$, and $\norm{u}\leq 1$.
+\end{proof}
+\begin{lemma}\label{Lemma 7}
+    Let $a\in\overline{M}$ and $\epsilon,\delta\in \mathbb{R}_+$. Then
+    \[
+        a\in D(\epsilon,\delta)\Leftrightarrow \tau(\chi_{]\epsilon,\infty[}(\abs{a}))\leq \delta
+    \]
+    (where $\chi_{]\epsilon,\infty[}(\abs{a})$ denotes the spectral projection of $\abs{a}$ corresponding to the interval $]\epsilon,\infty[$).
+\end{lemma}
+\begin{proof}
+    "$\Leftarrow$": Put $p=\chi_{[0,\epsilon]}(\abs{a})$. Then $pH\subset D(\abs{a})$ and $\norm{\abs{a}p}\leq \epsilon$.\par
+    "$\Rightarrow$": For some $p\in M_{\text{proj}}$, we have
+    \[
+        \norm{\abs{a}p}\leq \epsilon \text{ and } \tau(1-p)\leq \delta.
+    \]
+    Let $\abs{a}=\int_0^\infty\lambda\dd e_\lambda$ be the spectral decomposition of $\abs{a}$. Now for all $\xi\in pH$ we have
+    \[
+        \norm{\abs{a}\xi}^2\leq \epsilon^2\norm{\xi}^2,
+    \]
+    and for all $\xi\in (1-e_{\epsilon})H\setminus\{0\}$ we have
+    \[
+        \norm{\abs{a}\xi}^2>\epsilon^2\norm{\xi}^2
+    \]
+    since
+    \[
+        \norm{\abs{a}\xi}^2=\int_0^\infty\lambda^2\dd (e_\lambda \xi|\xi)=\int_{]\epsilon,\infty[}\lambda^2\dd(e_\lambda\xi|\xi).
+    \]
+    Hence $(1-e_\epsilon)H\cap pH$ must be $\{0\}$, i.e. $(1-e_\epsilon)\wedge p=0$. By \eqref{(11)} we conclude that $1-e_\epsilon\lesssim 1 - p$, whence $\tau(1-e_\epsilon)\leq \delta$.
+\end{proof}
+\begin{proposition}
+    Let $a\in \overline{M}$ and $\epsilon,\delta\in \mathbb{R}_+$. Then
+    \[
+        a\in D(\epsilon,\delta)\Leftrightarrow a^*\in D(\epsilon,\delta)  
+    \]
+\end{proposition}
+\begin{proof}
+    Let $a=u\abs{a}$ be the polar decomposition of $a$. Then $u$ is an isometry of $\chi_{]0,\infty[}(\abs{a})=\supp(a)$ onto $\chi_{]0,\infty[}(\abs{a^*})=\supp(a^*)=\rsupp(a)$. By uniqueness of the spectral decomposition, $u$ induces for each $\lambda\in \mathbb{R}_+$ an isometry of $\chi_{]\lambda,\infty[}(\abs{a})$ onto $\chi_{]\lambda,\infty[}(\abs{a^*})$.
+    The result follows by Lemma \ref{Lemma 7}.
+\end{proof}
+\begin{definition}
+    A subspace $E$ of $H$ is called $\tau$-dense if for all $\delta\in \mathbb{R}_+$, there exists a projection $p\in M$ such that
+    \[
+        pH\subset E \text{ and } \tau(1-p)\leq \delta.  
+    \]
+\end{definition}
+\begin{proposition}
+    Let $E$ be a $\tau$-dense subspace of $H$ . Then there exists an increasing sequence $(p_n)_{n\in \mathbb{N}}$ of projections in $M$ with
+\[
+    p_n\nearrow 1,\tau(1-p_n)\to 0,\text{ and } \cup_{n=1}^\infty p_nH\subset E.
+\]
+\end{proposition}
+\begin{proof}
+    Take projections $q_k\in M$, $k\in N$, such that 
+    \[
+        q_kH\subset E \text{ and } \tau(1-q_k)\leq 2^{-k}.
+    \]   
+    For each $n\in N$, put
+    \[
+        p_n=\wedge_{k=n+1}^\infty q_k.    
+    \]
+    Then
+    \[
+        p_nH=\cap_{k=n+1}^\infty q_kH\subset E  
+    \]
+    and 
+    \[
+        \tau(1-p_n)=\tau\left( \vee_{k=n+1}^\infty(1-q_k) \right)\leq \sum_{k=n+1}^\infty\tau(1-q_k)\leq \sum_{k=n+1}^\infty 2^{-k}=2^{-n}  
+    \]
+    It follows that
+    \[
+        p_n\nearrow 1;  
+    \]
+    indeed, denoting by $p$ the supremum of the increasing sequence $p_n$, we have
+    \[
+        \forall n\in \mathbb{N}:\tau(1-p)\leq \tau(1-p_n)\leq 2^{-n} 
+    \]
+    whence $\tau(1-p)=0$ and $p=1$.\par
+    Furthermore,
+    \[
+        \cup_{n=1}^\infty p_nH\subset E.  
+    \]
+\end{proof}
+\begin{corollary}
+    Let $E$ be a $\tau$-dense subspace of $H$. Then $E$ is dense in $H$.
+\end{corollary}
+An important property of $\tau$-dense subspaces is the following:
 % \end{document}
