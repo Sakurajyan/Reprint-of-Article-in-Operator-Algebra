@@ -151,7 +151,7 @@ Another consequence of \eqref{(8)} is this:
 \end{definition}
 When $pH\subset D(a)$, the operator $ap$ is everywhere defined. The requirement $\norm{ap}\leq \epsilon$ in particular implies that $ap$ is bounded.\par
 Note that we do not require $a$ to be densely defined, closed or preclosed.
-\begin{proposition}
+\begin{proposition}\label{prop: 5}
     Let $\epsilon_1,\epsilon_2,\delta_1,\delta_2\in \mathbb{R}_+$. Then 
     \begin{enumerate}
         \item $D(\epsilon_1,\delta_1)+D(\epsilon_2,\delta_2)\subset D(\epsilon_1+\epsilon_2,\delta_1+\delta_2)$,
@@ -308,4 +308,141 @@ Note that we do not require $a$ to be densely defined, closed or preclosed.
     Let $E$ be a $\tau$-dense subspace of $H$. Then $E$ is dense in $H$.
 \end{corollary}
 An important property of $\tau$-dense subspaces is the following:
+\begin{proposition}\label{prop: 12}
+    Let $a,b\in \overline{M}$ and let $E$ be a $\tau$-dense subspace of $H$ contained in $D(a)\cap D(b)$. Suppose that 
+\[
+    a|_E=b|_E.  
+\]
+Then $a=b$.
+\end{proposition}
+The proof is based on the following lemma: 
+\begin{lemma}
+    1) Let $p_0\in M_{\text{proj}}$. Suppose that 
+    \[
+        \forall \delta\in \mathbb{R}_+ \exists p\in M_{\text{proj}}: p_0\wedge p=0\text{ and }\tau(1-p)\leq \delta.  
+    \]
+Then $p_0=0$.\par 
+2) Let $p_1,p_2\in M_{\text{proj}}$. Suppose that
+\[
+        \forall \delta\in \mathbb{R}_+ \exists p\in M_{\text{proj}}: p_1\wedge p=p_2\wedge p\text{ and }\tau(1-p)\leq \delta.  
+    \] 
+and $p_1=p_2$.
+\end{lemma}
+\begin{proof}
+    1) Let $\delta\in \mathbb{R}_+$. Then $\tau(p_0)\leq \delta$. (indeed, for some $p\in M_{\text{proj}}$ we have $p_0\wedge p=0$ and $\tau(1-p)\leq \delta$, whence $p_0\lesssim 1-p$ and $\tau(p_0)\leq \tau(1-p)\leq \delta$). Hence $\tau(p_0)=0$ and $p_0=0$.\par 
+    2) Put $p_0=p_1-(p_1\wedge p_2)$. Now $p_1\wedge p= p_2\wedge p$ implies $p_1\wedge p= (p_1\wedge p_2)\wedge p$ and hence $p_0\wedge p=0$, so that 1) applies to $p_0$. Hence $p_0=0$, i.e. $p_1 = p_1\wedge p_2$. Similarly, $p_2=p_1\wedge p_2$. In all, $p_1 = p_2$. 
+\end{proof}
+\begin{proof}[Proof of Proposition 12]
+    Consider in the Hilbert space $H_2=H\oplus H$ the von Neumann algebra $M_2=\begin{bmatrix}
+        M&M\\
+        M&M
+    \end{bmatrix}$ equipped with the normal faithful semifinite trace $\tau_2$ defined by 
+    \[
+        \tau \begin{pmatrix}
+            x_{11}& x_{12}\\
+            x_{21}& x_{22}
+        \end{pmatrix}=\tau(x_{11})+\tau(x_{22}).
+    \]
+    Denote by $p_a$ and $p_b$ the projections onto the graphs $G(a)$ and $G(b)$ of $a$ and $b$. Since $a$ and $b$ are affiliated with $M$, $G(a)$ and $G(b)$ are invariant under all elements of $M_2'=\{\begin{bmatrix}
+        y&0\\
+        0&y
+    \end{bmatrix}:y\in M'\}$ and thus $p_a,p_b\in M_2$. \par 
+Let $\delta\in \mathbb{R}_+$. Then there exists a projection $p\in M$ with
+$pH\subset E$ and $\tau(1-p)\leq \frac{\delta}{2}$. Put $p_2= \begin{bmatrix}
+    p&0\\
+    0&p
+\end{bmatrix}$. Then $\tau_2(1-p_2)\leq \delta$.\par
+Furthermore,
+\[
+    p_a\wedge p_2=p_b\wedge p_2
+\]
+since $a$ and $b$ agree on $pH\subset E$ and thus
+\[
+    \begin{split}
+        G(a)\cap(pH\oplus pH) =& \{\inner{\xi,a\xi},\xi\in pH, a\xi\in pH\}\\
+                            =& \{\inner{\xi,b\xi},\xi\in pH, b\xi\in pH\}=G(b)\cap(pH\oplus pH).
+    \end{split}
+\]
+By Lemma 13, we conclude that $p_a=p_b$, whence $a = b$. 
+\end{proof}
+\begin{definition}\label{def: 14}
+    An operator $a\in \overline{M}$ is called $\tau$-measurable if $D(a)$ is $\tau$-dense, i.e. if for all $\delta\in \mathbb{R}_+$ there exists a projection $p\in M$ such that
+    \begin{equation}
+        pH\subset D(a) \text{ and } \tau(1-p)\leq \delta.          
+    \end{equation} 
+    The set of $\tau$-measurable operators $a\in \overline{M}$ is denoted $\widetilde{M}$.
+\end{definition}
+\begin{corollary}
+    1) Let $a,b\in \widetilde{M}$. If
+    \[
+      a\subset b  
+    \]
+    then
+    \[
+        a=b.  
+    \]\par
+    2) Let $a\in \widetilde{M}$. If a is symmetric (in particular, if $a$ is positive), then $a$ is self-adjoint.
+\end{corollary}
+\begin{proof}
+    Immediate from Definition \ref{def: 14} and Proposition \ref{prop: 12} (for 2), use that $a\subset a^*$).
+\end{proof}
+Note that when $a$ is closed and $p\in M_{\text{proj}}$ is such that $pH\subset D(a)$, then the everywhere defined operator $ap$ is also closed and hence - by the closed graph theorem - automatically bounded. Therefore the following definition is a generalization of Definition \ref{def: 14}. 
+\begin{definition}
+    Any operator $a\eta M$ is called $\tau$-premeasurable if for all $\delta\in \mathbb{R}_+$ there exists a projection $p\in M$ such that 
+    \begin{equation}
+        pH\subset D(a), \norm{ap}<\infty,\text{ and } \tau(1-p)\leq \delta.
+    \end{equation}
+\end{definition}
+By definition of the $D(\epsilon,\delta)$, this may be reformulated as: 
+\begin{remark}\label{remark: 17}
+    Let $a\eta M$. Then $a$ is $\tau$-premeasurable if and only if 
+    \[
+        \forall \delta\in \mathbb{R}_+ \exists \epsilon\in \mathbb{R}_+: a\in D(\epsilon,\delta).  
+    \]
+\end{remark}
+Also note 
+\begin{proposition}
+    Let $a\eta M$. If a is $\tau$-premeasurable, then a is densely defined. 
+\end{proposition}
+\begin{proof}
+    $D(a)$ is $\tau$-dense.
+\end{proof}
+\begin{proposition}
+    Let $a\eta M$. Suppose that $a$ is $\tau$-premeasurable and preclosed. Then 
+    \[
+        [a]\in \widetilde{M}.  
+    \]
+\end{proposition}
+\begin{proof}
+    Trivial.
+\end{proof}
+\begin{proposition}
+    Let $a,b\eta M$ be $\tau$-premeasurable. Then $a+b$ and $ab$ are also $\tau$-premeasurable. 
+\end{proposition}
+\begin{proof}
+    Combine Remark \ref{remark: 17} and Proposition \ref{prop: 5}.
+\end{proof}
+We have the following characterization of $\tau$-measurable operators: 
+\begin{proposition}
+    Let $a\in \overline{M}$ with polar decomposition $a=u\abs{a}$. Then the following assertions are equivalent:
+    \begin{enumerate}
+        \item a is $\tau$-measurable, 
+        \item $\abs{a}$ is $\tau$-measurable, 
+        \item $\forall \delta\in \mathbb{R}_+ \exists \epsilon\in \mathbb{R}_+: a\in D(\epsilon,\delta)$,
+        \item $\forall \delta\in \mathbb{R}_+ \exists \epsilon\in \mathbb{R}_+: \tau(\chi_{]\epsilon,\infty[}(\abs{a}))\leq \delta$,
+        \item $\tau(\chi_{]\lambda,\infty[}(\abs{a}))\to 0$ as $\lambda\to \infty$,
+        \item $\forall \lambda\in \mathbb{R}_+:\tau(\chi_{]\lambda,\infty[}(\abs{a}))<\infty$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    The equivalence of (i), (ii), and (iii), follows from Lemma \ref{Lemma 7}. Now note that 
+\[
+    \tau(\chi_{]\lambda,\infty[}(\abs{a}))\searrow \emptyset \text{ as }\lambda\to \infty
+\]
+so that, by the normality of $\tau$, 
+\[
+    \tau(\chi_{]\lambda,\infty[}(\abs{a}))\searrow 0 \text{ as }\lambda\to \infty
+\]
+% as ) . ➔ co
+\end{proof}
 % \end{document}
