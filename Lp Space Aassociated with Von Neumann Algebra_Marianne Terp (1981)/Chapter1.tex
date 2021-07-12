@@ -208,7 +208,7 @@ Note that we do not require $a$ to be densely defined, closed or preclosed.
     \]
     This completes the proof.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{prop: 6}
     Let $\epsilon,\delta\in \mathbb{R}_+$.
     \begin{enumerate}
         \item Let $a$ be a preclosed operator. Then
@@ -251,7 +251,7 @@ Note that we do not require $a$ to be densely defined, closed or preclosed.
     \]
     Hence $(1-e_\epsilon)H\cap pH$ must be $\{0\}$, i.e. $(1-e_\epsilon)\wedge p=0$. By \eqref{(11)} we conclude that $1-e_\epsilon\lesssim 1 - p$, whence $\tau(1-e_\epsilon)\leq \delta$.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{prop: 8}
     Let $a\in \overline{M}$ and $\epsilon,\delta\in \mathbb{R}_+$. Then
     \[
         a\in D(\epsilon,\delta)\Leftrightarrow a^*\in D(\epsilon,\delta)  
@@ -267,7 +267,7 @@ Note that we do not require $a$ to be densely defined, closed or preclosed.
         pH\subset E \text{ and } \tau(1-p)\leq \delta.  
     \]
 \end{definition}
-\begin{proposition}
+\begin{proposition}\label{prop: 10}
     Let $E$ be a $\tau$-dense subspace of $H$ . Then there exists an increasing sequence $(p_n)_{n\in \mathbb{N}}$ of projections in $M$ with
 \[
     p_n\nearrow 1,\tau(1-p_n)\to 0,\text{ and } \cup_{n=1}^\infty p_nH\subset E.
@@ -407,7 +407,7 @@ Also note
 \begin{proof}
     $D(a)$ is $\tau$-dense.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{prop: 19}
     Let $a\eta M$. Suppose that $a$ is $\tau$-premeasurable and preclosed. Then 
     \[
         [a]\in \widetilde{M}.  
@@ -416,14 +416,14 @@ Also note
 \begin{proof}
     Trivial.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{prop: 20}
     Let $a,b\eta M$ be $\tau$-premeasurable. Then $a+b$ and $ab$ are also $\tau$-premeasurable. 
 \end{proposition}
 \begin{proof}
     Combine Remark \ref{remark: 17} and Proposition \ref{prop: 5}.
 \end{proof}
 We have the following characterization of $\tau$-measurable operators: 
-\begin{proposition}
+\begin{proposition}\label{prop: 21}
     Let $a\in \overline{M}$ with polar decomposition $a=u\abs{a}$. Then the following assertions are equivalent:
     \begin{enumerate}
         \item a is $\tau$-measurable, 
@@ -443,6 +443,128 @@ so that, by the normality of $\tau$,
 \[
     \tau(\chi_{]\lambda,\infty[}(\abs{a}))\searrow 0 \text{ as }\lambda\to \infty
 \]
-% as ) . ➔ co
+if $ \tau(\chi_{]\lambda_0,\infty[}(\abs{a}))<\infty$ for some $\lambda_0$. The equivalence of (iii), (iv), (v), and (vi) follows. 
 \end{proof}
+\begin{corollary}
+    We have $M\subset \widetilde{M}$.
+\end{corollary}
+\begin{proof}
+    If $a$ is bounded, then $\tau(\chi_{]\norm{a},\infty[}(\abs{a}))=0$.
+\end{proof}
+\begin{proposition}
+    Let $a\in \widetilde{M}$ Then also $a^*\in \widetilde{M}$.
+\end{proposition}
+\begin{proof}
+    Combine Proposition \ref{prop: 8} and Proposition \ref{prop: 21}, (i) $\Leftrightarrow$ (iii).
+\end{proof}
+\begin{proposition}
+    1) Let $a,b\in \widetilde{M}$. Then $a+b$ and $ab$ are densely defined and preclosed, and $[a+b]\in \widetilde{M}$, $[ab]\in \widetilde{M}$.\par
+    2) $\widetilde{M}$ is a *-algebra with respect to strong sum and strong product. 
+\end{proposition}
+\begin{proof}
+    1) Let $a,b\in \widetilde{M}$. Then also  $a^*,b^*\in \widetilde{M}$. By Proposition \ref{prop: 20}, $a+b$ and $a^*+b^*$ are $\tau$-premeasurable. In particular, they are densely defined. Hence $(a^*+b^*)^*$ exists and $a+b\subset (a^*+b^*)^*$, whence $a+b$ is also preclosed. By Proposition \ref{prop: 19},  $[a+b]\in \widetilde{M}$.\par
+A quite analogous reasoning gives the result on $ab$.\par 
+2) Let $a,b,c\in \widetilde{M}$. Then by Proposition \ref{prop: 20} the operators 
+\[
+    a+b+c,abc,ac+bc,ca+cb,a^*+b^*,b^*a^*
+\]
+are all $\tau$-premeasurale. Hence by Proposition \ref{prop: 12}, each of them admits at most one extension in $\widetilde{M}$. It follows that
+\[
+    \begin{split}
+        [[a+b]+c]=[a+[b+c]],[[ab]c]=[a[bc]],  \\
+        [[a+b]c]=[[ac]+[bc]],[c[a+b]]=[[ca]+[cb]],\\
+        [a+b]^*=[a^*+b^*],[ab]^*=[b^*a^*].  
+    \end{split}
+\]
+\end{proof}
+\begin{notation}
+    From now on, we will omit the $[~]$ in the notation for strong sum and strong product. 
+\end{notation}
+\begin{definition}
+    For all $\epsilon,\delta\in \mathbb{R}_+$, we put
+    \[
+        N(\epsilon,\delta)=\widetilde{M}\cap D(\epsilon,\delta),  
+    \]
+    i.e. $N(\epsilon,\delta)$ is the set of $\tau$-measurable $a\in \widetilde{M}$ for which there exists a projection $p\in M$ such that 
+    \[
+        \norm{ap}\leq \epsilon \text{ and } \tau(1-p)\leq \delta.  
+    \]
+\end{definition}
+\begin{lemma}\label{lemma: 26}
+    For all $\epsilon,\epsilon_1,\epsilon_2,\delta,\delta_1,\delta_2\in \mathbb{R}_+$ and $\lambda\in \mathbb{C}$ we have
+\begin{enumerate}
+    \item $N(\epsilon,\delta)^*=N(\epsilon,\delta)$,
+    \item $N(\abs{\lambda}\epsilon,\delta)=\lambda N(\epsilon,\delta)$,
+    \item $\epsilon_1\leq \epsilon_2$, $\delta_1\leq \delta_2\Rightarrow N(\epsilon_1,\delta_1)\subset N(\epsilon_2,\delta_2)$,
+    \item $N(\epsilon_1,\delta_1)\cap N(\epsilon_2,\delta_2)\supset N(\epsilon_1\wedge \epsilon_2,\delta_1\wedge \delta_2)$,
+    \item $N(\epsilon_1,\delta_1)+N(\epsilon_2,\delta_2)\subset N(\epsilon_1+\epsilon_2,\delta_1+\delta_2)$,
+    \item $N(\epsilon_1,\delta_1)N(\epsilon_2,\delta_2)\subset N(\epsilon_1\epsilon_2,\delta_1\delta_2)$,
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+    (ii), (iii), (iv) are easily verified. (i) follows from Proposition \ref{prop: 8} and (v), (vi) follow from Proposition \ref{prop: 5} and Proposition \ref{prop: 6}, (i) ((v) and (vi) are to be understood in the strong sense).
+\end{proof}
+\begin{proposition}
+    The $N(\epsilon,\delta)$, $\epsilon,\delta\in \mathbb{R}_+$, form a basis for the neighbourhoods of $0$ for a topological vector space topology on $\widetilde{M}$.
+\end{proposition}
+\begin{proof}
+    This follows from Lemma \ref{lemma: 26}, (ii), (iii), (iv) and (v).
+\end{proof}
+\begin{theorem}
+    $\widetilde{M}$ is a complete Hausdorff topological *-algebra in which $M$ is dense. 
+\end{theorem}
+\begin{proof}
+    1) To show that $\widetilde{M}$ is Hausdorff, we shall prove that 
+    \[
+        \cap_{\epsilon,\delta\in \mathbb{R}_+}N(\epsilon,\delta)=\{0\}.  
+    \]
+    Let $a\in \cap_{\epsilon,\delta\in \mathbb{R}_+}N(\epsilon,\delta)$. Then
+    \[
+        \forall \delta\in \mathbb{R}_+ \forall \epsilon\in \mathbb{R}_+: \tau(\chi_{]\epsilon,\infty[}(\abs{a}))\leq \delta.  
+    \]
+    Since $\tau$ is faithful, this implies that all $\chi_{]\epsilon,\infty[}(\abs{a})=0$, whence $a=0$.\par
+    2) Next let us prove that $\widetilde{M}$ is a topological *-algebra. By Lemma \ref{lemma: 26}, (i), the adjoint operation is continuous. Now let $a_0,b_0\in \widetilde{M}$ and let $\epsilon,\delta\in \mathbb{R}_+$. Take $\mu,\lambda\in \mathbb{R}_+$ such that
+\[
+    a_0\in N(\mu,\delta),b_0\in N(\lambda,\delta).
+\] 
+Then for all $a,b \in\widetilde{M}$ such that $a-a_0 \in N(\epsilon,\delta)$ and $b-b_0 \in N(\epsilon,\delta)$, we have 
+\[
+    \begin{split}
+        ab-a_0b_0=&(a-a_0)(b-b_0)+a_0(b-b_0)+(a-a_0)b_0\\
+                \in &N(\epsilon,\delta)N(\epsilon,\delta)+N(\mu,\delta)N(\epsilon,\delta)+N(\epsilon,\delta)N(\lambda,\delta)\\
+                \subset&N(\epsilon^2,2\delta)+N(\mu\epsilon,2\delta)+N(\lambda\epsilon,2\delta)\\
+                \subset&N(\epsilon(\epsilon+\lambda+\mu),6\delta).
+    \end{split}  
+\]
+It follows that 
+\[
+  (a,b)\mapsto (ab)  
+\]
+is continuous.\par
+3) $M$ is dense in $\widetilde{M}$. Indeed, let $a\in \widetilde{M}$ and take projections $p_n\in M$ such that
+\[
+    p_n\nearrow 1, \tau(1-p_n)\to 0, \text{ and }\cup_{n\in \mathbb{N}}p_nH\subset D(a)  
+\]
+(possible by Proposition \ref{prop: 10}). Then $ap_n \in M$ and 
+\[
+    ap_n\to a \text{ in } \widetilde{M}  
+\]
+since $\norm{(ap_n-a)p_m}=0$ for all $m\geq n$ and $\tau(1-p_m)\to 0$ as $m\to \infty$.\par
+4) Finally, we shall prove that the topological vector space $\widetilde{M}$ is complete.\par
+Since $\widetilde{M}$ has a countable basis for the neighbourhoods of 0 (use e.g. the $N(1/n,1/m)$ , $n,m\in \mathbb{N}$), we just have to show that every Cauchy sequence $(a_n)_{n\in \mathbb{N}}$ in $\widetilde{M}$ converges. So let $(a_n)_{n\in \mathbb{N}}$ be a Cauchy sequence in $\widetilde{M}$.\par 
+Since $M$ is dense in $\widetilde{M}$, we may assume that all $a_n\in M$ (if not, replace each $a_n$ by $a_n'\in M$ such that $a_n-a_n'\in N(1/n, 1/n)$, and observe that $(a_n')_{n\in \mathbb{N}}$ converges if and only if $(a_n)_{n\in \mathbb{N}}$ converges). Furthermore, we may assume that 
+\[
+    \forall n\in \mathbb{N}: a_{n+1}-a_n\in N(2^{-(n+1)},2^{-n})  
+\]
+(since a subsequence of the given sequence has this property).\par
+Now take projections $p_n \in M$ such that 
+\[
+    \norm{(a_{n+1}-a_n)p_n}\leq 2^{-(n+1)} \text{ and } \tau(1-p_n)\leq 2^{-n}.  
+\]
+For each $n\in \mathbb{N}$, put
+\[
+    q_n=\wedge_{k=n+1}^\infty p_k.
+\]  
+\end{proof}
+
 % \end{document}
