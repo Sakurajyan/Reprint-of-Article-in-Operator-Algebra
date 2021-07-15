@@ -32,7 +32,7 @@
 In this chapter, we define the notion of measurability with respect to a trace $\tau$ on a von Neumann algebra $M$ and show that the set $M$ of $\tau$-measurable operators is a complete topological *-algebra. Our presentation is a modified version of that given by E. Nelson [13].\par
 Let $M$ be a - necessarily semifinite - von Neumann algebra acting on a Hilbert space $H$ and let $\tau$ be a normal faithful semifinite trace on $M$.\par
 For the convenience of the reader, we immediately give the definition of $\tau$-measurability and state the main theorem about $\tau$-measurable operators.\par
-\bigskip
+
 Definition 14: A closed densely defined operator $a$ affiliated with $M$ is called $\tau$-measurable if for all $\delta\in \mathbb{R}_+$ there exists a projection $p\in M$ such that
 \[
 pH\subset D(a)\text{ and } \tau(1-p)\leq \delta
@@ -47,11 +47,11 @@ Theorem 28. 1) $\widetilde{M}$ is a *-algebra with respect to strong sum, strong
 \]
 where $\epsilon,\delta\in \mathbb{R}_+$, form a basis for the neighbourhoods of $0$ for a topology on $\widetilde{M}$ that turns $\widetilde{M}$ into a topological vector space. \par
 3) $\widetilde{M}$ is a complete Hausdorff topological * -algebra and M is a dense subset of $\widetilde{M}$.\par
-\bigskip
+
 Once this theorem has been proven, we can freely add and multiply operators from $\widetilde{M}$, the operations being understood in the strong sense (see the definition below). Until then, we have to deal with unbounded operators in the usual careful way.\par
 Although we are mainly interested in closed densely defined opera tors it will be convenient for us to work with more general kinds of unbounded operators. We therefore start by recalling some basic facts on arbitrary unbounded operators. Next, we recall some properties of the lattice $M_{\text{proj}}$ of projections in $M$. After this, we go on to develop the theory of $\tau$-measurability.\par
-\bigskip
-\section*{Preliminaries on unbounded operators.}\par
+
+\section{Preliminaries on unbounded operators}
 Recall that for any (linear) operators $a$ and $b$ on $H$ we can define the sum $a+b$ and the product $ab$ as operators on $H$ with domains
 \begin{equation}
     D(a+b)=D(a)\cap D(b),
@@ -102,8 +102,8 @@ Denote by $M'$ the commutant of $M$.\par
     \item if $a$ is a closed densely defined operator with polar decomposition $a=u\abs{a}$, then $a\eta M$ if and only if $u\in M$.
 \end{enumerate}
 Notation. We denote by $\overline{M}$ the set of closed densely defined operators affiliated with $M$.\par
-\bigskip
-\section*{Preliminaries on projections.}
+
+\section{Preliminaries on projections}
 We denote by $M_{\text{proj}}$ the lattice of (orthogonal) projections in $M$. For a family $(p_i)_{i\in I}$ of projections in $M$, $\wedge_{i\in I}p_i$ (resp. $\vee_{i\in I}p_i$) is the projection onto $\cap_{i\in I}p_iH$ (resp. $\overline{\cup_{i\in I}p_iH}$).\par
 Recall that
 \begin{equation}
@@ -141,7 +141,7 @@ Another consequence of \eqref{(8)} is this:
 \[
     p=1-p^\perp=(p\wedge q)^\perp-p^\perp=(p^\perp\vee q^\perp)-p^\perp\sim q^\perp-(p^\perp \wedge q^\perp)\leq q^\perp=1-q.
 \]
-\section*{The theory of $\tau$-measurable operators.}
+\section{The theory of $\tau$-measurable operators}
 \begin{definition}
    Let $\epsilon,\delta\in \mathbb{R}_+$. Then we denote by $D(\epsilon,\delta)$ the set of all operators $a\eta M$ for which there exists a projection $p\in M$ such that
    \begin{enumerate}
@@ -565,6 +565,91 @@ For each $n\in \mathbb{N}$, put
 \[
     q_n=\wedge_{k=n+1}^\infty p_k.
 \]  
+Then
+\[
+    \tau(1-q_n)=\tau\left( \vee_{k=n-1}^\infty (1-p_k) \right)\leq \sum_{k=n+1}^\infty \tau(1-p_k)\leq \sum_{k=n+1}^\infty 2^{-k}=2^{-n};
+\]
+and
+\begin{equation}\label{eqn: 14}
+    \forall m\geq n+1~\forall l\in \mathbb{N}:\norm{(a_{m+l}-a_m)q_n}\leq 2^{-m}  
+\end{equation}
+since $q_n\leq p_k$ for all $k\geq m\geq n+1$ and hence
+\[
+   \begin{split}
+    \norm{(a_{m+l}-a_m)q_n}\leq& \sum_{k=m}^{m+l-1}\norm{(a_{k+1}-a_k)q_n}\\
+    \leq& \sum_{k=m}^{m+l-1}\norm{(a_{k+1}-a_k)p_k}\leq \sum_{k=m}^{m+l-1}2^{-(k+1)}\leq 2^{-m}.
+   \end{split}
+\]
+Let $\xi\in \cup_{n\in \mathbb{N}}q_nH$. Then $\xi\in q_nH$ for some $n\in \mathbb{N}$ and hence by \eqref{eqn: 14}, the sequence $(a_m\xi)_{m\in \mathbb{N}}$ is Cauchy. Put
+\[
+    a\xi=\lim_{m\to \infty}a_m\xi  
+\]
+We have now defined an operator $a$ with $D(a)=\cup_{n\in \mathbb{N}}q_nH$ (note that $D(a)$ is a linear subspace because $(q_n)_{n\in \mathbb{N}}$ is an increasing sequence of projections).\par 
+By construction, $a$ is $\tau$-premeasurable: for all $n\in \mathbb{N}$, we have $q_nH\subset D(a)$ and $\tau(1-q_n)\leq 2^{-n}$. We claim that $a$ is also preclosed. To see this, apply the preceding arguments to $(a_n^*)_{n\in \mathbb{N}}$. Hence there exists a $\tau$-premeasurable operator $b$ such that
+\[
+  b\eta=\lim_{m\to \infty}a_n^*\eta,\eta\in D(b). 
+\] 
+Then
+\[
+    \forall \xi\in D(a)~\forall \eta\in D(b):(a\xi|\eta)=\lim (a_m\xi|\eta)=\lim(\xi|a_m^*\eta)=(\xi|b\eta),
+\]
+whence
+   \[
+     a\in b^*.  
+   \]
+Hence $a$ is preclosed. By Proposition \ref{prop: 19} we then have $[a]\in \widetilde{M}$. Write $a_0=[a]$.\par
+Finally we shall prove that actually
+\begin{equation}
+    a_n\to a_0 \text{ in }\widetilde{M}.
+\end{equation}\label{eqn: 15}
+Let $\epsilon,\delta\in \mathbb{R}_+$. Take $n_0\in \mathbb{N}$ such that $2^{-(n_0+1)}\leq \epsilon$ and $2^{-n_0}\leq \delta$. Then for all $m\geq n_0+1$ we have
+    \[
+      \norm{(a_0-a_m)q_{n_0}}\leq 2^{-(n_0+1)}\leq \epsilon  
+    \]
+and
+\[
+    \tau(1-q_{n_0})\leq 2^{-n_0}\leq \delta  
+\] 
+since
+\[
+    \forall \xi\in H:(a_0-a_m)q_{n_0}\xi=\lim_{l\to\infty}(a_{m+l}a_m)q_{n_0}\xi  
+\]
+and
+\[
+    \norm{(a_{m+l}-a_m)q_{n_0}}\leq 2^{-m}\leq 2^{-(n_0+1)}\leq \epsilon.  
+\]
+Hence 
+\[
+  \forall m\geq n_0+1:a_0-a_m\in N(\epsilon,\delta).  
+\]
+This proves \eqref{eqn: 15}.
 \end{proof}
+\begin{example}
+    1) If $\tau$ is finite, then $\widetilde{M}=\overline{M}$, i.e. all closed densely defined operators affiliated with $M$ are $\tau$-measurable (by Proposition \ref{prop: 21}, (vi)).\par 
+    2) If $M=B(H)$ and $\tau$ is the usual trace $\Tr$, then $\widetilde{M}=M$ (by Proposition \ref{prop: 21}, (iv), and the fact that $\Tr(x) < 1, x\geq 0$, implies $x = 0$).\par
+    3) If $(X,\mu)$ is a measure space, $M = L^\infty(x,\mu)$ and $\tau=\int\cdot \dd \mu$, then $\widetilde{M}$ is the closure of $L^\infty(x,\mu)$ for the topology of convergence in measure. 
+\end{example}
+\section{$L^p$ spaces with respect to a trace}
+For any positive self-adjoint operator $a$ affiliated with $M$, we put 
+\[
+    \tau(a)=\sup_{n\in \mathbb{N}}\tau\left( \int_0^n \lambda\dd e_\lambda \right)  
+\]
+where 
+\[
+    a=\int_0^\infty \lambda  \dd e_\lambda
+\]
+is the spectral representation of $a$ . Then for each $p\in [1,\infty[$, we can define 
+\[
+   L^p(M,\tau)=\{a\in \overline{M}|\tau(\abs{a}^p)<\infty\} 
+\]
+and 
+\[
+    \norm{a}_p=\tau(\abs{a}^p)^\frac{1}{p},a\in L^p(M,\tau).
+\]
+The $(L^p(M,\tau),\norm{\cdot}_p)$ are Banach spaces in which $I=\{x\in M|\tau(\abs{x})<\infty\}$ is dense, and they are all contained in (and even continuously embedded in) $\widetilde{M}$ (for this and further results, see [13]; see also [3], [12], [21], and Chapter IV). 
 
+\section{Notes and comments}
+The notion of measurable operators was introduced by I.E. Segal [15] and formed the basis for investigations in non-commutative integration theory, i.e. a theory of "integration" where $L^\infty(X,\mu)$ (corresponding to a measure space $(X,\mu)$ is replaced by a more general von Neumann algebra. Among other things, this theory provided a framework for constructing $L^p$ spaces associated with (semifinite) von Neumann algebras as concrete spaces of (closed densely defined) operators ([12], [21]) (isomorphic to J. Dixmier's "abstract" $L^p$ spaces [3]).\par
+In [13], E. Nelson gave a new approach - requiring less knowledge of von Newmann algebra techniques - to the theory, based on the notion of measurability with respect to a trace (inspired by the notion of convergence in measure introduced by W. F. Stinespring in [16]). Any $\tau$-measurable operator is also measurable in the sense of [15, Definition 2.1], whereas the converse is not in general true. The set of $\tau$-measurable operators is, howe ver, big enough to contain the $L^p$ spaces with respect to $\tau$.\par
+In our presentation, we have followed [13] with some modifications. In [13], $\widetilde{M}$ is defined as the (abstract) completion of M with respect to a certain (measure) topology on M (given by the $0$-neighbourhoods $N(\epsilon,\delta)\cap M$, there simply called $N(\epsilon,\delta)$; afterwards, $\widetilde{M}$ is identified with a subset of the closed densely defined operators affiliated with $M$. As a tool, the completion of the Hilbert space $H$ with respect to a certain (measure) topology is considered. - We have preferred to work with operators on $H$ right from the beginning and to introduce the measure topology directly on the whole of $\widetilde{M}$. When doing so, we do not need a new topology on $H$.
 % \end{document}
