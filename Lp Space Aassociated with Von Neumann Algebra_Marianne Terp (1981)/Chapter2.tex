@@ -80,7 +80,7 @@ If $\varphi$ and $\psi$ are normal faithful semifinite weights, then so are $\ti
 \begin{equation}
     \forall t\in \mathbb{R}:(D\tilde{\varphi}:D\tilde{\psi})_t=(D\varphi:D\psi)_t.
 \end{equation}
-\begin{lemma}
+\begin{lemma}\label{Chap2: lemma: 1}
     1) The mapping 
 \[
     \varphi\mapsto \tilde{\varphi}  
@@ -130,6 +130,109 @@ since
  and the fact that $\dot{T}(m_T)$ is $\sigma$-weakly dense in $M$ [7, Proposition 2.5].\par
  We now return to 1). Let $\psi$ be a normal semifinite weight on 
 $N$ satisfying \eqref{Chap2: eqn: 13}. First suppose that $\psi$ is also faithful. Then by [5, (proof of) Theorem 3.7), it follows that $\psi=\tilde{\varphi}$ for some normal faithful semifinite $\varphi$ on $M$.\par 
- In the general case, put $q_0=1-\supp \psi$. Then by \eqref{Chap2: eqn: 13} and \eqref{Chap2: eqn: 5}, we have $q_0\in M$. Now take any normal semifinite weight $\chi_0$ on $M$ 
+ In the general case, put $q_0=1-\supp \psi$. Then by \eqref{Chap2: eqn: 13} and \eqref{Chap2: eqn: 5}, we have $q_0\in M$. Now take any normal semifinite weight $\chi_0$ on $M$ such that $\supp\chi_0=q_0$. Then $\widetilde{\chi}_0$ is a normal faithful semifinite $\theta$-invariant weight on $N$ with $\supp \widetilde{\chi}_0=q_0$. Hence $\widetilde{\chi}_0+\psi$ is faithful and thus, as above, 
+ \[
+    \widetilde{\chi}_0+\psi=\tilde{\varphi}
+ \]
+ for some normal faithful semifinite weight $\varphi$ on $M$. Finally, using (b), we find that 
+\[
+   \begin{split}
+       \psi=&(1-q_0)\cdot (\widetilde{\chi}_0+\psi)\cdot (1-q_0)\\
+       =&(1-q_0)\cdot \tilde{\varphi}\cdot (1-q_0)\\
+       =&((1-q_0)\cdot \varphi\cdot (1-q_0))^\sim.
+   \end{split} 
+\]
+\end{proof}
+
+Denote by $\tau$ the normal faithful semifinite trace on $N$ characterized by 
+\begin{equation}
+    \forall t\in \mathbb{R}:(D\tilde{\varphi}_0:D\tau)_t=\lambda(t)
+\end{equation} 
+(for the existence, see [8, Lemma 5.2]); $\tau$ satisfies 
+\begin{equation}\label{Chap2: eqn: 15}
+    \forall s\in \mathbb{R}:\tau\circ \theta_s=e^{-s}\tau.
+\end{equation}
+With each $h\in \hat{N}_+$ we associate the normal weight $\tau(h\cdot)$ on $N$ as in [8, remarks preceding Proposition 1.11]. When $h$ is simply a positive self-adjoint operator affiliated with $N$ (see [7, Example 1.2]), this definition agrees with that given in [14, Section 4].\par 
+We recall some facts about the mapping $h\mapsto \tau(h\cdot)$ (see [7, Theorem 1.12 (and its proof) and Preposition 1.11, (4)]):
+\begin{lemma}\label{Chap2: lemma: 2}
+    1) The mapping 
+\[
+    h\mapsto \tau(h\cdot)  
+\]
+is a bijection of $\hat{N}_+$ onto the set of normal weights on $N$. In particular, it is a bijection of the positive self-adjoint operators affiliated with $N$ onto the normal semifinite weights on $N$.\par 
+2) For all $h,k\in \hat{N}_+$ and all $x\in N$, we have
+\begin{enumerate}
+    \item $\tau((h\dot{+}k)\cdot)=\tau(h\cdot)+\tau(k\cdot)$,
+    \item $\tau((x\cdot h\cdot x^*)\cdot)=x\cdot \tau(h\cdot)\cdot x^*$,
+    \item $\supp \tau(h\cdot)=\supp h$.
+\end{enumerate} 
+\end{lemma} 
+Here, $h\dot{+}k$ and $x\cdot h\cdot x^*$ denote the operations in $\hat{N}_+$ introduced in [7, Definition 1.3]. If $h$ and $k$ are positive self-adjoint operators such that $D(h^\frac{1}{2})\cap D(k^\frac{1}{2})$ is dense, then $h\dot{+}k$ is the simply the form sum of $h$ and $k$ [2, Corollary 4.13]. If $h$ is a positive self-adjoint operator and $x$ a bounded operator such that $D(h^\frac{1}{2}x^*)$ is dense, then $x\cdot h\cdot x^*=\abs{h^\frac{1}{2}x^*}^2$.\par 
+\begin{definition}
+    For each normal weight $\varphi$ on $M$ we define $h_\varphi$ as the unique element of $\hat{N}_+$ given by 
+   \begin{equation}
+       \tilde{\varphi}=\tau(h_\varphi\cdot).
+   \end{equation}
+\end{definition}
+\begin{proposition}
+    1) The mapping 
+\[
+    \varphi\mapsto h_\varphi
+\]
+is a bijection of the set of all normal semifinite weights on $M$ onto the set of all positive self-adjoint operators $h$ affiliated with $N$ satisfying
+\begin{equation}\label{Chap2: eqn: 17}
+    \forall s\in \mathbb{R}:\theta_sh=e^{-s}h.
+\end{equation}
+(2) For all normal weights $\varphi$ and $\psi$ on $M$ and all $x\in M$, we have
+\begin{enumerate}
+    \item $h_{\varphi+\psi}+h_\varphi\dot{+}h_\psi$,
+    \item $h_{x\cdot \varphi \cdot x^*}=x\cdot h_\varphi\cdot x^*$,
+    \item $\supp h_\varphi=\supp\varphi$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+    This proposition is an immediate consequence of Lemma \ref{Chap2: lemma: 1} and \ref{Chap2: lemma: 2}. We just need to prove that a positive self-adjoint operator $h$ affiliated with $N$ satisfies \eqref{Chap2: eqn: 17} if and only if the corresponding weight $\tau(h\cdot)$ is $\theta$-invariant. This follows easily from \eqref{Chap2: eqn: 15}. Indeed, for all $s\in \mathbb{R}$ we have
+    \[
+        \tau(e^s\theta_s(h)\cdot)=e^s(\tau\circ \theta_s)(h\theta_{-s}(\cdot))=\tau(h\theta_{-s}(\cdot))=\tau(h\cdot )\circ \theta_{-s},
+    \]
+    whence 
+    \[
+      e^s\theta_s(h)=h\Leftrightarrow \tau(e^s\theta_s(h)\cdot)=\tau(h\cdot)\Leftrightarrow \tau(h\cdot)=\tau(h\cdot)\circ \theta_{-s}.  
+    \]
+    The equivalence of \eqref{Chap2: eqn: 17} and
+    \[
+        \forall s\in \mathbb{R}:\tau(h\cdot)=\tau(h\cdot)\circ \theta_s    
+    \]
+    follows.
+\end{proof}
+The next lemma is essential. It will permit us apply results on $\tau$-measurable operators.\par
+As usual, $\chi_{]\gamma,\infty[}$ denotes the characteristic function for the interval $]\gamma,\infty[$.
+\begin{lemma}
+    Let $\varphi$ be a normal semifinite weight on $M$. Then for all $\gamma\in \mathbb{R}_+$, we have 
+    \[
+      \tau(\chi_{]\gamma,\infty[}(h_\varphi))=\frac{1}{\gamma}\varphi(1).
+    \]
+\end{lemma}
+\begin{proof}
+    First let us prove the formula in the case $\gamma=1$.\par 
+Let $s\in \mathbb{R}$. Then since $\theta_s$ is an automorphism and $\theta_sh_\varphi=e^{-s}h_\varphi$ we have
+\[
+    \theta_s(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))=e^sh_\varphi^{-1}\chi_{]1,\infty[}(e^{-s}h_\varphi).
+\]
+Now let $h_\varphi=\int\lambda\dd e_\lambda$ be the spectral decomposition of $h_\varphi$. Then for any vector functional $\omega_{\xi,\xi}$, where $\xi$ is a unit vector, we have 
+\[
+    \begin{split}
+        \inner{\int_\mathbb{R}\theta_s(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))\dd s,\omega_{\xi,\xi}}=&\int_\mathbb{R}\inner{e^sh_\varphi^{-1}\chi_{]1,\infty[}(e^{-s}h_\varphi),\omega_{\xi,\xi}}\dd s\\ 
+        =&\int_\mathbb{R}\int_{]0,\infty[}e^s\lambda^{-1}\chi_{]1,\infty[}(e^{-s}\lambda)\dd (e_\lambda \xi|\xi)\dd s\\
+        =&\int_{]0,\infty[}\lambda^{-1}\left( \int_{]-\infty,\log \lambda[}e^s\dd s \right)\dd (e_\lambda \xi|\xi)\\
+        =&\int_{]0,\infty[}\lambda^{-1}\lambda\dd (e_\lambda \xi|\xi)\\
+        =&\norm{(\supp h_\varphi)\xi}^2
+    \end{split}
+\]
+So that
+\[
+    \int_\mathbb{R}\theta_s(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))\dd s=\supp h_\varphi=\supp \varphi.
+\]
+Finally, since $\tilde{\varphi}=\tau(h_\varphi\cdot)$ we have 
 \end{proof}
 % \end{document}
