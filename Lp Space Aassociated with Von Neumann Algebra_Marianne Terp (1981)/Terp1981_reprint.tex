@@ -20,8 +20,8 @@
 \tikzcdset{every label/.append style = {font = \normalsize}}
 % \numberwithin{equation}{chapter}
 \usepackage{chngcntr}
-\counterwithout{equation}{chapter}
-\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -31,6 +31,9 @@
 % \theoremstyle{definition}
 \newtheorem*{example}{Example}
 \counterwithout{theorem}{chapter}
+\counterwithout{equation}{chapter}
+\counterwithin*{equation}{chapter}
+\counterwithin*{theorem}{chapter}
 \newcommand{\inner}[1]{\langle#1\rangle}
 \newcommand{\Sp}{\operatorname{Sp}}
 \newcommand{\supp}{\operatorname{supp}}
@@ -38,7 +41,7 @@
 \begin{document}
 \tableofcontents
 % \input{Introduction}
-% \input{Chapter1}
+\input{Chapter1}
 \input{Chapter2}
 % \input{Chapter7-8}
 % \bibliography{reference}

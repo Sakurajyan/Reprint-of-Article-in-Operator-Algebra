@@ -174,7 +174,7 @@ Here, $h\dot{+}k$ and $x\cdot h\cdot x^*$ denote the operations in $\hat{N}_+$ i
        \tilde{\varphi}=\tau(h_\varphi\cdot).
    \end{equation}
 \end{definition}
-\begin{proposition}
+\begin{proposition}\label{Chap2: Prop: 4}
     1) The mapping 
 \[
     \varphi\mapsto h_\varphi
@@ -234,5 +234,118 @@ So that
     \int_\mathbb{R}\theta_s(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))\dd s=\supp h_\varphi=\supp \varphi.
 \]
 Finally, since $\tilde{\varphi}=\tau(h_\varphi\cdot)$ we have 
+\[
+\begin{split}
+    \tau(\chi_{]1,\infty[}(h_\varphi))=&\tau(h_\varphi^\frac{1}{2}(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))h_\varphi^\frac{1}{2})\\
+    =&\tilde{\varphi}(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))\\
+    =&\varphi\left( \int \theta_s(h_\varphi^{-1}\chi_{]1,\infty[}(h_\varphi))\dd s \right)=\varphi(\supp \varphi)=\varphi(1).
+\end{split}
+\]
+This completes the proof in the case $\gamma=1$. In the general case, write $\gamma=e^s$, $s\in \mathbb{R}$. Then by \eqref{Chap2: eqn: 15} 
+\[
+    \begin{split}
+        \tau(\chi_{]e^s,\infty[}(h_\varphi))=&\tau(\chi_{]1,\infty[}(e^{-s}h_\varphi))\\
+        =&\tau(\theta_s(\chi_{]1,\infty[}(h_\varphi)))\\
+        =&e^{-s}\tau(\chi_{]1,\infty[}(h_\varphi))=e^{-s}\varphi(1).\\
+    \end{split}  
+\]
 \end{proof}
+By Chapter I, Proposition \ref{prop: 21}, we have 
+\begin{corollary}\label{Chap2: Coro: 6}
+    Let $\varphi$ be a normal semifinite weight on $M$. Then $h_\varphi$ is $\tau$-measurable if and only if $\varphi\in M_*$. 
+\end{corollary}
+We denote by $\tilde{N}$ the set of all $\tau$-measurable closed densely defined operators affiliated with $N$. Recall (Chapter I) that $\tilde{N}$ is a topological *-algebra with respect to strong sum and product. Sums and products of elements in $\tilde{N}$ will always be understood to be 
+in the strong sense although we do not emphasize it in the notation.\par 
+We denote by $\tilde{N}_+$ the subset of all positive self-adjoint elements of $\tilde{N}$.\par
+Note that the $\theta_s$, $s\in \mathbb{R}$, extend to continuous *-automorphisms, still denoted $\theta_s$, of $\tilde{N}$. We have 
+\begin{equation}
+    \forall s\in \mathbb{R} \forall \epsilon,\delta\in \mathbb{R}_+: \theta_s(N(\epsilon,\delta))=N(\epsilon,e^{-s}\delta)
+\end{equation}
+Since for all $a\in \tilde{N}_+$
+\[
+    \tau(\chi_{]\epsilon,\infty[}(\theta_sa))=\tau(\theta_s(\chi_{]\epsilon,\infty[}(a)))=e^{-s}\tau(\chi_{]\epsilon,\infty[}(a))  
+\]
+(for the definition and properties of the $0$-neighbourhoods $N(\epsilon,\delta)$, we refer to Chapter I).
+\begin{theorem}\label{Chap2: Thm: 7}
+    1) The mapping 
+\[
+  \varphi\mapsto h_\varphi  
+\]
+extends to a linear bijection, still denoted $\varphi\mapsto h_\varphi$, of $M_*$ onto the subspace
+\begin{equation}\label{Chap2: eqn: 19}
+    \{h\in \tilde{N}|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}  
+\end{equation}
+of $N$.\par 
+2) For all $\varphi\in M_*$ and $x,y \in M$, we have 
+\begin{equation}
+    h_{x\cdot \varphi \cdot y^*}=x h_\varphi y^*  
+\end{equation}
+and
+\begin{equation}
+     h_{\varphi^*}=h_\varphi^*.  
+\end{equation}
+3) If $\varphi=u\abs{\varphi}$ is the polar decomposition of $\varphi$, then $h=uh_{\abs{\varphi}}$ {\color{red} ($h_\varphi=uh_{\abs{\varphi}}$)} is the polar decomposition of $h_\varphi$. In particular, 
+\begin{equation}
+    \abs{h_\varphi}=h_{\abs{\varphi}}.
+\end{equation}
+\end{theorem}
+The proof will be based on Corollary \ref{Chap2: Coro: 6}, Proposition \ref{Chap2: Prop: 4}, and the following lemma.
+\begin{lemma}\label{Chap2: lemma: 8}
+    1) Let $h$ and $k$ be positive self-adjoint operators such that $D(h^\frac{1}{2})\cap D(k^\frac{1}{2})$ is dense. Then 
+    \[
+       h+k\subset h\dot{+}k. 
+    \]
+    If $h+k$ is essentially self-adjoint, then its unique self-adjoint extension is precisely $h\dot{+}k$.\par 
+2) Let $h$ be a positive self-adjoint operator and $x$ a bounded operator such that $D(h^\frac{1}{2}x^*)$ is dense. Then 
+\[
+    xhx^*\subset x\cdot h\cdot x^*.
+\]
+If $xhx^*$ is essentially self-adjoint, then its unique self-adjoint extension is precisely $x\cdot h\cdot x^*$. 
+\end{lemma}
+\begin{proof}
+    1) Recall that by definition $h\dot{+}k$ is the unique positive self-adjoint operator characterized by $D((h\dot{+}k)^\frac{1}{2})=D(h^\frac{1}{2})\cap D(k^\frac{1}{2})$ and 
+    \begin{equation}
+        \forall \xi\in D(h^\frac{1}{2})\cap D(k^\frac{1}{2}):\norm{(h\dot{+}k)^\frac{1}{2}\xi}^2=\norm{h^\frac{1}{2}\xi}^2+\norm{k^\frac{1}{2}\xi}^2.
+    \end{equation}
+    By polarization, it follows that 
+\[
+    \forall \xi\in D(h^\frac{1}{2})\cap D(k^\frac{1}{2}):((h\dot{+}k)^\frac{1}{2}\xi|(h\dot{+}k)^\frac{1}{2}\eta)=(h^\frac{1}{2}\xi|h^\frac{1}{2}\eta)+(k^\frac{1}{2}\xi|k^\frac{1}{2}\eta).
+\]
+    Now let $\xi\in D(h+k)=D(h)\cap D(k)$ and $\eta\in D(h\dot{+}k)$. Then also $\xi\in D(h^\frac{1}{2})\cap D(k^\frac{1}{2})$ and $\eta\in D((h\dot{+}k)^\frac{1}{2})=D(h^\frac{1}{2})\cap D(k^\frac{1}{2})$ so that 
+    \[
+       \begin{split}
+           ((h+k)\xi|\eta)=&(h\xi|\eta)+(k\xi|\eta)\\
+            =&(h^\frac{1}{2}\xi|h^\frac{1}{2}\eta)+(k^\frac{1}{2}\xi|k^\frac{1}{2}\xi)\\
+            =&((h\dot{+}k)^\frac{1}{2}\xi|(h\dot{+}k)^\frac{1}{2}\eta)\\
+            =&(\xi|(h\dot{+}k)\eta).
+       \end{split}
+    \]
+    It follows that 
+    \[
+        h+k\subset (h\dot{+}k)^*=(h\dot{+}k).
+    \]
+    Hence $h+k$ is preclosed and $[h+k]\subset h\dot{+}k$. If $[h+k]$ is self-adjoint, we must have $[h+k]=h\dot{+}k$.\par 
+    2) Recall that $x\cdot h\cdot x^*=\abs{h^\frac{1}{2}x^*}^2$. Now let $\xi\in D(xhx^*)=D(hx^*)$ and $\eta\in D(x\cdot h\cdot x^*)$. Then also $\xi\in D(h^\frac{1}{2}x^*)$ and $\eta\in D((x\cdot h\cdot x^*)^\frac{1}{2})=D(h^\frac{1}{2}x^*)$ so that 
+    \[
+      (xhx^* \xi|\eta)=(hx^*\xi|x^* \eta)=(h^\frac{1}{2}x^*\xi|h^\frac{1}{2}x^*\eta)=(\xi|(x\cdot h\cdot x^*)\eta).  
+    \]
+    It follows that 
+    \[
+        xhx^*\subset(x\cdot h\cdot x^*)^*=x\cdot h\cdot x^*.
+    \]
+    Hence $xhx^*$ is preclosed and $[xhx^*]\subset x\cdot h\cdot x^*$. If $[xhx^*]$ is self-adjoint, we must have $[xhx^*]=x\cdot h\cdot x^*$.
+\end{proof}
+\begin{proof}[Proof of Theorem \ref{Chap2: Thm: 7}]
+    Let $\varphi,\psi\in M_*^+$. Then $h_\varphi$ and $h_\psi$ are positive self-adjoint and $\tau$-measurable so that their strong sum exists and is again a positive self-adjoint $\tau$-measurable operator. By Lemma \ref{Chap2: lemma: 8}, this sum then coincides with $h_\varphi\dot{+}h_\psi$. Then Proposition \ref{Chap2: Prop: 4} yields 
+\[
+  h_{\varphi+\psi}=h_\varphi+h_\psi,  
+\]
+where the sum at the right hand side is now the sum in $\tilde{N}$.\par 
+Similarly for all $\varphi\in M_*^+$ and $x\in M$ we get 
+\begin{equation}
+    h_{x\cdot \varphi\cdot \xi^*}=xh_\varphi x^*.
+\end{equation}
+Now the additive and homogeneous mapping $\varphi\mapsto h_\varphi$ of $M_*^+$ onto $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$ extends by linearity to a linear mapping $\varphi\mapsto h_\varphi$ of $M_*$ onto the subspace of $\tilde{N}$ spanned by $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$, i.e. onto the subspace \eqref{Chap2: eqn: 19}  
+\end{proof}
+
 % \end{document}
