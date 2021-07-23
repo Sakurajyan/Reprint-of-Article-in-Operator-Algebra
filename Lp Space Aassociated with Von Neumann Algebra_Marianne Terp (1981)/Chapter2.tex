@@ -277,11 +277,11 @@ extends to a linear bijection, still denoted $\varphi\mapsto h_\varphi$, of $M_*
 \end{equation}
 of $N$.\par 
 2) For all $\varphi\in M_*$ and $x,y \in M$, we have 
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 20}
     h_{x\cdot \varphi \cdot y^*}=x h_\varphi y^*  
 \end{equation}
 and
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 21}
      h_{\varphi^*}=h_\varphi^*.  
 \end{equation}
 3) If $\varphi=u\abs{\varphi}$ is the polar decomposition of $\varphi$, then $h=uh_{\abs{\varphi}}$ {\color{red} ($h_\varphi=uh_{\abs{\varphi}}$)} is the polar decomposition of $h_\varphi$. In particular, 
@@ -342,10 +342,128 @@ If $xhx^*$ is essentially self-adjoint, then its unique self-adjoint extension i
 \]
 where the sum at the right hand side is now the sum in $\tilde{N}$.\par 
 Similarly for all $\varphi\in M_*^+$ and $x\in M$ we get 
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 24}
     h_{x\cdot \varphi\cdot \xi^*}=xh_\varphi x^*.
 \end{equation}
-Now the additive and homogeneous mapping $\varphi\mapsto h_\varphi$ of $M_*^+$ onto $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$ extends by linearity to a linear mapping $\varphi\mapsto h_\varphi$ of $M_*$ onto the subspace of $\tilde{N}$ spanned by $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$, i.e. onto the subspace \eqref{Chap2: eqn: 19}  
+Now the additive and homogeneous mapping $\varphi\mapsto h_\varphi$ of $M_*^+$ onto $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$ extends by linearity to a linear mapping $\varphi\mapsto h_\varphi$ of $M_*$ onto the subspace of $\tilde{N}$ spanned by $\{h\in \tilde{N}_+|\forall s\in \mathbb{R}:\theta_sh=e^{-s}h\}$, i.e. onto the subspace \eqref{Chap2: eqn: 19} (evidently, \eqref{Chap2: eqn: 19} is stable under $h\mapsto h^*$ and $h\mapsto\abs{h}$ and hence spanned by its positive elements).\par 
+By linearity, we must have \eqref{Chap2: eqn: 21} for a11 $\varphi\in M_*$. Also by linearity, \eqref{Chap2: eqn: 24} holds for all $\varphi\in M_*$ and $x\in M$; by polarization the equation \eqref{Chap2: eqn: 20} follows for all $\varphi\in M_*$ and $x,y\in M$.\par 
+In particular, if $\varphi\in u\abs{\varphi}$ is the polar decomposition of $\varphi$, we have 
+\[
+    h_\varphi=h_{u\abs{\varphi}}=uh_{\abs{\varphi}}.
+\]
+That this relation is the polar decomposition of $h_\varphi$ follows from the fact that the initial projection for the partial isometry $u$ is $\supp \abs{\varphi}=\supp h_\abs{\varphi}$.\par 
+Finally, $\varphi\mapsto h_\varphi$ is injective: if $h_\varphi=0$, then $h_{\abs{\varphi}}=\abs{h_\varphi}=0$, whence $\abs{\varphi}=0$ and $\varphi=0$.
+\end{proof}
+Motivated by Theorem \ref{Chap2: Thm: 7}, we now give the following definition:
+\begin{definition}\label{Chap2: Def: 9}
+    For each $p\in [1,\infty]$, we let
+    \[
+        L^p(M)=\{a\in \tilde{N}|\forall s\in \mathbb{R}:\theta_s a=e^{-\frac{s}{p}}a\}.
+    \] 
+\end{definition}
+Note that the $L^p(M)$ are linear subspaces of $\tilde{N}$ and that they are linearly spanned by their positive part $L^p(M)_+=L^p(M)\cap \tilde{N}_+$.\par 
+By Theorem \ref{Chap2: Thm: 7}, we know that $L^1(M)\cong M_*$. And: 
+\begin{proposition}\label{Chap2: Prop: 10}
+    We have $L^\infty(M)=M$.
+\end{proposition}
+\begin{proof}
+    In view of \eqref{Chap2: eqn: 5}, we just need to show that every $a\in L^\infty(M)$ is bounded. Let $a\in L^\infty(M)$. Then for all $s\in \mathbb{R}$ and all $\lambda\in \mathbb{R}_+$ we have
+    \[
+        \begin{split}
+            \tau(\chi_{]\lambda,\infty[}(\abs{a}))=&\tau(\chi_{]\lambda,\infty[}(\theta_s\abs{a}))\\
+            =&\tau(\theta_s(\chi_{]\lambda,\infty[}(\abs{a})))=e^{-s}\tau(\chi_{]\lambda,\infty[}(\abs{a})).
+        \end{split}
+    \]
+    Hence for all $\lambda\in \mathbb{R}_+$ we must have 
+    \[
+        \tau(\chi_{]\lambda,\infty[}(\abs{a}))=0 \text{ or } \tau(\chi_{]\lambda,\infty[}(\abs{a}))=\infty.
+    \]
+Since $a$ is $\tau$-measurable, we have $\tau(\chi_{]\lambda,\infty[}(\abs{a}))<\infty$ for some $\lambda$. Hence $\tau(\chi_{]\lambda,\infty[}(\abs{a}))=0$ and thus $\chi_{]\lambda,\infty[}(\abs{a})=0$ since $\tau$ is faithful. This means that $a$ is bounded.
+\end{proof}
+\begin{remark}
+    We have seen that all elements of $L^\infty(M)$ are bounded. In contrast to this, all non-zero elements of $L^p(M)$, where $p<\infty$, are unbounded. To see this, let $a\in L^p(M)$ and suppose that $a\neq 0$. Then for some $\lambda\in \mathbb{R}_+$ we have $\chi_{]\lambda,\infty[}(\abs{a})\neq 0$ and hence $\tau(\chi_{]\lambda,\infty[}(\abs{a}))\neq 0$. Then for all $\mu\in \mathbb{R}_+$ we have 
+    \[
+        \tau(\chi_{]\mu,\infty[}(\abs{a}))\neq 0
+    \]
+    since for all $s\in \mathbb{R}$
+    \[
+       \begin{split}
+           \tau(\chi_{]e^\frac{s}{p}\lambda,\infty[}(\abs{a}))=&\tau(\chi_{]\lambda,\infty[}(e^{-\frac{s}{p}}\abs{a}))\\
+           =&\tau(\chi_{]\lambda,\infty[}(\theta_s\abs{a}))\\
+           =&\tau(\theta_s\chi_{]\lambda,\infty[}(\abs{a}))\\
+           =&e^{-s}\tau(\chi_{]\lambda,\infty[}(\abs{a}))\neq 0.
+       \end{split} 
+    \]
+    It follows that $\abs{a}$ must be unbounded.
+\end{remark}
+\begin{proposition}
+    Let $a$ be a closed densely defined operator affiliated with $N$ with polar decomposition $a=u\abs{a}$. Let $p\in [1,\infty[$. Then
+    \[
+        a\in L^p(M)
+    \] 
+    if and only if 
+    \[
+        u\in M \text{ and } \abs{a}^p\in L^1(M).
+    \]
+\end{proposition}
+\begin{proof}
+    Recall that $a\in \tilde{N}$ if and only if $\abs{a}\in\tilde{N}$. Furthermore, $\abs{a}\in\tilde{N}$ if and only if $\abs{a}^p\in\tilde{N}$ since $\tau(\chi_{]\lambda,\infty[}(\abs{a}))=\tau(\chi_{]\lambda^p,\infty[}(\abs{a}^p))$ for all $\lambda\in \mathbb{R}_+$. For all such $a$ and all $s\in \mathbb{R}$ we have 
+    \[
+        \theta_sa=e^{-\frac{s}{p}}a\Leftrightarrow \theta_su=u \text{ and }\theta_s\abs{a}^p=e^{-s}\abs{a}^p.
+    \]
+    The result follows by Definition \ref{Chap2: Def: 9} and Proposition \ref{Chap2: Prop: 10}.
+\end{proof}
+ A similar result holds for the right polar decomposition. 
+\begin{definition}
+    We define a linear functional $\tr$ on $L^1(M)$ by
+    \[
+       \tr(h_\varphi)=\varphi(1),\varphi\in M_*. 
+    \]
+\end{definition}
+Note that 
+\begin{equation}
+    \tr(\abs{h_\varphi})=\tr(h_{\abs{\varphi}})=\abs{\varphi}(1)=\norm{\varphi}
+\end{equation}
+for all $\varphi\in M_*$. This implies that 
+\begin{equation}\label{Chap2: eqn: 26}
+    \abs{\tr(a)}\leq\tr(\abs{a})
+\end{equation}
+for all $a\in L^1(M)$ and that the mapping $a\mapsto\tr(\abs{a})$ is a norm on $L^1(M)$. 
+\begin{definition}
+    Let $p\in [1,\infty[$. Then we define $\norm{\cdot}_p$ on $L^p(M)$ by 
+    \[
+        \norm{a}_p=\tr(\abs{a}^p)^\frac{1}{p}, a\in L^p(M).  
+    \]
+For $p=\infty$, we put 
+\[
+    \norm{a}_\infty=\norm{a}, a\in L^\infty(M).
+\]
+\end{definition}
+We shall see that for all $p$, $\norm{\cdot}_p$ is a norm on $L^p(M)$.\par
+By \eqref{Chap2: eqn: 26}, we have 
+\begin{proposition}
+    The mapping 
+    \[
+       \varphi\mapsto h_\varphi:M_*\to L^1(M)    
+    \]
+    is an isometry of $M_*$ onto $L^1(M)$. 
+\end{proposition}
+\begin{lemma}
+    Let $p\in[1,\infty[$ and $\epsilon,\delta\in \mathbb{R}_+$. Then
+    \[
+        N(\epsilon,\delta)\cap L^p(M)=\{a\in L^p(M)|\norm{a}_p\leq \epsilon\delta^\frac{1}{p}\}.
+    \] 
+\end{lemma}
+\begin{proof}
+    Let $a\in L^p(M)$. Then $\abs{a}^p\in L^1(M)_+$ and hence $\abs{a}^p=h_\varphi$ for some $\varphi\in M_*^+$. Now 
+    \[
+        \begin{split}
+            \tau(\chi_{]\epsilon,\infty[}(\abs{a}))=&\tau(\chi_{]\epsilon^p,\infty[}(\abs{a}^p))\\
+            =&\frac{1}{\epsilon^p}\varphi(1)\\
+            =&\frac{1}{\epsilon^p}\norm{\abs{a}^p}_1=\frac{1}{\epsilon^p}\norm{a}_p^p
+        \end{split}
+    \]
+Using this we get 
 \end{proof}
 
 % \end{document}
