@@ -207,7 +207,7 @@ is a bijection of the set of all normal semifinite weights on $M$ onto the set o
 \end{proof}
 The next lemma is essential. It will permit us apply results on $\tau$-measurable operators.\par
 As usual, $\chi_{]\gamma,\infty[}$ denotes the characteristic function for the interval $]\gamma,\infty[$.
-\begin{lemma}
+\begin{lemma}\label{Chap2: Lemma: 5}
     Let $\varphi$ be a normal semifinite weight on $M$. Then for all $\gamma\in \mathbb{R}_+$, we have 
     \[
       \tau(\chi_{]\gamma,\infty[}(h_\varphi))=\frac{1}{\gamma}\varphi(1).
@@ -414,7 +414,7 @@ Since $a$ is $\tau$-measurable, we have $\tau(\chi_{]\lambda,\infty[}(\abs{a}))<
     The result follows by Definition \ref{Chap2: Def: 9} and Proposition \ref{Chap2: Prop: 10}.
 \end{proof}
  A similar result holds for the right polar decomposition. 
-\begin{definition}
+\begin{definition}\label{Chap2: Def: 13}
     We define a linear functional $\tr$ on $L^1(M)$ by
     \[
        \tr(h_\varphi)=\varphi(1),\varphi\in M_*. 
@@ -464,6 +464,132 @@ By \eqref{Chap2: eqn: 26}, we have
         \end{split}
     \]
 Using this we get 
+\[
+    \begin{split}
+        a\in N(\epsilon,\delta)\Leftrightarrow& \abs{a}\in N(\epsilon,\delta)\\
+        \Leftrightarrow& \tau(\chi_{]\epsilon,\infty[}(\abs{a}))\leq \delta\\
+        \Leftrightarrow& \frac{1}{\epsilon^p}\norm{a}_p^p\leq \delta\\
+        \Leftrightarrow& \norm{a}_p\leq \epsilon\delta^\frac{1}{p}.
+    \end{split}
+\]
 \end{proof}
-
+\begin{corollary}\label{Chap2: Coro: 17}
+    On $L^1(M)$ the norm topology is exactly the topology induced from $\tilde{N}$.
+\end{corollary}
+We denote by $\mathbb{C}_+$ the closed half-plane $\{a\in \mathbb{C}|\Re a\geq 0\}$ and by $\mathbb{C}^{\circ}_+$ the corresponding open half-plane.
+\begin{lemma}  
+    Let $h\in \tilde{N}_+$. Then the mapping 
+    \[
+        \alpha\mapsto h^\alpha:\mathbb{C}_+^\circ\to \tilde{N}
+    \]
+    is differentiable. 
+\end{lemma}
+\begin{proof}
+    First note that all $h^\alpha$, $\alpha\in \mathbb{C}_+^\circ$, are actually $\tau$-measurable since $h$ is $\tau$-measurable.\par
+1) Suppose that $h$ is bounded, i.e. $h\in N_+$. Then the mapping
+\[
+    \alpha\mapsto h^\alpha:\mathbb{C}_+^\circ\to N
+\] 
+is differentiable with respect to the norm topology on $N$ and 
+\begin{equation}\label{Chap2: eqn: 27}
+    \dv{\alpha}h^\alpha=h^\alpha \log h
+\end{equation}
+(note that the expression at the right hand side is defined for any positive $h\in N$ since the function $\lambda\mapsto \lambda^\alpha \log \lambda$ is continuous on the closed half-plane $\mathbb{C}_+$). This follows from spectral theory using the fact that for all $\alpha_0\in \mathbb{C}_+^\circ$ we have 
+\[
+    \begin{split}
+        \frac{1}{\alpha-\alpha_0}(\lambda^\alpha-\lambda^{\alpha_0})-\lambda^{\alpha_0}\log \lambda=&\frac{1}{\alpha-\alpha_0}(e^{\alpha\log \lambda}-e^{\alpha_0\log \lambda})-\log \lambda e^{\alpha_0\log \lambda}\\
+        \to& 0 \text{ as $\alpha\to \alpha_0$ uniformly in $\lambda\in]0,\norm{h}]$.}
+    \end{split}
+\]
+2) Now let $h$ be any element of $\tilde{N}_+$. We claim that $\alpha\mapsto h^\alpha:\mathbb{C}_+^\circ \to \tilde{N}$ is differentiable with respect to the topology on $\tilde{N}$ and that \eqref{Chap2: eqn: 27} still holds (as above, $h^\alpha\log h$ is a well-defined positive self-adjoint operator and, by spectral theory, it is $\tau$-measurable). Now let $\epsilon,\delta\in \mathbb{R}_+$. Take $\lambda\in \mathbb{R}_+$ such that $\tau(\chi_{]\lambda,\infty[}(h))\leq \delta$. Put $p=\chi_{[0,\lambda]}(h)$. Then $hp$ is bounded and by the first part of the proof 
+\[
+    \begin{split}
+        &\norm{\left( \frac{1}{\alpha-\alpha_0}(h^\alpha-h^{\alpha_0})-h^{\alpha_0}\log h \right)p}\\
+        =&\norm{ \frac{1}{\alpha-\alpha_0}((hp)^\alpha-(hp)^{\alpha_0})-(hp)^{\alpha_0}\log (hp) }\leq \epsilon
+    \end{split}
+\]
+{\color{red} Origin article here is $(hp)^{\alpha}\log (hp)$} for all $\alpha\in \mathbb{C}_+^\circ$ sufficiently close to $\alpha_0$. Thus
+\[
+     \frac{1}{\alpha-\alpha_0}(h^\alpha-h^{\alpha_0})-h^{\alpha_0}\log h \in N(\epsilon,\delta)
+\] 
+for $\alpha$ sufficiently close to $\alpha_0$. This proves the lemma.
+\end{proof}
+We denote by $S$ the closed complex strip $\{\alpha\in \mathbb{C}|0\leq \Re \alpha\leq 1\}$ and by $S^\circ$ the corresponding open strip. \par
+\begin{lemma}\label{Chap2: Lemma: 19}
+    Let $h,k\in L^1(M)_+$. Then for $\alpha\in S^\circ$ we have 
+\[
+    h^\alpha k^{1-\alpha}\in L^1(M),
+\]
+and the mapping 
+\begin{equation}\label{Chap2: eqn: 28}
+    \alpha\mapsto h^\alpha k^{1-\alpha}: S^\circ \to L^1(M)
+\end{equation} 
+is analytic.
+\end{lemma}
+\begin{proof}
+    That $ h^\alpha k^{1-\alpha}\in L^1(M)$ follows from Definition \ref{Chap2: Def: 9} since 
+    \[
+        \begin{split}
+            \forall s\in \mathbb{R}: \theta_s(h^\alpha k^{1-\alpha})=&(\theta_s h)^\alpha (\theta_s k)^{1-\alpha}\\
+            =& e^{-\alpha s}h^\alpha e^{-(1-\alpha)s}k^{1-\alpha}=e^{-s}h^\alpha k^{1-\alpha}.
+        \end{split}
+    \]
+    {\color{red} Origin article here is $e^{-s}h^\alpha h^{1-\alpha}$} we want to prove that the mapping \eqref{Chap2: eqn: 28} is differentiable. In view of Corollary \ref{Chap2: Coro: 17} we may as well prove that \eqref{Chap2: eqn: 28} is differentiable as a mapping into $\tilde{N}$. Now by the preceding lemma, the functions $f,g:S^\circ \mapsto \tilde{N}$ defined by $f(\alpha)=h^\alpha$ and $g(\alpha)=k^{1-\alpha}.$ are differentiable. It follows that for all $\alpha_0\in S^\circ$ we have 
+    \[
+        \begin{split}
+            &\frac{1}{\alpha-\alpha_0}(f(\alpha)g(\alpha)-f(\alpha_0)g(\alpha_0))\\
+            =&\frac{1}{\alpha-\alpha_0}f(\alpha)(g(\alpha)-g(\alpha_0))+\frac{1}{\alpha-\alpha_0}(f(\alpha)-f(\alpha_0))g(\alpha_0)\\
+            \to & f(\alpha_0)g'(\alpha_0)+f'(\alpha_0)g(\alpha_0) \text{ as } \alpha\to \alpha_0
+        \end{split}
+    \]
+so that also $f\cdot g: S^\circ \to \tilde{N}$ is differentiable.
+\end{proof}
+\begin{lemma}\label{Chap2: Lemma: 20}
+    Let $t\in \mathbb{R}$ and put 
+    \begin{equation}\label{Chap2: eqn: 29}
+        \tilde{N}_{\frac{1}{2}+it}=\{a\in \tilde{N}|\forall s\in \mathbb{R}: \theta_s a=e^{-(\frac{1}{2}+it)}a\}.
+    \end{equation}
+    Let $a,b\in \tilde{N}_{\frac{1}{2}+it}$. Then $b^*a, ab^*\in L^1(M)$ and 
+    \begin{equation}\label{Chap2: eqn: 30}
+        \tr(b^*a)=\tr(ab^*).
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    That $b^*a, ab^*\in L^1(M)$ follows from Definition \ref{Chap2: Def: 9} and \eqref{Chap2: eqn: 29}.\par
+To prove \eqref{Chap2: eqn: 30}, suppose first that $a=b$. Then by Definition \ref{Chap2: Def: 13} and Lemma \ref{Chap2: Lemma: 5}
+\[
+    \tr(a^*a)=\tau(\chi_{]1,\infty[}(a^*a))=\tau(\chi_{]1,\infty[}(aa^*))=\tr(aa^*).
+\]
+In the general case, note that $a+ib\in \tilde{N}_{\frac{1}{2}+it}$ and 
+\[
+    b^*a=\frac{1}{4}\sum_{k=0}^3 i^k(a+i^kb)^*(a+i^kb)
+\]
+\[
+    ab^*=\frac{1}{4}\sum_{k=0}^3 i^k(a+i^kb)(a+i^kb)^*
+\]
+The result follows since $\tr$ is linear.
+\end{proof}
+\begin{proposition}
+Let $p,q\in [1,\infty]$ with $\frac{1}{p}+\frac{1}{q}=1$. Let $a\in L^p(M)$ and $b\in L^q(M)$. Then $ab,ba\in L^1(M)$ and 
+\[
+    \tr(ab) = \tr(ba).
+\]
+\end{proposition}
+\begin{proof}
+    If $p=1$ we have $a=h_\varphi$ for some $\varphi\in M_*$ and the result follows by Theorem \ref{Chap2: Thm: 7}:
+    \[
+        \tr(h_\varphi b)=\tr(h_{\varphi\cdot b})=(\varphi\cdot b)(1)=(b\cdot \varphi)(1)=\tr(h_{b\cdot\varphi})=\tr(bh_\varphi)
+    \] 
+    Now suppose that $p,q\in ]1,\infty[$. As usual, we easily see that $ab$ and $ba$ are in $L^1(M)$. By linearity, we may assume that $a\in L^p(M)_+$ and $b\in L^q(M)_+$. Now $a^p,b^q\in L^1(M)_+$ and by Lemma \ref{Chap2: Lemma: 19} the functions $F$ and $G$ on $S^\circ$ defined by $F(\alpha)=\tr(a^{p\alpha}b^{q(1-\alpha)})$ and $G(\alpha)=\tr(b^{q(1-\alpha)}a^{p\alpha})$ are analytic. For all $t\in \mathbb{R}$, we have $a^{p(\frac{1}{2}+it)}\in\tilde{N}_{\frac{1}{2}+it}$ and $b^{q(\frac{1}{2}+it)}\in \tilde{N}_{\frac{1}{2}+it}$ so that by Lemma \ref{Chap2: Lemma: 20}
+    \[
+        \begin{split}
+            F(\frac{1}{2}+it)=&\tr(a^{p(\frac{1}{2}+it)}b^{q(\frac{1}{2}-it)})=\tr(a^{p(\frac{1}{2}+it)}(b^{q(\frac{1}{2}-it)})^*)\\
+            =&\tr((b^{q(\frac{1}{2}-it)})^*a^{p(\frac{1}{2}+it)})=\tr(b^{q(\frac{1}{2}-it)}a^{p(\frac{1}{2}+it)})=G(\frac{1}{2}+it)
+        \end{split}
+    \] 
+We conclude that $F=G$. In particular,
+\[
+    \tr(ab)=F(\frac{1}{p})=G(\frac{1}{p})=\tr(ba).
+\]
+\end{proof}
 % \end{document}
