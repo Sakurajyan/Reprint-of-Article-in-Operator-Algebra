@@ -448,7 +448,7 @@ By \eqref{Chap2: eqn: 26}, we have
     \]
     is an isometry of $M_*$ onto $L^1(M)$. 
 \end{proposition}
-\begin{lemma}
+\begin{lemma}\label{Chap2: Lemma: 16}
     Let $p\in[1,\infty[$ and $\epsilon,\delta\in \mathbb{R}_+$. Then
     \[
         N(\epsilon,\delta)\cap L^p(M)=\{a\in L^p(M)|\norm{a}_p\leq \epsilon\delta^\frac{1}{p}\}.
@@ -592,4 +592,140 @@ We conclude that $F=G$. In particular,
     \tr(ab)=F(\frac{1}{p})=G(\frac{1}{p})=\tr(ba).
 \]
 \end{proof}
+The proof of the next lemma is based on the 3 lines theorem for analytic functions (see e.g. [23, p.93]). The 3 lines theorem also holds for analytic functions $F$ with values in a Banach space (to see this, apply it to the scalar-valued functions $\alpha\mapsto v(F(\alpha))$, where $v$ is in the dual of the given Banach space).
+\begin{lemma}\label{Chap2: Lemma: 22}
+    Let $h,k\in L^1(M)_+$ and suppose that $\norm{h}_1=\norm{k}_1=1$. Then for all $\alpha\in S^\circ$, we have 
+    \[
+        \norm{h^\alpha k^{1-\alpha}}_1\leq 1
+    \]
+\end{lemma} 
+\begin{proof}
+    Write $s=\Re \alpha$, $t=\Im \alpha$. Then $h^s\in L^\frac{1}{s}(M)$ with $\norm{h^s}_{\frac{1}{s}}=1=s^{-s}\cdot s^s$, whence by Lemma \ref{Chap2: Lemma: 16} 
+    \[
+        h^s\in N(s^{-s},s).
+    \]
+    Similarly, 
+    \[
+        k^{1-s}\in N((1-s)^{-(1-s)},1-s).
+    \]
+    It follows that 
+    \[
+        \begin{split}
+            h^s k^{1-s}\in& N(s^{-s},s)\cdot N((1-s)^{-(1-s)},1-s)\\
+            \subset& N(s^{-s}(1-s)^{-(1-s)},s+(1-s))
+        \end{split}
+    \]
+    whence also 
+    \[
+        h^\alpha k^{1-\alpha}=h^{it}h^s k^{1-s}k^{-it}\in N(s^{-s}(1-s)^{-(1-s)},1)
+    \]
+    Again by Lemma \ref{Chap2: Lemma: 16},
+    \[
+        \norm{h^\alpha k^{1-\alpha}}_1\leq s^{-s}(1-s)^{-(1-s)}
+    \]
+    Since $s\mapsto s^{-s}(1-s)^{-(1-s)}$ is bounded, the function $\alpha\mapsto h^\alpha k^{1-\alpha}:S^\circ \to L^1(M)$ is bounded. It is analytic by Lemma \ref{Chap2: Lemma: 19}. Hence we can apply the 3 lines theorem on each closed strip $\{a\in \mathbb{C}|\epsilon\leq \Re \alpha\leq 1-\epsilon\}$ and we obtain 
+    \[
+        \sup_{t\leq \Re \alpha\leq 1-\epsilon}\norm{h^\alpha k^{1-\alpha}}_1\leq \epsilon^{-\epsilon}(1-\epsilon)^{-(1-\epsilon)}.
+    \]
+    Hence for fixed $a\in S^\circ$, the inequality 
+    \[
+        \norm{h^\alpha k^{1-\alpha}}_1\leq \epsilon^{-\epsilon}(1-\epsilon)^{-(1-\epsilon)}
+    \]
+    holds for all $\epsilon\in \mathbb{R}_+$ such that $\epsilon\leq \Re \alpha\leq 1-\epsilon$. Since 
+    \[
+        \epsilon^{-\epsilon}(1-\epsilon)^{-(1-\epsilon)}=e^{-\epsilon\log \epsilon}e^{-(1-\epsilon)\log (1-\epsilon)}\to 1 \text{ as } \epsilon\to 0,
+    \]
+    it follows that 
+    \[
+        \norm{h^\alpha k^{1-\alpha}}_1\leq 1 
+    \]
+    This proves the lemma.
+\end{proof}
+\begin{theorem}[H\"older's inequality]
+    Let $p,q\in [1,\infty]$ with $\frac{1}{p}+\frac{1}{q}=1$. Let $a\in L^p(M)$ and $b\in L^q(M)$. Then  
+    \[
+        \norm{ab}_1\leq \norm{a}_p\norm{b}_q.
+    \]
+\end{theorem}
+\begin{proof}
+    If $p=1$, we have $a=h_\varphi$ for some $\varphi\in M_*$ and 
+\[
+    \norm{h_\varphi b}_1=\norm{h_{\varphi\cdot b}}_1=\norm{\varphi\cdot b}\leq \norm{\varphi}\norm{b}_\infty=\norm{h_\varphi}_1\cdot \norm{b}_\infty
+\]
+for all $b\in L^\infty(M)=M$. The case $q=1$ is quite similar to this.\par
+Now assume $p,q\in ]1,\infty[$, and $\norm{a}_p=1$, $\norm{b}_q=1$. Let $a=u\abs{a}$ be the (usual) polar decomposition of $a$ and $b=\abs{b^*}v$ the right polar decomposition of $b$. Then $\abs{a}^p, \abs{b^*}^q\in L^1(M)$ with $\norm{\abs{a}^p}=\norm{\abs{b^*}_r^q}_1=1$ and Lemma \ref{Chap2: Lemma: 22} applies:
+\[
+    \begin{split}
+        \norm{ab}_1=&\norm{u\abs{a}\abs{b^*}v}_1\leq \norm{\abs{a}\abs{b^*}}_1\\
+        =&\norm{\abs{a}^\frac{p}{p}\abs{b^*}^\frac{q}{q}}_1\leq 1.
+    \end{split}
+\]
+\end{proof}
+\begin{proposition}\label{Chap2: Prop: 24}
+    Let $p,q\in [1,\infty]$ with $\frac{1}{p}+\frac{1}{q}=1$. Let $a\in L^p(M)$. Then 
+    \[
+        \norm{a}_p=\sup\{\abs{\tr(ab)}|b\in L^q(M),\norm{b}_q\leq 1\}.
+    \]
+\end{proposition}
+\begin{proof}
+    If $p=1$ or $p=\infty$ this is well-known (since $\tr(ch_\varphi)=\tr(h_\varphi c)=\varphi(c)$ for all $\varphi\in M_*$ and $c\in M$). Suppose that $1<p<\infty$. We may assume that $\norm{a}_p=1$. Then putting $b=\abs{a}^\frac{p}{q}u^*$, where $a=u\abs{a}$ is the polar decomposition of $a$, we have $b\in L^q(M)$ with $\norm{b}_q=\norm{\abs{a}^\frac{p}{q}u^*}_q=\tr(\abs{a}^p)^\frac{1}{q}=1$ and  
+    \[
+        \tr(ab)=\tr(u\abs{a}\abs{a}^\frac{p}{q}u^*)=\tr(\abs{a}^p)=1.
+    \]  
+Hence 
+\[
+   \norm{a}_p=1\leq \sup\{\abs{\tr(ab)}|b\in L^q(M),\norm{b}_q\leq 1\}.
+\]
+The converse inequality follows from H\"older's inequality (together with \eqref{Chap2: eqn: 26}). 
+\end{proof}
+\begin{corollary}
+    $\norm{\cdot}_p$ is a norm on $L^p(M)$.
+\end{corollary}
+\begin{proof}
+    The inequality 
+\[
+    \norm{a+b}_p\leq \norm{a}_p+\norm{b}_p
+\]
+    follows immediately from Proposition \ref{Chap2: Prop: 24}.
+\end{proof}
+\begin{proposition}
+    On $L^p(M)$, the norm topology is exactly the topology induced from $\tilde{N}$. 
+\end{proposition}
+\begin{proof}
+    Now that we know that $\norm{\cdot}_p$ is a norm, this is a corollary of Lemma \ref{Chap2: Lemma: 16}.
+\end{proof}
+\begin{corollary}\label{Chap2: Coro: 27}
+    $(L^p(M),\norm{\cdot}_p)$ is a Banach space. 
+\end{corollary}
+\begin{proof}
+    From the definition of $L^p(M)$ it follows that it is a closed subspace of the complete topological vector space $\tilde{N}$. Hence it is complete for the uniform structure induced from $\tilde{N}$. By Lemma \ref{Chap2: Lemma: 16}, this is simply the uniform structure coming from the norm. Hence $L^p(M)$ is a complete normed space.
+\end{proof}
+\begin{corollary}
+    $(L^2(M),\norm{\cdot}_2)$ is a Hilbert space with the inner product 
+    \[
+        (a|b)_{L^2(M)}=\tr(b^*a)\quad (=\tr(ab^*)),a,b\in L^2(M).
+    \]
+\end{corollary}
+\begin{proof}
+    That $(a,b)\mapsto (a|b)_{L^2(M)}$ is an inner product defining the norm $\norm{\cdot}_2$ is easily verified. By Corollary \ref{Chap2: Coro: 27}, $L^2(M)$ is complete.
+\end{proof}
+\begin{remark}
+    Let $t\in \mathbb{R}$. Define $\tilde{N}_{\frac{1}{2}+it}$ as in Lemma \ref{Chap2: Lemma: 20}. Then 
+    \[
+        (a,b)\mapsto \tr(b^*a)
+    \]
+is an inner product on $\tilde{N}_{\frac{1}{2}+it}$ and 
+\[
+    a\mapsto \tr(a^*a)^\frac{1}{2}
+\]
+is a norm which we shall denote by $\norm{\cdot}_2$ (as in the case $t=0$ where $\tilde{N}_{\frac{1}{2}}=L^2(M)$). Note that 
+\[
+    \abs{\tr(b^*a)}\leq \norm{a}_2\norm{b}_2
+\]
+and 
+\[
+    \norm{a+b}_2^2+\norm{a-b}_2^2=2\norm{a}_2^2+2\norm{b}_2^2
+\]
+for all $a,b\in \tilde{N}_{\frac{1}{2}+it}$.
+\end{remark}
 % \end{document}
