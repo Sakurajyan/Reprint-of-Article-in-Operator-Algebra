@@ -709,7 +709,7 @@ The proof of the next lemma is based on the 3 lines theorem for analytic functio
 \begin{proof}
     That $(a,b)\mapsto (a|b)_{L^2(M)}$ is an inner product defining the norm $\norm{\cdot}_2$ is easily verified. By Corollary \ref{Chap2: Coro: 27}, $L^2(M)$ is complete.
 \end{proof}
-\begin{remark}
+\begin{remark}\label{Chap2: Remark: 29}
     Let $t\in \mathbb{R}$. Define $\tilde{N}_{\frac{1}{2}+it}$ as in Lemma \ref{Chap2: Lemma: 20}. Then
     \[
         (a,b)\mapsto \tr(b^*a)
@@ -728,4 +728,175 @@ The proof of the next lemma is based on the 3 lines theorem for analytic functio
     \]
     for all $a,b\in \tilde{N}_{\frac{1}{2}+it}$.
 \end{remark}
+\begin{remark}\label{Chap2: Remark: 30}
+    Let $p\in [1,\infty[$. Then we have a natural identification
+    \begin{equation}\label{Chap2: eqn: 31}
+        L^p(M\oplus M)\cong L^p(M)\times L^p(M)
+    \end{equation}
+    such that
+    \begin{equation}\label{Chap2: eqn: 32}
+        \forall (a,b)\in L^p(M)\times L^p(M)\cong L^p(M\oplus M):\norm{(a,b)}_p=(\norm{a}_p^p+\norm{b}_p^p)^\frac{1}{p}.
+    \end{equation}
+\end{remark}
+To see this, write $M^{(2)}=M\oplus M$ and define the normal faithful semifinite weight $\varphi_0^{(2)}$ on $M^{(2)}$ by $\varphi_0^{(2)}=\varphi_0\oplus \varphi_0$, i.e.
+\[
+    \varphi_0^{(2)}\begin{pmatrix}
+        x & 0 \\
+        0 & y
+    \end{pmatrix}=\varphi_0(x)+\varphi_0(y), x,y\in M_+.
+\]
+Let us denote by $N^{(2)}$, $\tau^{(2)}$ etc. the objects associated with $(M^{(2)},\varphi_0^{(2)})$ analogous to $N$, $\tau$ etc. associated with $(M,\varphi_0)$. Then one easily verifies that $N^{(2)}\cong N\oplus N$, $\tau^{(2)}\cong \tau\oplus \tau$, $(M^{(2)})_*\cong M_*\oplus M_*$, $h_{\varphi\oplus \psi}^{(2)}\cong h_\varphi \oplus h_\psi$, $\theta_s^{(2)}\cong \theta_s\oplus \theta_s$, $\tilde{N}^{(2)}\cong \tilde{N}\oplus \tilde{N}$, and finally \eqref{Chap2: eqn: 31}. Furthermore, $\tr^{(2)}\cong \tr\oplus \tr$ so that
+\[
+    \begin{split}
+        \norm{(a,b)}_p^p=&\tr^{(2)}\left( \abs{\begin{pmatrix}
+                a & 0 \\
+                0 & b
+            \end{pmatrix}}^p \right)=\tr^{(2)}\begin{pmatrix}
+            \abs{a}^p & 0         \\
+            0         & \abs{b}^p
+        \end{pmatrix}\\
+        =&\tr(\abs{a}^p)+\tr(\abs{b}^p)=\norm{a}_p^p+\norm{b}_p^p
+    \end{split}
+\]
+for all $a,b\in L^p(M)$. This proves \eqref{Chap2: eqn: 32}.
+\begin{proposition}[Clarkson's inequality]
+    Let $p\in[2,\infty[$. Then for all $a,b\in L^p(M)$ we have
+    \[
+        \norm{a+b}_p^p+\norm{a-b}_p^p\leq 2^{p-1}(\norm{a}_p^p+\norm{b}_p^p).
+    \]
+\end{proposition}
+\begin{proof}
+    Using Remark \ref{Chap2: Remark: 30} we may reformulate the inequality to be proved as
+    \begin{equation}\label{Chap2: eqn: 33}
+        \norm{(a+b,a-b)}_p\leq 2^\frac{1}{q}\norm{(a,b)}_p
+    \end{equation}
+    where we have put $\frac{1}{q}=1 -\frac{1}{p}$. \par
+    Let $(a,b)\in L^p(M\oplus M)$ and $(c,d)\in L^q(M\oplus M)$ such that
+    \begin{equation}\label{Chap2: eqn: 34}
+        \norm{(a,b)}_p=1 \text{ and } \norm{(c,d)}_q=1.
+    \end{equation}
+    Let
+    \[
+        a=uh^\frac{1}{p},b=vk^\frac{1}{p}
+    \]
+    be the polar decompositions of $a$ and $b$, and
+    \[
+        c=f^\frac{1}{q}w,d=g^\frac{1}{q}z
+    \]
+    the right polar decompositions of $c$ and $d$. Then $h,k,f,g\in L^1(M)_+$ and
+    \[
+        \norm{(h,k)}_1=1, \norm{(f,g)}_1=1.
+    \]\par
+    For each $a\in S^\circ$, put
+    \[
+        F(\alpha)=\tr((uh^\alpha+vk^\alpha)f^{1-\alpha}w+(uh^\alpha -vk^\alpha)g^{1-\alpha}z).
+    \]
+    Then
+    \[
+        F(\frac{1}{p})=\tr((a+b)c+(a-b)d).
+    \]
+    For all $a\in S^\circ$, we have
+    \[
+        \begin{split}
+            F(\alpha)=&\tr^{(2)}\left( \begin{pmatrix}
+                    u & 0  \\
+                    0 & -v
+                \end{pmatrix}\begin{pmatrix}
+                    h^\alpha & 0        \\
+                    0        & k^\alpha
+                \end{pmatrix}\begin{pmatrix}
+                    f^{1-\alpha} & 0            \\
+                    0            & g^{1-\alpha}
+                \end{pmatrix} \begin{pmatrix}
+                    w & 0 \\
+                    0 & z
+                \end{pmatrix}\right)\\
+            +& \tr^{(2)}\left( \begin{pmatrix}
+                    v & 0 \\
+                    0 & u
+                \end{pmatrix}\begin{pmatrix}
+                    k^\alpha & 0        \\
+                    0        & h^\alpha
+                \end{pmatrix}\begin{pmatrix}
+                    f^{1-\alpha} & 0            \\
+                    0            & g^{1-\alpha}
+                \end{pmatrix} \begin{pmatrix}
+                    w & 0 \\
+                    0 & z
+                \end{pmatrix}\right)
+        \end{split}
+    \]
+    By Lemma \ref{Chap2: Lemma: 19} and \ref{Chap2: Lemma: 22} applied to $(h,k)\in L^1(M\oplus M)$ and $(f,g)\in L^1 (M\oplus M)$ we conclude that $F$ is analytic and
+    \begin{equation}\label{Chap2: eqn: 35}
+        \forall \alpha\in S^\circ: \abs{F(\alpha)}\leq 2.
+    \end{equation}
+    we claim that
+    \begin{equation}\label{Chap2: eqn: 36}
+        \forall t\in \mathbb{R}: \abs{F(\frac{1}{2}+it)}\leq \sqrt{2}.
+    \end{equation}
+    For the proof we app1y first the Cauchy-Schwarz inequality in $\tilde{N}_{\frac{1}{2}+it}^{(2)}$, next the parallelogram law in $\tilde{N}_{\frac{1}{2}+it}$ (cf. Remark \ref{Chap2: Remark: 29}):
+    \[
+        \begin{split}
+            &\abs{F(\frac{1}{2}+it)}^2\\
+            =&\abs{\tr^{(2)}\left( \begin{pmatrix}
+                        uh^{\frac{1}{2}+it}+vk^{\frac{1}{2}+it} & 0                                       \\
+                        0                                       & uh^{\frac{1}{2}+it}-vk^{\frac{1}{2}+it}
+                    \end{pmatrix}\begin{pmatrix}
+                        f^{\frac{1}{2}-it}w & 0                   \\
+                        0                   & g^{\frac{1}{2}-it}z
+                    \end{pmatrix} \right)}^2\\
+            \leq&\norm{\begin{pmatrix}
+                    uh^{\frac{1}{2}+it}+vk^{\frac{1}{2}+it} & 0                                       \\
+                    0                                       & uh^{\frac{1}{2}+it}-vk^{\frac{1}{2}+it}
+                \end{pmatrix}}_2^2 \norm{\begin{pmatrix}
+                    f^{\frac{1}{2}-it}w & 0                   \\
+                    0                   & g^{\frac{1}{2}-it}z
+                \end{pmatrix}^*}_2^2\\
+            =&(\norm{uh^{\frac{1}{2}+it}+vk^{\frac{1}{2}+it}}_2^2+\norm{uh^{\frac{1}{2}+it}-vk^{\frac{1}{2}+it}}_2^2)(\norm{f^{\frac{1}{2}-it}w}_2^2+\norm{g^{\frac{1}{2}-it}z}_2^2)\\
+            =&(2\norm{uh^{\frac{1}{2}+it}}_2^2+2\norm{vk^{\frac{1}{2}+it}}_2^2)(\norm{f^\frac{1}{2}}_2^2+\norm{g^\frac{1}{2}}_2^2)=2(\norm{h^\frac{1}{2}}_2^2+\norm{k^\frac{1}{2}}_2^2)=2
+        \end{split}
+    \]
+    Finally, by the 3 lines theorem applied to each strip $\{\alpha\in \mathbb{C}|\epsilon\leq \Re \alpha\leq \frac{1}{2}\}$ where $0<\epsilon<\frac{1}{p}$, \ref{Chap2: eqn: 35} and \ref{Chap2: eqn: 36} give
+    \[
+        \begin{split}
+            &\abs{\tr((a+b)c+(a-b)d)}=\abs{F(\frac{1}{p})}\\
+            \leq & 2^{(\frac{1}{2}-\frac{1}{p})/(\frac{1}{2}-\epsilon)}\cdot (\sqrt{2})^{((\frac{1}{p})-\epsilon)/(\frac{1}{2}-\epsilon)}\\
+            \to &2^{1-\frac{2}{p}}\cdot2^\frac{1}{p}=2^\frac{1}{q} \text{ as } \epsilon\to \infty.
+        \end{split}
+    \]
+    Hence
+    \[
+        \abs{\tr^{(2)}\left( \begin{pmatrix}
+                    a+b & 0   \\
+                    0   & a-b
+                \end{pmatrix}\begin{pmatrix}
+                    c & 0 \\
+                    0 & d
+                \end{pmatrix} \right)}\leq 2^\frac{1}{q}
+    \]
+    for all $(a,b)\in  L^p(M\oplus M)$ and $(c,d)\in  L^q(M\oplus M)$ satisfying \eqref{Chap2: eqn: 34}. By Proposition \ref{Chap2: Prop: 24} applied to $ L^p(M\oplus M)$ this implies that
+    \[
+        \norm{(a+b,a-b)}_p\leq 2^\frac{1}{q}
+    \]
+    for all $(a,b)\in  L^p(M\oplus M)$ with $\norm{(a,b)}_p=1$. \eqref{Chap2: eqn: 33} follows.
+\end{proof}
+By Clarkson's inequality, the Banach space $L^p(M)$, where $2\leq p<\infty$, is uniformly convex. Hence it is reflexive (see e.g. [22, p. 127, Theorem 2]).
+\begin{theorem}
+    Let $p\in [1,\infty[$ and $\frac{1}{p} + \frac{1}{q}=1$.\par
+    1) Let $a\in L^q(M)$. Then $\varphi_a$ defined by
+    \[
+        \varphi_a(b)=\tr(ab),b\in L^p(M),
+    \]
+    is a bounded linear functional on $L^p(M)$.\par
+    2) The mapping
+    \[
+        a\mapsto \varphi_a
+    \]
+    is an isometric isomorphism of $L^q(M)$ onto the dual Banach space of $L^p(M)$.
+\end{theorem}
+\begin{proof}
+    By Proposition \ref{Chap2: Prop: 24}, $a\mapsto \varphi_a$ is an isometry of $L^q(M)$ onto a subspace of the dual $L^p(M)^*$ of $L^p(M)$. Since $L^q(M)$ is complete, this subspace is closed. It follows from Proposition \ref{Chap2: Prop: 24} that it is w*-dense (its orthogonal in $L^p(M)$ vanishes).\par
+    Now if $p\geq 2$, the space $L^p(M)$ is reflexive. Hence $L^p(M)^*$ is also reflexive and thus the w*-closure of the subspace $L^q(M)$ is equal to its norm closure. Hence $L^q(M)=L^p(M)^*$.\par
+    If $p<2$, we have $q\geq 2$ and thus $L^p(M)\cong L^q(M)^*$ via $\tr$. It follows that $L^p(M)^*\cong L^q(M)^{**}\cong L^q(M)$ (via $\tr$).
+\end{proof}
 % \end{document}
