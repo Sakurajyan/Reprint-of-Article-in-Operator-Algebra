@@ -899,4 +899,131 @@ By Clarkson's inequality, the Banach space $L^p(M)$, where $2\leq p<\infty$, is 
     Now if $p\geq 2$, the space $L^p(M)$ is reflexive. Hence $L^p(M)^*$ is also reflexive and thus the w*-closure of the subspace $L^q(M)$ is equal to its norm closure. Hence $L^q(M)=L^p(M)^*$.\par
     If $p<2$, we have $q\geq 2$ and thus $L^p(M)\cong L^q(M)^*$ via $\tr$. It follows that $L^p(M)^*\cong L^q(M)^{**}\cong L^q(M)$ (via $\tr$).
 \end{proof}
+\begin{proposition}
+    Let $p,q\in [1,\infty]$ with $\frac{1}{p}+\frac{1}{q}=1$. Let $a\in L^q(M)$. Then $a\geq 0$ if and only if
+    \begin{equation}\label{Chap2: eqn: 37}
+        \forall b\in L^p(M)_*:\tr(ab)\geq 0
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    If $p,q\in \{1,\infty\}$, the result is well-known. Now assume that $p,q\in ]1,\infty[$. If $a\in L^q(M)_+$, then $a^\frac{1}{2}ba^\frac{1}{2}\in L^1(M)\cap \tilde{N}_+=L^1(M)_+$ and hence
+    \[
+        \tr(ab)=\tr(a^\frac{1}{2}a^\frac{1}{2}b)=\tr(a^\frac{1}{2}ba^\frac{1}{2})\geq 0
+    \]
+    Conversely, suppose that $a\in L^q(M)$ satisfies \eqref{Chap2: eqn: 37}. Then $a=a^*$ since
+    \[
+        \tr(ab)=\overline{\tr(ab)}=\tr((ab)^*)=\tr(ba^*)=\tr(a^*b)
+    \]
+    for all $b\in L^p(M)_+$. Put $a_+=(a+\abs{a})/2, a_-=(a-\abs{a})/2\in L^q(M)_+$. Then $a = a_+ - a_-$ and $a_+ a_- = 0$. Put $b=a_-^\frac{q}{p}$. Then $b\in L^p(M)_+$ so that $\tr(ab)\geq 0$. Now
+    \[
+        \tr(ab)=\tr(a_+b)-\tr(a_-b)=-\tr(a_-b)=-\tr(a_-^q).
+    \]
+    It follows that $\tr(a_-^q)=0$ whence $a_-= 0$ and $a = a_+\in L^q(M)_+$.
+\end{proof}
+For each $p\in [1,\infty]$ we define left and right actions $\lambda_p$ and $\rho_p$ on $L^p(M)$ by
+\begin{equation}
+    \lambda_p(x)a=xa, a\in L^p(M),
+\end{equation}
+\begin{equation}
+    \rho_p(x)a=ax, a\in L^p(M),
+\end{equation}
+for all $x\in M$. That $\lambda_p(x)$ and $\rho_p(x)$ map $L^p(M)$ into itself follows immediately from Definition \ref{Chap2: Def: 9}. From Lemma \ref{Chap2: Lemma: 16} and the fact that $xN(\epsilon,\delta)\subset N(\norm{x}\epsilon,\delta)$ for all $x\in M$ and $\epsilon,\delta\in \mathbb{R}_+$, we get
+\begin{equation}
+    \forall x\in M \forall a\in L^p(M): \norm{xa}_p\leq \norm{x}_\infty \norm{a}_p.
+\end{equation}
+Since $ax=(x^*a^*)^*$, we also have
+\begin{equation}
+    \forall x\in M \forall a\in L^p(M): \norm{ax}_p\leq \norm{x}_\infty \norm{a}_p.
+\end{equation}
+Hence  $\lambda_p(x)$ and $\rho_p(x)$ are bounded linear operators on $L^p(M)$.
+\begin{proposition}\label{Chap2: Prop: 34}
+    Let $p\in [1,\infty]$.\par
+    1) $\lambda_p$ (resp.$\rho_p$) is a faithful representation (resp. anti-representation) of $M$ on the Banach space $L^p(M)$.\par
+    2) For all $x\in M$, we have
+    \[
+        J_p\lambda_p(x)J_p=\rho_p(x^*),
+    \]
+    where $J_p$ denotes the conjugate linear isometric involution $a\mapsto a^*$ of $L^p(M)$.\par
+    3) Let $z$ be an element of the center of $M$. Then
+    \[
+        \lambda_p(z)=\rho_p(z).
+    \]
+\end{proposition}
+\begin{proof}
+    1) Suppose that $\lambda_p(x)=0$. Then
+    \[
+        \forall a\in L^p(M) \forall b\in L^q(M):\tr(xab)=\tr((\lambda_p(x)a)b)=0.
+    \]
+    Since $L^1(M)=L^p(M)\cdot L^q(M)$, $x$ must be $0$.\par
+    2) For all $a\in L^p(M)$, we have
+    \[
+        (J_p\lambda_p(x)J_p)(a)=(xa^*)^*=ax^*=\rho_p(x^*)a.
+    \]
+    3) Clearly, $\lambda_\infty(z)=\rho_\infty(z)$. It follows that
+    \[
+        \forall a\in L^1(M)\forall b\in L^\infty(M):\tr(zab)=\tr(abz)=\tr(azb)
+    \]
+    whence $\lambda_1(z)=\rho_1(z)$. In particular
+    \[
+        \forall a\in L^1(M)_+:za=az,
+    \]
+    whence by spectral theory
+    \[
+        \forall a\in L^1(M)_+:za^\frac{1}{p}=a^\frac{1}{p}z.
+    \]
+    Thus $\lambda_p(z)$ and $\rho_p(z)$ coincide on $L^p(M)_+$. Hence $\lambda_p(z)=\rho_p(z)$.
+\end{proof}
+\begin{proposition}
+    For all $p\in [1,\infty]$, we have
+    \begin{equation}\label{Chap2: eqn: 42}
+        \lambda_p(M)=\rho_p(M)' \text{ and } \rho_p(M)=\lambda_p(M)'
+    \end{equation}
+    (where $\rho_p(M)'$, resp. $\lambda_p(M)'$, denotes the set of bounded linear operators on $L^p(M)$ commuting with all $\rho_p(x),x\in M$, resp. all $\lambda_p(x), x\in M$).
+\end{proposition}
+\begin{proof}
+    Obviously
+    \[
+        \lambda_p(M)\subset \rho_p(M)' \text{ and } \rho_p(M)\subset \lambda_p(M)'.
+    \]
+    To show \eqref{Chap2: eqn: 42} we need only prove either $\lambda_p(M)\supset \rho_p(M)'$ or $\rho_p(M)\supset \lambda_p(M)'$. Then the other one follows by Proposition \ref{Chap2: Prop: 34}, 2).\par
+    (i) First suppose that $p=\infty$. Let $T\in \lambda_\infty(M)'$. Then
+    \[
+        \forall a\in L^\infty(M): T(a)=T(a1)=aT(1)
+    \]
+    whence $T=\rho_\infty(T(1))\in \rho_\infty(M)$.\par
+    (ii) Next we consider the case $p = 1$. Let $S\in \lambda_1(M)'$. Denote by $T:L^\infty(M)\to L^\infty(M)$ the transpose of $S$ given by
+    \[
+        \tr(T(a)b)=\tr(aS(b)),a\in L^\infty(M),b\in L^1(M).
+    \]
+    Now
+    \[
+        \begin{split}
+            \forall x\in M \forall a\in L^\infty(M)\forall b\in L^1(M): \tr(T(ax)b)=&\tr(axS(b))\\
+            =&\tr(aS(xb))\\
+            =&\tr(T(a)xb).
+        \end{split}
+    \]
+    Thus $T\in \rho_\infty(M)'$ and hence $T=\lambda_\infty(y)$ for some $y\in M$. It follows that
+    \[
+        \begin{split}
+            \forall a\in L^\infty(M) \forall b\in L^1(M):\tr(aS(b))=&\tr(T(a)b)\\
+            =&\tr(yab)=\tr(aby),
+        \end{split}
+    \]
+    whence $S=\rho_1(y)\in \rho_1(M)$.\par
+    (iii) Now let $p\in]1,\infty[$. Let $T\in \lambda_p(M)'$. We want to define a linear mapping $S:L^1(M)\to L^1(M)$ by
+    \begin{equation}
+        S\left( \sum_{i=1}^n b_ia_i \right)=\sum_{i=1}^nb_iT(a_i)
+    \end{equation}
+    for all $a_1,\dots,a_n\in L^p(M)$ and  $b_1,\dots,b_n\in L^q(M)$. First let us show that
+    \begin{equation}
+        \sum_{i=1}^nb_ia_i=0\Rightarrow \sum_{i=1}^nb_iT(a_i)=0
+    \end{equation}
+    {\color{red} =0} so that S is well-defined.\par
+    Suppose that $\sum_{i=1}^nb_ia_i=0$. Put $a=\left( \sum_{i=1}^na_i^*a_i \right)^\frac{1}{2} \in L^p(M)_+$. Then all $a_i^*a_i\leq a^2$. Hence there exist $x_1,\dots,x_n\in M$ such that
+    \[
+        a_i=x_ia \text{ and }\sum_{i=1}^n x_i^*x_i=\supp a.
+    \]
+    Then
+\end{proof}
 % \end{document}
