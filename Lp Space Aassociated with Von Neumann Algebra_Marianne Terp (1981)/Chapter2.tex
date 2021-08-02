@@ -145,7 +145,7 @@ If $\varphi$ and $\psi$ are normal faithful semifinite weights, then so are $\ti
 \end{proof}
 
 Denote by $\tau$ the normal faithful semifinite trace on $N$ characterized by
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 14}
     \forall t\in \mathbb{R}:(D\tilde{\varphi}_0:D\tau)_t=\lambda(t)
 \end{equation}
 (for the existence, see [8, Lemma 5.2]); $\tau$ satisfies
@@ -899,7 +899,7 @@ By Clarkson's inequality, the Banach space $L^p(M)$, where $2\leq p<\infty$, is 
     Now if $p\geq 2$, the space $L^p(M)$ is reflexive. Hence $L^p(M)^*$ is also reflexive and thus the w*-closure of the subspace $L^q(M)$ is equal to its norm closure. Hence $L^q(M)=L^p(M)^*$.\par
     If $p<2$, we have $q\geq 2$ and thus $L^p(M)\cong L^q(M)^*$ via $\tr$. It follows that $L^p(M)^*\cong L^q(M)^{**}\cong L^q(M)$ (via $\tr$).
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{Chap2: Prop: 33}
     Let $p,q\in [1,\infty]$ with $\frac{1}{p}+\frac{1}{q}=1$. Let $a\in L^q(M)$. Then $a\geq 0$ if and only if
     \begin{equation}\label{Chap2: eqn: 37}
         \forall b\in L^p(M)_*:\tr(ab)\geq 0
@@ -973,7 +973,7 @@ Hence  $\lambda_p(x)$ and $\rho_p(x)$ are bounded linear operators on $L^p(M)$.
     \]
     Thus $\lambda_p(z)$ and $\rho_p(z)$ coincide on $L^p(M)_+$. Hence $\lambda_p(z)=\rho_p(z)$.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{Chap2: Prop: 35}
     For all $p\in [1,\infty]$, we have
     \begin{equation}\label{Chap2: eqn: 42}
         \lambda_p(M)=\rho_p(M)' \text{ and } \rho_p(M)=\lambda_p(M)'
@@ -1025,5 +1025,135 @@ Hence  $\lambda_p(x)$ and $\rho_p(x)$ are bounded linear operators on $L^p(M)$.
         a_i=x_ia \text{ and }\sum_{i=1}^n x_i^*x_i=\supp a.
     \]
     Then
+    \[
+        \left( \sum_{i=1}^nb_ix_i \right)a= \sum_{i=1}^nb_ia_i =0
+    \]
+    and
+    \[
+        \supp\left( \sum_{i=1}^nb_ix_i \right) \leq \supp a
+    \]
+    whence
+    \[
+        \sum_{i=1}^nb_ix_i=0.
+    \]
+    It follows that
+    \[
+        \sum_{i=1}^nb_iT(a_i)=\sum_{i=1}^nb_iT(x_ia)=\sum_{i=1}^nb_ix_iT(a)=\left( \sum_{i=1}^nb_ix_i \right)T(a)=0
+    \]
+    as wanted.\par
+    We have shown that $S:L^1(M) \mapsto L^1(M)$ is a well-defined linear map. It is also bounded. Indeed, any $c\in L^1(M)$ may be written as a product $c = ba$ where $a\in L^p(M),  b\in  L^q(M)$, and $\norm{c}_1=\norm{b}_q\norm{a}_p$. Then
+    \[
+        \norm{S(c)}_1=\norm{bT(a)}_1\leq \norm{b}_q\norm{T(a)}_p\leq\norm{b}_q\norm{T}\norm{a}_p=\norm{T}\norm{c}_1.
+    \]
+    Finally, since
+    \[
+        \forall x\in M \forall b\in  L^q(M) \forall a\in L^p(M): S(xba) = xb T(a) = x S(ba)
+    \]
+    we have $S\in \lambda_1(M)'$. Hence $S=\rho_1(y)$ for some $y\in M$.\par
+    Now
+    \[
+        b T(a)=S(ba) =bay= b \rho_p(y)a
+    \]
+    for all $b\in L^q(M)$ and $a\in L^p(M)$. It follows that $T=\rho_p(y)\in \rho_p(M)$ as wanted.
+\end{proof}
+We shall denote $\lambda_2$ and $\rho_2$ simply by $\lambda$ and $\rho$, and $J_2$ by $J$ (i.e. $Ja=a^*$ for all $a\in L^2(M)$).
+\begin{theorem}
+    1) $\lambda$ (resp. $\rho$) is a normal faithful representation (resp. anti-representation) of $M$ on the Hilbert space $L^2(M)$.\par
+    2) The von Neumann algebras $\lambda(M)$ and $\rho(M)$ are commutants of each other, and
+    \[
+        \rho(M)=J\lambda(M)J
+    \]\par
+    3) $(\lambda(M),L^2(M),J,L^2(M)_+)$ is a standard form of $M$ in the sense of [4, Definition 2.1].
+\end{theorem}
+\begin{proof}
+    For all $x\in M$ and $a,b\in L^2(M)$ we have
+    \[
+        (\lambda(x)a|b)_{L^2(M)}=\tr(b^*xa)=\tr((x^*b)^*a)=(a|\lambda(x^*)b)_{L^2(M)}
+    \]
+    so that $\lambda$ is a *-representation.\par
+    Suppose that $x_i\nearrow x\in M$. Then for all $a\in L^2 (M)$, we have
+    \[
+        \begin{split}
+            (\lambda(x_i)a|a)_{L^2(M)}=&\tr(a^*x_ia)=\tr(x_iaa^*)=\inner{x_i,aa^*}\\
+            \nearrow& \inner{x,aa^*}=\tr(xaa^*)=\tr(a^*xa)=(\lambda(x)x|a)_{L^2(M)}.
+        \end{split}
+    \]\par
+    2) follows immediately from Proposition \ref{Chap2: Prop: 35} and Proposition \ref{Chap2: Prop: 34}, 2).\par
+    3) That $L^2(M)_+$ is a self-dual cone follows from Proposition \ref{Chap2: Prop: 33}. Now
+    \begin{enumerate}
+        \item $J\lambda(M)J=\rho(M)=\lambda(M)'$;
+        \item $J\lambda(z)J=\rho(x^*)=\lambda(z^*)=\lambda(z)^*$ for all $z$ in the center of $M$;
+        \item for all $a\in L^2(M)_+$, we have $a^* = a$;
+        \item for all $a\in L^2(M)_+$ and $x\in M$, we have $(\lambda(x)J\lambda(x)J)a=\lambda(x)\rho(x^*)a=xax^*\in L^2(M)_+$.
+    \end{enumerate}
+\end{proof}
+\section{Independence of the choice of $\varphi_0$}
+The spaces $L^p(M)$ and their relations are independent of the choice of $\varphi_0$ (and hence canonically associated with $M$). This is a consequence of the following theorem and its corollary when we recall that the spaces $(L^p(M), \norm{\cdot}_p)$ are defined in terms of $\tilde{N}$, $(\theta_s)_{s\in \mathbb{R}}$, and $\tau$.\par
+Let $\varphi_0$ and $\varphi_1$ be normal faithful semifinite weights on $M$. We view the crossed products $N_0=R(M,\sigma^{\varphi_0})$ and $N_1=R(M,\sigma^{\varphi_1})$ as von Neumann algebras on $L^2(\mathbb{R},H)$. They are generated by $\pi_0(x), x\in M$, (resp. $\pi_1(x), x\in M$) and $\lambda(s),s\in \mathbb{R}$, where
+\[
+    (\pi_0(x)\xi)(t)=\sigma_{-t}^{\varphi_0}(x)\xi(t),(\pi_1(x)\xi)(t)=\sigma_{-t}^{\varphi_1}(x)\xi(t),
+\]
+\[
+    (\lambda(s)\xi)(t)=\xi(t-s)
+\]
+for all $\xi\in L^2(\mathbb{R},H), t\in \mathbb{R}$.\par
+Denote by $s\mapsto \theta_s$ the dual action of $\mathbb{R}$ in $N_0$ and $N_1$. Recall [18, Section 4] that each $\theta_s$ has the form
+\begin{equation}
+    \theta_s(y)=\mu_sy\mu_s^{-1}
+\end{equation}
+where $\mu_s$ is the unitary on $L^2(\mathbb{R},H)$ given by
+\begin{equation}
+    (\mu_s\xi)(t)=e^{-ist}\xi(t),\xi\in L^2(\mathbb{R},H),t\in \mathbb{R}.
+\end{equation}
+Denote by $\tau_0$, resp. $\tau_1$, the trace on $N_0$, resp. $N_1$, given by \eqref{Chap2: eqn: 14}.
+\begin{theorem}
+    There exists an isomorphism
+    \[
+        \kappa:N_0\to N_1
+    \]
+    such that
+    \begin{equation}
+        \forall s\in \mathbb{R}:\kappa\circ\theta_s\circ\kappa^{-1}=\theta_s
+    \end{equation}
+    and
+    \begin{equation}
+        \tau_1=\tau_0\circ\kappa^{-1}.
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    (cf. [18,Proposition 3.5]). We define a unitary $u$ on $L^2(\mathbb{R},H)$ by
+    \[
+        (u\xi)(t)=(D\varphi_1:D\varphi_0)_{-t}\xi(t),\xi\in L^2(\mathbb{R},H), t\in \mathbb{R}.
+    \]
+    Now
+    \begin{equation}
+        \forall x\in M: u\pi_0(x)u^*=\pi_1(x)
+    \end{equation}
+    and
+    \begin{equation}
+        \forall s\in \mathbb{R}:u\lambda(s)u^*=\pi_1((D\varphi_1,D\varphi_0)_s^*)\lambda(s)
+    \end{equation}
+    since
+    \[
+        \begin{split}
+            (u\pi_0(x)u^*\xi)(t)=&(D\varphi_1:D\varphi_0)_{-t}\sigma_{-t}^{\varphi_0}(x)(D\varphi_1:D\varphi_0)_{-t}^*\xi(t)\\
+            =&\sigma_{-t}^{\varphi_1}(x)\xi(t),t\in \mathbb{R},
+        \end{split}
+    \]
+    and
+    \[
+        \begin{split}
+            (u\lambda(s)u^* \xi)(t)=&(D\varphi_1:D\varphi_0)_{-t}(D\varphi_1:D\varphi_0)_{-(t-s)}^*\xi(t-s)\\
+            =&(D\varphi_1:D\varphi_0)_{-t}((D\varphi_1:D\varphi_0)_{-t}\sigma_{-t}^{\varphi_0}((D\varphi_1:D\varphi_0)_{s}))^*\xi(t-s)\\
+            =&(D\varphi_1:D\varphi_0)_{-t}\sigma_{-t}^{\varphi_0}((D\varphi_1:D\varphi_0)_{s}^*)(D\varphi_1:D\varphi_0)_{-t}^*\xi(t-s)\\
+            =&(\sigma_{-t}^{\varphi_1}((D\varphi_1:D\varphi_0)_{s}^*)\lambda(s)\xi)(t),t\in \mathbb{R},
+        \end{split}
+    \]
+    for all $x\in M,s\in \mathbb{R}$, and $\xi\in L^2(\mathbb{R},H)$.\par
+    Hence $\kappa=u(\cdot)u^*$ maps $N_0$ into $N_1$. Similarly, $u^*(\cdot)u$ maps $N_1$ into $N_0$. In all, we have shown that
+    \[
+        \kappa:N_0\to N_1
+    \]
+    {\color{red} is} an isomorphism of $N_0$ onto $N_1$.
 \end{proof}
 % \end{document}
