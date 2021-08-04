@@ -53,7 +53,7 @@ By \eqref{Chap2: eqn: 3}, $M$ is contained in the set of fixed points under $\th
 (see e.g. [5, Lemma 3.6]).\par
 The $\theta_s$, $s\in \mathbb{R}$, naturally extend to automorphisms, still denoted $\theta_s$, of $\hat{N}_+$, the extended positive part of $N$ [7, Section 1].
 Recall [8, Lemma 5.2] that the formula
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 6}
     Tx=\int_{\mathbb{R}}\theta_s(x)\dd s,x\in N_+,
 \end{equation}
 defines a normal faithful semifinite operator valued weight $T$ from $N$ to $M$ in the following sense: for each $x\in N_+$, $Tx$ is the element of $\hat{N}_+$ characterized by
@@ -1102,7 +1102,7 @@ Denote by $s\mapsto \theta_s$ the dual action of $\mathbb{R}$ in $N_0$ and $N_1$
     \theta_s(y)=\mu_sy\mu_s^{-1}
 \end{equation}
 where $\mu_s$ is the unitary on $L^2(\mathbb{R},H)$ given by
-\begin{equation}
+\begin{equation}\label{Chap2: eqn: 46}
     (\mu_s\xi)(t)=e^{-ist}\xi(t),\xi\in L^2(\mathbb{R},H),t\in \mathbb{R}.
 \end{equation}
 Denote by $\tau_0$, resp. $\tau_1$, the trace on $N_0$, resp. $N_1$, given by \eqref{Chap2: eqn: 14}.
@@ -1112,7 +1112,7 @@ Denote by $\tau_0$, resp. $\tau_1$, the trace on $N_0$, resp. $N_1$, given by \e
         \kappa:N_0\to N_1
     \]
     such that
-    \begin{equation}
+    \begin{equation}\label{Chap2: eqn: 47}
         \forall s\in \mathbb{R}:\kappa\circ\theta_s\circ\kappa^{-1}=\theta_s
     \end{equation}
     and
@@ -1154,6 +1154,73 @@ Denote by $\tau_0$, resp. $\tau_1$, the trace on $N_0$, resp. $N_1$, given by \e
     \[
         \kappa:N_0\to N_1
     \]
-    {\color{red} is} an isomorphism of $N_0$ onto $N_1$.
+    {\color{red} is} an isomorphism of $N_0$ onto $N_1$.\par
+    Obviously, $u$ commutes with each $\mu_s$ (see \eqref{Chap2: eqn: 46}), and hence $\kappa$ commutes with each $\theta_s$, i.e. \eqref{Chap2: eqn: 47}.\par
+    Denote by $T_0$, resp. $T_1$, the operator valued weights introduced as in \eqref{Chap2: eqn: 6}. Then for all $x\in(N_0)_+$, we have
+    \[
+        \begin{split}
+            T_1x=\pi_1^{-1}(\int \theta_s(x)\dd s)=&\pi_1^{-1}(\kappa(\int \theta_s (\kappa^{-1}(x))\dd s))\\
+            =&\pi_0^{-1}(\int \theta_s (\kappa^{-1}(x))\dd s)=T_0(\kappa^{-1}(x)),
+        \end{split}
+    \]
+    i.e.
+    \[
+        T_1=T_0\circ \kappa^{-1},
+    \]
+    whence
+    \[
+        \tilde{\varphi}^{(1)}= \tilde{\varphi}^{(0)}\circ\kappa^{-1}
+    \]
+    for all normal weights on $M$ (here, $^{(0)}$, resp. $^{(1)}$, denotes dual weight construction w.r.t. $N_0$, resp. $N_1$). In particular,
+    \[
+        \tilde{\varphi}_1^{(1)}= \tilde{\varphi}_1^{(0)}\circ\kappa^{-1}
+    \]
+    whence
+    \[
+        \begin{split}
+            (D\tilde{\varphi}_1^{(1)}:D(\tau_0\circ\kappa^{-1}))_t=&(D(\tilde{\varphi}_1^{(0)}\circ\kappa^{-1}):D(\tau_0\circ\kappa^{-1}))_t\\
+            =&\kappa((D\tilde{\varphi}_1^{(0)}:D\tau_0)_t)\\
+            =&\kappa((D\tilde{\varphi}_1^{(0)}:D\tilde{\varphi}_0^{(0)})_t)\kappa((D\tilde{\varphi}_0^{(0)}:D\tau_0)_t)\\
+            =&\kappa(\pi_0((D\varphi_1:D\varphi_0)_t))\kappa(\lambda(t))\\
+            =&\pi_1((D\varphi_1:D\varphi_0)_t)\pi_1((D\varphi_1:D\varphi_0)_t^*)\lambda(t)\\
+            =&\lambda(t)
+        \end{split}
+    \]
+    for all $t$. Hence $\tau_0\circ \kappa^{-1}=\tau_1$.
 \end{proof}
+\begin{corollary}
+    The mapping $\kappa: N_0\to N_1$ extends to a topological *-isomorphism
+    \[
+        \tilde{\kappa}:\tilde{N}_0\to \tilde{N}_1.
+    \]
+    For all $\epsilon,\delta\in \mathbb{R}_+$, we have
+    \[
+        \tilde{\kappa}(N^{(0)}(\epsilon,\delta))=N^{(1)}(\epsilon,\delta).
+    \]
+\end{corollary}
+\begin{proof}
+    We can define $\tilde{\kappa}$ by
+    \[
+        \tilde{\kappa}(y)=uyu^*,y\in \tilde{N}_0.
+    \]
+    Since $\tau_1=\tau_0\circ \kappa^{-1}$, $\tilde{\kappa}(y)$ is $\tau_1$-measurable when $y$ is $\tau_0$-measurable.
+\end{proof}
+\section{The semifinite case}
+Suppose that $M$ is semifinite. Then there exists a normal faithful semifinite trace $\tau_0$ on $M$, and for the construction of the $L^p(M)$, we may assume that $\varphi_0=\tau_0$. In this case, we have (when identifying $L^2(\mathbb{R})$ with $L^2(\mathbb{R})$ via Fourier transformation)
+\[
+    R(M,\sigma^{\varphi_0})\cong M\otimes L^\infty(\mathbb{R});
+\]
+for all $x\in M , f\in L^\infty(\mathbb{R})$, and $s\in R$ we have
+\[
+    \theta_s(x\otimes f)\cong x\otimes \ell(s)(f),
+\]
+where $\ell(s)$ denotes translation by $s$ in $L^2(\mathbb{R})$. Finally,
+\[
+    \tau\cong \tau_0\otimes e^{-s}\dd s.
+\]
+Now one can show that for all $p\in [1,\infty]$,
+\[
+    L^p(M)\cong L^p(M,\tau_0)\otimes \exp((\cdot)/p)
+\]
+where $L^p(M,\tau_0)$ is the $L^p$ space with respect to the trace $\tau_0$ as defined at the end of Chapter I.
 % \end{document}

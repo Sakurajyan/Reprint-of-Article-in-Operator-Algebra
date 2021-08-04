@@ -1,0 +1,70 @@
+% \documentclass[12pt]{report}
+% \usepackage{geometry}
+%  \geometry{
+%  a4paper,
+%  total={170mm,257mm},
+%  left=20mm,
+%  top=20mm,
+%  }
+% \usepackage[hidelinks]{hyperref}
+% \usepackage{tikz-cd}
+% \usepackage{amsthm}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsfonts}
+% \usepackage{xcolor}
+% \usepackage{physics}
+% \usepackage{mathrsfs}
+% \usepackage{bbm}
+
+% \tikzcdset{every label/.append style = {font = \normalsize}}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{definition}[theorem]{Definition}
+% \theoremstyle{definition}
+% \newtheorem{example}[theorem]{Example}
+% \newcommand{\inner}[1]{\langle#1\rangle}
+% \newcommand{\Sp}{\operatorname{Sp}}
+% \begin{document}
+% \tableofcontents
+\chapter{Spatial Derivatives}
+Spatial derivatives were introduced by A. Connes in [1]. In this chapter, we give an alternative definition (equivalent to that given in [1]) suggested to us by U. Haagerup, based on the notion of the extended positive part of a von Neumann algebra. This definition permits us to obtain very easily some elementary properties of spatial derivatives. After this, we recall their main modular properties and the characterization as (-1)-homogeneous operators.\par
+\section{Definition and elementary properties of spatial derivatives}
+Let $M$ be a von Neumann algebra acting on a Hilbert space $H$, and let $\psi$ be a normal faithful semifinite weight on the commutant $M'$ of $M$.\par
+We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\infty\}$, $H_\psi$ the Hilbert space completion of $n_\psi$ with respect to the inner product $(y_1,y_2)\mapsto \psi(y_2^*y_1)$, $\Lambda_\psi$ the canonical injection of $n_\psi$ into $H_\psi$, $\pi_\psi$ the canonical representation of $M'$ on $H_\psi$.
+\begin{definition}\label{Chap3: Def: 1}
+    For each $\xi\in H$, we denote by $R^\psi(\xi)$ the (densely defined) operator from $H_\psi$ to $H$ defined by
+    \begin{equation}
+        R^\psi(\xi)\Lambda_\psi(y)=y\xi,y\in n_\psi.
+    \end{equation}
+\end{definition}
+\begin{proposition}
+    For all $\xi,\xi_1,\xi_2\in H$, $x\in M$, and $y\in M'$ we have
+    \begin{enumerate}[(i)]
+        \item $R^\psi(\xi_1+\xi_2)=R^\psi(\xi_1)+R^\psi(\xi_2)$,
+        \item $R^\psi(x\xi)=xR^\psi(\xi)$,
+        \item $yR^\psi(\xi)\subset R^\psi(\xi)\pi_\psi(y)$,
+    \end{enumerate}
+    and
+    \begin{enumerate}[(i)*]
+        \item $R^\psi(\xi_1)^*+R^\psi(\xi_2)^*\subset R^\psi(\xi_1+\xi_2)^*$,
+        \item $R^\psi(x\xi)^*=R^\psi(\xi)^*x^*$,
+        \item $\pi_\psi(y)R^\psi(\xi)^*\subset R^\psi(\xi)^*y$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (i) and (ii) are immediate from Definition \ref{Chap3: Def: 1}. (iii): For all $z\in n_\psi$, we have $yR^\psi(\xi)\Lambda_\psi(z)=yz\xi=R^\psi(\xi)\Lambda_\psi(yz)=R^\psi(\xi)\pi_\psi(y)\Lambda_\psi(z)$.\par
+    (i)*, (ii)*, and (iii)* follow from (i), (ii), and (iii) using $R^\psi(\xi_1)+R^\psi(\xi_2)\subset (R^\psi(\xi_1)+R^\psi(\xi_2))^*$, $(xR^\psi(\xi))^*=R^\psi(\xi)^*x^*$, and $(y^*R^\psi(\xi))^*=R^\psi(\xi)^*y^*$.
+\end{proof}
+\begin{definition}
+    A vector $\xi\in H$ is called $\psi$-bounded if the operator $R^\psi(\xi)$ is bounded. The set of $\psi$-bounded vectors is denoted $D(H,\psi)$.
+\end{definition}
+\begin{notation}
+    If $\xi\in D(H,\psi)$, $R^\psi(\xi)$ extends to a bounded operator $H_\psi\to H$ which we shall also denote $R^\psi(\xi)$.
+\end{notation}
+\begin{proposition}
+    The set $D(H,\psi)$ is an $M$-invariant dense subspace
+    of $H$.
+\end{proposition}
+% \end{document}
