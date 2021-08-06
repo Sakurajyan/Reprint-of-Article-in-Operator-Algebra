@@ -39,7 +39,7 @@ We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\inft
         R^\psi(\xi)\Lambda_\psi(y)=y\xi,y\in n_\psi.
     \end{equation}
 \end{definition}
-\begin{proposition}
+\begin{proposition}\label{Chap3: Prop: 2}
     For all $\xi,\xi_1,\xi_2\in H$, $x\in M$, and $y\in M'$ we have
     \begin{enumerate}[(i)]
         \item $R^\psi(\xi_1+\xi_2)=R^\psi(\xi_1)+R^\psi(\xi_2)$,
@@ -67,4 +67,131 @@ We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\inft
     The set $D(H,\psi)$ is an $M$-invariant dense subspace
     of $H$.
 \end{proposition}
+\begin{proof}
+    That $D(H,\psi)$ is an $M$-invariant subspace of $H$ follows from Proposition \ref{Chap3: Prop: 2}, i) and (ii). Denote by $e$ the projection onto $\overline{D(H,\psi)}$; then $e\in M'$. Suppose that $e\neq 1$. Then $\psi(1-e)>0$. We can write $\psi=\sum_{i\in I}\omega_{\zeta_i,\zeta_i}$ for certain $\zeta_i\in H$. Then for at least one $\zeta_i$, we have $((1-e)\zeta_i|\zeta_i)\neq 0$ so that $(1-e)\zeta_i\neq 0$. On the other hand, we have
+    \[
+        \forall y\in n_\psi:\norm{y\zeta_i}^2\leq \psi(y^*y)=\norm{\Lambda_\psi(y)}^2
+    \]
+    so that $\zeta_i\in D(H,\psi)$ and hence $e\zeta_i = \zeta_i$. This is a contradiction. Hence we must have $e = 1$ and $D(H,\psi)$ is dense in $H$.
+\end{proof}
+Let $\xi\in H$. By Proposition \ref{Chap3: Prop: 2}, (iii)*, $D(R^\psi(\xi)^*)$ is invariant under the action of $M'$. Hence the projection $p$ onto $\overline{D(R^\psi(\xi)^*)}$ is in $M$. Considered as an operator from $pH$ to $H_\psi$, $R^\psi(\xi)^*$ is closed and densely defined and hence $\abs{R^\psi(\xi)^*}^2$ exists as a positive self-adjoint operator on $pH$ which by Proposition \ref{Chap3: Prop: 2}, (iii)*, is affiliated with $pMp$. We denote by $\theta^\psi(\xi,\xi)$ the element of $\widehat{M}_+$ (the extended positive part of $M$) associated with the couple $(pH,\abs{R^\psi(\xi)^*}^2)$ as in [7, Example 1.2 and Lemma 1.4], i.e.
+\begin{definition}\label{Chap3: Def: 5}
+    For each $\xi\in H$, we denote by
+    \[
+        \theta^\psi(\xi,\xi)
+    \]
+    the element of $\widehat{M}_+$ characterized by
+    \begin{equation}
+        \forall \eta\in H: \inner{\omega_{\eta,\eta},\theta^\psi(\xi,\xi)}=\begin{cases}
+            \norm{R^\psi(\xi)^*\eta}^2\quad \text{ if } \eta\in D(R^\psi(\xi)^*) \\
+            \infty\quad \text{otherwise}
+        \end{cases}.
+    \end{equation}
+\end{definition}
+\begin{remark}
+    If $\xi\in D(H,\psi)$, we simply have
+    \begin{equation}
+        \theta^\psi(\xi,\xi)=R^\psi(\xi)R^\psi(\xi)^*.
+    \end{equation}
+\end{remark}
+\begin{proposition}
+    For all $\xi\in H$ and $x\in M$, we have
+    \[
+        \theta^\psi(x\xi,x\xi)=x\cdot \theta^\psi(\xi,\xi)\cdot x^*.
+    \]
+\end{proposition}
+\begin{proof}
+    For all $\eta\in H$, we have, using Proposition \ref{Chap3: Prop: 2}, (ii)*, and Definition \ref{Chap3: Def: 5}
+    \[
+        \begin{split}
+            \inner{\omega_{\eta,\eta},\theta^\psi(x\xi,x\xi)}=&\inner{\omega_{x^*\eta,x^*\eta},\theta^\psi(\xi,\xi)}\\
+            =&\inner{x^*\cdot\omega_{\eta,\eta}\cdot x,\theta^\psi(\xi,\xi)}\\
+            =&\inner{\omega_{\eta,\eta},x\cdot\theta^\psi(\xi,\xi)\cdot x^*}
+        \end{split}
+    \]
+    where the last equality simply follows from the definition of the operation $m\mapsto x\cdot m\cdot x^*$ in $\widehat{M}_+$.
+\end{proof}
+Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique extension, also denoted $\varphi$, to a normal weight on $\widehat{M}_+$.
+\begin{definition}
+    Let $\varphi$ be a normal weight on $M$. We define
+    \[
+        q_\varphi: H\to [0,\infty]
+    \]
+    by
+    \begin{equation}
+        q_\varphi(\xi)=\inner{\varphi,\theta^\psi(\xi,\xi)}, \xi\in H.
+    \end{equation}
+\end{definition}
+\begin{proposition}
+    Let $\varphi$ be a normal weight on $M$. Then $q_\varphi$ is a l.s.c. quadratic form on $M$, i.e.
+    \begin{enumerate}[(i)]
+        \item $\forall \xi_1,\xi_2\in H:q_\varphi(\xi_1+\xi_2)+q_\varphi(\xi_1-\xi_2)=2q_\varphi(\xi_1)+2q_\varphi(\xi_2)$,
+        \item $\forall \xi\in H \forall \lambda\in \mathbb{C}: q_\varphi(\lambda \xi)=\abs{\lambda}^2q_\varphi(\xi)$,
+        \item $q_\varphi$ is lower semi-continuous.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (ii) is immediate. For the proof of (i) and (iii), first suppose that $\varphi=\omega_{\eta,\eta}$ for some $\eta\in H$. Then
+    \begin{equation}\label{Chap3: Eqn: 5}
+        q_\varphi(\xi)=\inner{\omega_{\eta,\eta},\theta^\psi(\xi,\xi)}=\begin{cases}
+            \norm{R^\psi(\xi)^*\eta}^2\quad \text{ if } \eta\in D(R^\psi(\xi)^*) \\
+            \infty\quad \text{otherwise}
+        \end{cases}.
+    \end{equation}
+    Let $\xi_1,\xi_2\in H$. We shall prove that
+    \begin{equation}\label{Chap3: Eqn: 6}
+        q_\varphi(\xi_1+\xi_2)+q_\varphi(\xi_1-\xi_2)\leq 2q_\varphi(\xi_1)+2q_\varphi(\xi_2).
+    \end{equation}
+    If either $\eta\in D(R^\psi(\xi_1)^*)$ or $\eta\in D(R^\psi(\xi_2)^*)$, the right hand side of \eqref{Chap3: Eqn: 6} is $+\infty$ and hence \eqref{Chap3: Eqn: 6} holds. Now suppose that $\eta\in D(R^\psi(\xi_1)^*)$ and $\eta\in D(R^\psi(\xi_2)^*)$. Then by Proposition \ref{Chap3: Prop: 2}, (i)*, also $\eta\in D(R^\psi(\xi_1+\xi_2)^*)$ and $\eta\in D(R^\psi(\xi_1-\xi_2)^*)$. Furthermore,
+    \[
+        \begin{split}
+            &\norm{R^\psi(\xi_1+\xi_2)^*\eta}^2+\norm{R^\psi(\xi_1-\xi_2)^*\eta}^2\\
+            =&\norm{R^\psi(\xi_1)^*\eta+R^\psi(\xi_2)^*\eta}^2+\norm{R^\psi(\xi_1)^*\eta-R^\psi(\xi_2)^*\eta}^2\\
+            =&2\norm{R^\psi(\xi_1)^*\eta}^2+2\norm{R^\psi(\xi_2)^*\eta}^2.
+        \end{split}
+    \]
+    Thus we have proved \eqref{Chap3: Eqn: 6} in all cases.\par
+    By \eqref{Chap3: Eqn: 6} applied to $\xi_1+\xi_2$ and $\xi_1-\xi_2$ we get
+    \[
+        4(q_\varphi(\xi_1)+q_\varphi(\xi_2))=q_\varphi(2\xi_1)+q_\varphi(2\xi_2)\leq 2q_\varphi(\xi_1+\xi_2)+2q_\varphi(\xi_1-\xi_2).
+    \]
+    In all, we have shown (i).\par
+    By \eqref{Chap3: Eqn: 5}, we have
+    \[
+        \begin{split}
+            \inner{\omega_{\eta,\eta},\theta^\psi(\xi,\xi)}=&\sup\{\abs{(R^\psi(\xi)^*\eta|\zeta)}^2|\zeta\in D(R^\psi(\xi)),\norm{\zeta}\leq 1\}\\
+            =&\sup\{\abs{(\eta|R^\psi(\xi)\Lambda_\psi(y))}^2|y\in n_\psi,\norm{\Lambda_\psi(y)}\leq 1\}\\
+            =&\sup\{\abs{(\eta|y\xi)}^2|y\in n_\psi,\norm{\Lambda_\psi(y)}\leq 1\}
+        \end{split}
+    \]
+    for all $\xi\in H$. Since each $\xi\mapsto \abs{(\eta|y\xi)}^2$ is continuous, this implies (iii).\par
+    Now let $\varphi$ be an arbitrary normal weight. Then we can write
+    \[
+        \varphi=\sum_{i\in I}\omega_{\eta_i,\eta_i}
+    \]
+    and thus (cf. the proof of [7, Proposition 1.10])
+    \[
+        \forall \xi\in H:  q_\varphi(\xi)=\inner{\varphi,\theta^\psi(\xi,\xi)}=\sum_{i=I}\inner{\omega_{\eta_i,\eta_i},\theta^\psi(\xi,\xi)}.
+    \]
+    Now (i) and (iii) follow by the first part of the proof.
+\end{proof}
+\begin{remark}
+    Let $\varphi$ be a normal weight on $M$. Write
+    \begin{equation}
+        \Dom(q_\varphi)=\{\xi\in H|q_\varphi(\xi)<\infty\}.
+    \end{equation}
+    Then for all $x\in n_\varphi$ and $\xi\in D(H,\psi)$, we have
+    \begin{equation}
+        x^*\xi\in \Dom(q_\varphi).
+    \end{equation}
+    Indeed,
+    \[
+        \begin{split}
+            q_\varphi(x^*\xi)=&\inner{\varphi,\theta^\psi(x^*\xi,x^*\xi)}\\
+            =&\inner{\varphi,x^*\cdot\theta^\psi(\xi,\xi)\cdot x}\\
+            \leq &\norm{\theta^\psi(\xi,\xi)}\inner{\varphi,x^*x}<\infty.
+        \end{split}
+    \]
+    In particular, if $\varphi$ is semifinite then $\Dom(q_\varphi)$ is dense in $H$ (since $n_\varphi^*$ is strongly dense in $M$).
+\end{remark}
 % \end{document}
