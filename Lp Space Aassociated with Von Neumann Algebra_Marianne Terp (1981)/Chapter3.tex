@@ -94,7 +94,7 @@ Let $\xi\in H$. By Proposition \ref{Chap3: Prop: 2}, (iii)*, $D(R^\psi(\xi)^*)$ 
         \theta^\psi(\xi,\xi)=R^\psi(\xi)R^\psi(\xi)^*.
     \end{equation}
 \end{remark}
-\begin{proposition}
+\begin{proposition}\label{Chap3: Prop: 7}
     For all $\xi\in H$ and $x\in M$, we have
     \[
         \theta^\psi(x\xi,x\xi)=x\cdot \theta^\psi(\xi,\xi)\cdot x^*.
@@ -122,7 +122,7 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
         q_\varphi(\xi)=\inner{\varphi,\theta^\psi(\xi,\xi)}, \xi\in H.
     \end{equation}
 \end{definition}
-\begin{proposition}
+\begin{proposition}\label{Chap3: Prop: 9}
     Let $\varphi$ be a normal weight on $M$. Then $q_\varphi$ is a l.s.c. quadratic form on $M$, i.e.
     \begin{enumerate}[(i)]
         \item $\forall \xi_1,\xi_2\in H:q_\varphi(\xi_1+\xi_2)+q_\varphi(\xi_1-\xi_2)=2q_\varphi(\xi_1)+2q_\varphi(\xi_2)$,
@@ -194,4 +194,133 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
     \]
     In particular, if $\varphi$ is semifinite then $\Dom(q_\varphi)$ is dense in $H$ (since $n_\varphi^*$ is strongly dense in $M$).
 \end{remark}
+\begin{definition}\label{Chap3: Def: 11}
+    For each normal weight $\varphi$ on $M$, we define the spatial derivative $\dv{\varphi}{\psi}$ as the unique element of $\widehat{B(H)}_+$ such that
+    \begin{equation}
+        \forall \xi\in H: \inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}=\inner{\varphi,\theta^\psi(\xi,\xi)}.
+    \end{equation}
+\end{definition}
+The existence of $\dv{\varphi}{\psi}$ follows from Proposition \ref{Chap3: Prop: 9} and [7, proof of Lemma 1.4].
+\begin{remark}
+    If $\varphi$ is semifinite, $\dv{\varphi}{\psi}$ is simply a positive self-adjoint operator on $H$ (since in this case, $\{\xi\in H|\inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}<\infty\}=\Dom(q_\varphi)$ is dense in $H$). Note that
+    \begin{equation}
+        \forall \xi\in H:q_\varphi(\xi)=\begin{cases}
+            \norm{\left( \dv{\varphi}{\psi} \right)^\frac{1}{2}\xi}^2\quad if \xi\in D\left( \left( \dv{\varphi}{\psi} \right)^\frac{1}{2} \right) \\
+            \infty\quad \text{otherwise}
+        \end{cases}.
+    \end{equation}
+\end{remark}
+We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\dv{\varphi}{\psi}$ given here agrees with that given in [1]. (This is not quite obvious. Note that in [1, Lemma 6], the quadratic form $q$ is only defined on the subspace $D(H,\psi)$, and then extended by [1, Lemma 5] to the whole of $H$.)
+\begin{lemma}\label{Chap3: Lemma: 13}
+    Let $\varphi_1,\varphi_2,(\varphi_i)_{i\in I}$, and $\varphi$ be normal weights on $M$ and let $x\in M$. Then
+    \begin{enumerate}[(i)]
+        \item $\forall m\in \widehat{M}_+: \inner{\varphi_1+\varphi_2,m}=\inner{\varphi_1,m}+\inner{\varphi_2,m}$,
+        \item $\forall m\in \widehat{M}_+: \inner{x\cdot\varphi\cdot x^*,m}=\inner{\varphi,x^*\cdot m\cdot x}$,
+        \item if $\varphi_i\nearrow \varphi$, then $\forall m\in \widehat{M}_+:\inner{\varphi_i,m}\nearrow \inner{\varphi,m}$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    (i) and (ii) are immediate consequences of [7, Proposition 1.10] (or its proof). As for (iii), we have by the proof of [7, Proposition 1.10], using the notation from there,
+    \[
+        \begin{split}
+            \inner{\varphi_i,m}=&\sup_n\inner{\varphi_i,\int_0^n \lambda\dd e_\lambda}+\infty\cdot\varphi_i(p)\\
+            \nearrow&\sup_n\inner{\varphi,\int_0^n\lambda\dd e_\lambda}+\infty\cdot\varphi_i(p)=\inner{\varphi,m}.
+        \end{split}
+    \]
+\end{proof}
+\begin{theorem}
+    For all normal weights $\varphi_1$, $\varphi_2$, and $\varphi$ on $M$ and all $x\in M$ we have
+    \begin{enumerate}[(a)]
+        \item $\dv{(\varphi_1+\varphi_2)}{\psi}=\dv{\varphi_1}{\psi}+\dv{\varphi_2}{\psi}$,
+        \item $\dv{(x\cdot\varphi\cdot x^*)}{\psi}=x\cdot\dv{\varphi}{\psi}\cdot x^*$.
+    \end{enumerate}
+\end{theorem}
+\begin{remark}
+    The sums and products occurring at the right hand side of (a) and (b) are to be understood in the sense of the operations in $\widehat{B(H)}_+$. In particular, if $\varphi_1$, $\varphi_2$, $\varphi_1+\varphi_2$ are semifinite, $\dv{\varphi_1}{\psi}+\dv{\varphi_2}{\psi}$ is the form sum of the positive self-adjoint operators $\dv{\varphi_1}{\psi}$ and $\dv{\varphi_2}{\psi}$. Similarly, if $x\cdot\varphi\cdot x^*$ is semifinite, $x\cdot\dv{\varphi}{\psi}\cdot x^*$ is the form product.
+\end{remark}
+\begin{remark}
+    In [1], the sum property is simply stated without proof. It seems to be difficult to give a proof using only the methods of [1] (one only gets "$\geq$"). - The product property is stated (and proved) only for invertible $x\in M$.
+\end{remark}
+\begin{proof}[Proof of Theorem 14]
+    Let $\xi\in H$. Then, using successively Definition \ref{Chap3: Def: 11}, Lemma \ref{Chap3: Lemma: 13}, Definition \ref{Chap3: Def: 11} again, and the definition of the sum in $\widehat{B(H)}_+$, we get
+    \[
+        \begin{split}
+            \inner{\omega_{\xi,\xi},\dv{(\varphi_1+\varphi_2)}{\psi}}=&\inner{\varphi_1+\varphi_2,\theta^\psi(\xi,\xi)}\\
+            =&\inner{\varphi_1,\theta^\psi(\xi,\xi)}+\inner{\varphi_2,\theta^\psi(\xi,\xi)}\\
+            =&\inner{\omega_{\xi,\xi},\dv{\varphi_1}{\psi}}+\inner{\omega_{\xi,\xi},\dv{\varphi_2}{\psi}}\\
+            =&\inner{\omega_{\xi,\xi},\dv{\varphi_1}{\psi}+\dv{\varphi_2}{\psi}}.
+        \end{split}
+    \]
+    Similarly,
+    \[
+        \begin{split}
+            \inner{\omega_{\xi,\xi},\dv{(x\cdot\varphi\cdot x^*)}{\psi}}=&\inner{x\cdot\varphi\cdot x^*,\theta^\psi(\xi,\xi)}=\inner{\varphi,x^*\cdot\theta^\psi(\xi,\xi)\cdot x}\\
+            =&\inner{\varphi,\theta^\psi(x^*\xi,x^*\xi)}=\inner{\omega_{x^*\xi,x^*\xi},\dv{\varphi}{\psi}}\\
+            =&\inner{x^*\cdot\omega_{\xi,\xi}\cdot x,\dv{\varphi}{\psi}}=\inner{\omega_{\xi,\xi},x\cdot\dv{\varphi_1}{\psi}\cdot x^*}
+        \end{split}
+    \]
+    where we have used Lemma \ref{Chap3: Lemma: 13} and Proposition \ref{Chap3: Prop: 7}.
+\end{proof}
+\begin{theorem}
+    Let $(\varphi_i)_{i\in I}$ and $\varphi$ be normal weights on $M$. Suppose that
+    \[
+        \varphi_i\nearrow \varphi.
+    \]
+    Then
+    \[
+        \dv{\varphi_i}{\psi}\nearrow\dv{\varphi}{\psi}.
+    \]
+\end{theorem}
+\begin{remark}
+    In particular, if $\varphi$ is semifinite, we have $\dv{\varphi_i}{\psi}\nearrow\dv{\varphi}{\psi}$ in the usual sense of positive self-adjoint operators.
+\end{remark}
+\begin{proof}[Proof of Theorem 17]
+    For all $\xi\in H$, we have by Lemma \ref{Chap3: Lemma: 13}
+    \[
+        \begin{split}
+            \inner{\omega_{\xi,\xi},\dv{\varphi_i}{\psi}}=&\inner{\varphi_i,\theta^\psi(\xi,\xi)}\\
+            \nearrow&\inner{\varphi,\theta^\psi(\xi,\xi)}=\inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}.
+        \end{split}
+    \]
+\end{proof}
+\begin{lemma}\label{Chap3: Lemma: 19}
+    Let $\varphi$ be a normal semifinite weight on $M$. Write $p=\supp\varphi$. Then for all $m\in \widehat{M}_+$, we have
+    \[
+        \inner{\varphi,m}=0\Leftrightarrow p\cdot m\cdot p=0.
+    \]
+\end{lemma}
+\begin{proof}
+    Let $m=\int_0^\infty \lambda\dd e_\lambda+\infty\cdot (1-r)$ be the spectral resolution of $m$. Put $x_n=\int_0^n \lambda\dd e_\lambda,n\in \mathbb{N}$. Then
+    \[
+        \begin{split}
+            \inner{\varphi,m}=0\Leftrightarrow&\forall n\in \mathbb{N}:\inner{\varphi,x_n}=0\text{ and }\inner{\varphi,1-r}=0\\
+            &\forall n\in \mathbb{N}:p\cdot x_n\cdot p=0\text{ and }p\cdot(1-r)\cdot p=0\\
+            &\Leftrightarrow p\cdot m\cdot p=0.
+        \end{split}
+    \]
+\end{proof}
+\begin{theorem}
+    Let $\varphi$ be a normal semifinite weight on $M$. Then
+    \begin{equation}
+        \supp\left( \dv{\varphi}{\psi} \right)=\supp(\varphi).
+    \end{equation}
+    In particular, $\dv{\varphi}{\psi}$ is injective if and only if $\varphi$ is faithful.
+\end{theorem}
+\begin{proof}
+    Put $p=\supp\varphi\in M$. Now for all $\xi\in H$, we have, using Lemma \ref{Chap3: Lemma: 19} and Proposition \ref{Chap3: Prop: 7}:
+    \[
+        \begin{split}
+            \xi\in\ker(\dv{\varphi}{\psi})\Leftrightarrow&\inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}=0\\
+            \Leftrightarrow&\inner{\varphi,\theta^\psi(\xi,\xi)}=0\\
+            \Leftrightarrow&p\cdot\theta^\psi(\xi,\xi)\cdot p=0\\
+            \Leftrightarrow&\theta^\psi(p\xi,p\xi)=0\\
+            \Leftrightarrow& p\xi=0\\
+            \Leftrightarrow& \xi\in (1-p)H.
+        \end{split}
+    \]
+    Since $ker\left( \dv{\varphi}{\psi} \right)=\supp\left( \dv{\varphi}{\psi} \right)^\perp$, the result follows.
+\end{proof}
+\begin{proposition}\label{Chap3: Prop: 22}
+
+\end{proposition}
 % \end{document}
