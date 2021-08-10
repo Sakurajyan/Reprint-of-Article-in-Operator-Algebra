@@ -63,7 +63,7 @@ We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\inft
 \begin{notation}
     If $\xi\in D(H,\psi)$, $R^\psi(\xi)$ extends to a bounded operator $H_\psi\to H$ which we shall also denote $R^\psi(\xi)$.
 \end{notation}
-\begin{proposition}
+\begin{proposition}\label{Chap3: Prop: 4}
     The set $D(H,\psi)$ is an $M$-invariant dense subspace
     of $H$.
 \end{proposition}
@@ -203,9 +203,9 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
 The existence of $\dv{\varphi}{\psi}$ follows from Proposition \ref{Chap3: Prop: 9} and [7, proof of Lemma 1.4].
 \begin{remark}
     If $\varphi$ is semifinite, $\dv{\varphi}{\psi}$ is simply a positive self-adjoint operator on $H$ (since in this case, $\{\xi\in H|\inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}<\infty\}=\Dom(q_\varphi)$ is dense in $H$). Note that
-    \begin{equation}
+    \begin{equation}\label{Chap3: Eqn: 10}
         \forall \xi\in H:q_\varphi(\xi)=\begin{cases}
-            \norm{\left( \dv{\varphi}{\psi} \right)^\frac{1}{2}\xi}^2\quad if \xi\in D\left( \left( \dv{\varphi}{\psi} \right)^\frac{1}{2} \right) \\
+            \norm{\left( \dv{\varphi}{\psi} \right)^\frac{1}{2}\xi}^2\quad \text{ if } \xi\in D\left( \left( \dv{\varphi}{\psi} \right)^\frac{1}{2} \right) \\
             \infty\quad \text{otherwise}
         \end{cases}.
     \end{equation}
@@ -320,7 +320,125 @@ We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\d
     \]
     Since $ker\left( \dv{\varphi}{\psi} \right)=\supp\left( \dv{\varphi}{\psi} \right)^\perp$, the result follows.
 \end{proof}
-\begin{proposition}\label{Chap3: Prop: 22}
-
+\begin{proposition}\label{Chap3: Prop: 21}
+    Let $\xi\in H$. Then there exists a sequence $(\xi_n)_{n\in \mathbb{N}}$ in $D(H,\psi)$ satisfying
+    \[
+        \xi_n\to \xi \text{ as }n\to \infty
+    \]
+    and such that
+    \begin{equation}\label{Chap3: Eqn: 12}
+        q_\varphi(\xi_n)\to q_\varphi(\xi)\text{ as }n\to \infty
+    \end{equation}
+    for all normal weights $\varphi$ on $M$.
 \end{proposition}
+\begin{proof}
+    Let
+    \[
+        \theta^\psi(\xi,\xi)=\int_0^\infty\lambda\dd e_\lambda+\infty\cdot(1-p)
+    \]
+    be the spectral resolution of $\theta^\psi(\xi,\xi)$. Then $p$ is the projection onto $\overline{D(R^\psi(\xi)^*)}$. For each $n\in \mathbb{N}$, the operator $R^\psi(e_n\xi)^*$, being closed and everywhere defined (since $R^\psi(e_n\xi)^*=R^\psi(\xi)^*e_n$), must be bounded; hence $R^\psi(e_n\xi)$ is bounded and $e_n\xi\in D(H,\psi)$.\par
+    Take a sequence $(\zeta_n)_{n\in N}$ in $D(H,\psi)$ such that $\zeta_n\to \xi$ (possible by Proposition \ref{Chap3: Prop: 4}). Then also $(1-p)\zeta_n\in D(H,\psi)$.\par
+    Now for each $n\in \mathbb{N}$, put
+    \[
+        \xi_n=e_n\xi+(1-p)\zeta_n\in D(H,\psi).
+    \]
+    Then
+    \[
+        \xi_n\to p\xi+(1-p)\xi=\xi\text{ as }n\to \infty.
+    \]
+    We claim that $(\xi_n)_{n\in \mathbb{N}}$ \eqref{Chap3: Eqn: 12}.\par
+    Hence, let $\varphi$ be a normal weight on $M$. We consider two cases. If $\inner{\varphi,\theta^\psi(\xi,\xi)}=\infty$, \eqref{Chap3: Eqn: 12} is trivially true; indeed, by the lower semicontinuity of $q_\varphi$, we have
+    \[
+        \infty=q_\varphi(\xi)\leq \liminf_{n\to \infty}q_\varphi(\xi_n).
+    \]\par
+    Now suppose that $\inner{\varphi,\theta^\psi(\xi,\xi)}<\infty$. We can write
+    \[
+        \varphi=\sum_{i\in I}\omega_{\eta_i,\eta_i}
+    \]
+    for certain $\eta_i\in H$. Then all
+    \[
+        \inner{\omega_{\eta_i,\eta_i},\theta^\psi(\xi,\xi)}<\infty
+    \]
+    so that $\eta_i\in D(R^\psi(\xi)^*)\subset pH$, whence
+    \[
+        \omega_{\eta_i,\eta_i}=p\cdot\omega_{\eta_i,\eta_i}\cdot p.
+    \]
+    Hence
+    \[
+        \varphi=p\cdot \varphi\cdot p.
+    \]
+    Now using
+    \[
+        \begin{split}
+            p\cdot\theta^\psi(\xi_n,\xi_n)\cdot p=&\theta^\psi(p\xi_n,p\xi_n)\\
+            =&\theta^\psi(e_n\xi,e_n\xi)\\
+            =&e_n\cdot \theta^\psi(\xi,\xi)\cdot e_n\\
+            \nearrow&p\cdot \theta^\psi(\xi,\xi)\cdot p
+        \end{split}
+    \]
+    it follows that
+    \[
+        \begin{split}
+            \inner{\varphi,\theta^\psi(\xi_n,\xi_n)}=&\inner{\varphi,p\cdot \theta^\psi(\xi_n,\xi_n)\cdot p}\\
+            \nearrow&\inner{\varphi,p\cdot\theta^\psi(\xi,\xi)\cdot p}\\
+            =&\inner{\varphi,\theta^\psi(\xi,\xi)}.
+        \end{split}
+    \]
+\end{proof}
+Using Proposition \ref{Chap3: Prop: 21}, we can now prove that our definition of $\dv{\varphi}{\psi}$ agrees with Connes' [1]. Note that we also prove the existence of a biggest positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13} below so that we do not need [1, Lemma 5].
+\begin{proposition}\label{Chap3: Prop: 22}
+    Let $\varphi$ be a normal semifinite weight on $M$.\par
+    1) The operator $\dv{\varphi}{\psi}$ is the biggest positive self-adjoint operator $d$ satisfying
+    \begin{equation}\label{Chap3: Eqn: 13}
+        \forall \xi\in D(H,\psi):q_\varphi(\xi)=\begin{cases}
+            \norm{d^\frac{1}{2}\xi}^2\text{ if }\xi\in D(d^\frac{1}{2}) \\
+            \infty\text{ otherwise }
+        \end{cases}.
+    \end{equation}\par
+    2) The operator $\dv{\varphi}{\psi}$ is the unique positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13} and
+    \begin{equation}\label{Chap3: Eqn: 14}
+        d^\frac{1}{2}=\left[ d^\frac{1}{2}|_{D(H,\psi)\cap D(d^\frac{1}{2})} \right].
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    1) The operator $\dv{\varphi}{\psi}$ is characterized by \eqref{Chap3: Eqn: 10}. Hence, in particular, \eqref{Chap3: Eqn: 13} holds.\par
+    Now let $d$ be any positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13}. We shall prove that $d\leq \dv{\varphi}{\psi}$. Let $\xi\in D\left( \left( \dv{\varphi}{\psi} \right)^\frac{1}{2} \right)$. By Proposition \ref{Chap3: Prop: 21}, there exist $\xi_n\in D(H,\psi)$ such that $\xi_n\to \xi$ and
+    \[
+        q_\varphi(\xi_n)\to q_\varphi(\xi).
+    \]
+    On the other hand, the mapping $p: H \to [0,\infty]$ defined by
+    \begin{equation}\label{Chap3: Eqn: 15}
+        p(\xi)=\begin{cases}
+            \norm{d^\frac{1}{2}\xi}^2 \quad \text{ if } \xi\in D(d^\frac{1}{2}) \\
+            \infty\quad \text{ otherwise }
+        \end{cases}
+    \end{equation}
+    is lower semi-continuous (since $p(\xi)=\int_0^\infty \lambda\dd(e_\lambda \xi|\xi)=\sup\int_0^n \lambda\dd(e_\lambda \xi|\xi)$, where $d = \int_0^\infty\lambda\dd e_\lambda$ is the spectral resolution of d), whence
+    \[
+        p(\xi)\leq \liminf_{n\to \infty}q_\varphi(\xi_n)=q_\varphi(\xi)=\norm{\left( \dv{\varphi}{\psi} \right)^\frac{1}{2}\xi}^2.
+    \]
+    This shows that $d\leq\dv{\varphi}{\psi}$.\par
+    2) First, let us show that $d = \dv{\varphi}{\psi}$ satisfies \eqref{Chap3: Eqn: 14}. Let $\xi\in D(d^\frac{1}{2})$. Take a sequence $(\xi_n)_{n\in \mathbb{N}}$ in $D(H,\psi)$ as in Proposition \ref{Chap3: Prop: 21}. Since $q_\varphi(\xi_n)\to q_\varphi(\xi)=\norm{d^\frac{1}{2}\xi}^2<\infty$, we may assume that all $q_\varphi(\xi_n)<\infty$, i.e. all $\xi_n\in D(H,\psi)\cap D(d^\frac{1}{2})$. Now $\xi_n\to \xi$ and $\norm{d^\frac{1}{2}\xi_n}^2\to \norm{d^\frac{1}{2}\xi}^2$. It follows that $d^\frac{1}{2}\xi_n\to d^\frac{1}{2}\xi$. Indeed,
+    \[
+        \begin{split}
+            0\leq &\limsup_{n\to \infty}\norm{d^\frac{1}{2}\xi-d^\frac{1}{2}\xi_n}^2\\
+            =&\limsup_{n\to \infty}(2\norm{d^\frac{1}{2}\xi}^2+2\norm{d^\frac{1}{2}\xi_n}^2-\norm{d^\frac{1}{2}\xi+d^\frac{1}{2}\xi_n}^2)\\
+            =&2\norm{d^\frac{1}{2}\xi}^2+2\lim_{n\to \infty}\norm{d^\frac{1}{2}\xi_n}^2-\liminf_{n\to\infty}\norm{d^\frac{1}{2}\xi+d^\frac{1}{2}\xi_n}^2\leq 0.
+        \end{split}
+    \]\par
+    Next, assume that $d$ is a positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13} and \eqref{Chap3: Eqn: 14}. We shall prove that then $d$ is the maximal positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13}. Define $p:H \to [0,\infty]$ as above \eqref{Chap3: Eqn: 15}. Then
+    \begin{equation}\label{Chap3: Eqn: 16}
+        \forall \xi\in H:q_\varphi(\xi)\leq p(\xi).
+    \end{equation}
+    Indeed, if $\xi\in D(d^\frac{1}{2})$, this is trivially true; if $\xi\in D(d^\frac{1}{2})$, take, by \eqref{Chap3: Eqn: 14}, $\xi_n\in D(H,\psi)\cap D(d^\frac{1}{2})$ such that
+    \[
+        \xi_n\to \xi\text{ and }d^\frac{1}{2}\xi_n\to d^\frac{1}{2}\xi.
+    \]
+    Then $q_\varphi(\xi_n)=\norm{d^\frac{1}{2}\xi_n}^2\to \norm{d^\frac{1}{2}\xi}^2=p(\xi)$ so that
+    \[
+        q_\varphi(\xi)\leq \liminf_{n\to \infty}q_\varphi(\xi_n)=p(\xi).
+    \]
+    Finally, \eqref{Chap3: Eqn: 16} implies that $\dv{\varphi}{\psi}\leq d$, whence $\dv{\varphi}{\psi}=d$ by 1).
+\end{proof}
+We recall [1, proof of Theorem 9]:
 % \end{document}
