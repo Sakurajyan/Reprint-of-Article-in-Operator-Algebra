@@ -196,7 +196,7 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
 \end{remark}
 \begin{definition}\label{Chap3: Def: 11}
     For each normal weight $\varphi$ on $M$, we define the spatial derivative $\dv{\varphi}{\psi}$ as the unique element of $\widehat{B(H)}_+$ such that
-    \begin{equation}
+    \begin{equation}\label{Chap3: Eqn: 9}
         \forall \xi\in H: \inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}=\inner{\varphi,\theta^\psi(\xi,\xi)}.
     \end{equation}
 \end{definition}
@@ -299,7 +299,7 @@ We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\d
         \end{split}
     \]
 \end{proof}
-\begin{theorem}
+\begin{theorem}\label{Chap3: Thm: 20}
     Let $\varphi$ be a normal semifinite weight on $M$. Then
     \begin{equation}
         \supp\left( \dv{\varphi}{\psi} \right)=\supp(\varphi).
@@ -441,4 +441,111 @@ Using Proposition \ref{Chap3: Prop: 21}, we can now prove that our definition of
     Finally, \eqref{Chap3: Eqn: 16} implies that $\dv{\varphi}{\psi}\leq d$, whence $\dv{\varphi}{\psi}=d$ by 1).
 \end{proof}
 We recall [1, proof of Theorem 9]:
+\begin{example}\label{Chap3: Eg: 23}
+    Let $M$ be the left algebra associated with a left Hilbert algebra $\mathfrak{A}$ in $H$. Let $\varphi_0$, resp. $\psi_0$, be the canonical weight on $M$, resp. $M'$, associated with $\mathfrak{A}''$, resp. $\mathfrak{A}'$. Then
+    \[
+        \dv{\varphi_0}{\psi_0}=\Delta,
+    \]
+    where $\Delta$ is the modular operator associated with $\varphi_0$.
+\end{example}
+Spatial derivatives are preserved by spatial isomorphisms:
+\begin{proposition}\label{Chap3: Prop: 24}
+    Let $M_1$ be a von Neumann algebra acting on a Hilbert space $H_1$. Suppose that
+    \[
+        u:H\to H_1
+    \]
+    is a unitary such that
+    \[
+        uMu^*=M_1.
+    \]
+    Then for all normal semifinite weights $\varphi$ on $M$ and all normal faithful semifinite weights $\psi$ on $M'$, $u\cdot\varphi\cdot u^*$ and $u\cdot\psi\cdot u^*$ are weights on $M_1$ and $M_1'$ respectively, and we have
+    \[
+        \dv{(u\cdot\varphi\cdot u^*)}{(u\cdot\psi\cdot u^*)}=u\dv{\varphi}{\psi}u^*.
+    \]
+\end{proposition}
+The proof is left to the reader.
+\section{Modular properties of spatial derivatives}
+Here, we first recall, without proof, some main results from [1] and then state some immediate corollaries. For the first theorems, recall that the spatial derivatives occurring in them are injective by Theorem \ref{Chap3: Thm: 20}.
+\begin{theorem}
+    Let $\varphi_1$ and $\varphi_2$ be normal faithful semifinite weights on $M$, and let $\psi$ be a normal faithful semifinite weight on $M'$. Then
+    \[
+        \forall t\in \mathbb{R}:(D\varphi_1:D\varphi_2)_t=\left( \dv{\varphi_1}{\psi}\right)^{it}\left( \dv{\varphi_2}{\psi}\right)^{-it}.
+    \]
+\end{theorem}
+\begin{theorem}\label{Chap3: Thm: 26}
+    Let $\varphi$ and $\psi$ be normal faithful semifinite weights on $M$ and $M'$, respectively. Then
+    \begin{enumerate}[(i)]
+        \item $\forall x\in M\forall t\in \mathbb{R}:\sigma_t^\varphi(x)=\left( \dv{\varphi}{\psi}\right)^{it}x\left( \dv{\varphi}{\psi}\right)^{-it}$,
+        \item $\forall y\in M'\forall t\in \mathbb{R}:\sigma_t^\psi(y)=\left( \dv{\varphi}{\psi}\right)^{-it}y\left( \dv{\varphi}{\psi}\right)^{it}$.
+    \end{enumerate}
+\end{theorem}
+\begin{corollary}\label{Chap3: Coro: 27}
+    Let $\varphi$ and $\psi$ be normal faithful semifinite weights on $M$ and $M'$, respectively. Then
+    \begin{enumerate}[(i)]
+        \item $\dv{\varphi}{\psi}\eta M'$ if and only if $\varphi$ is a trace,
+        \item $\dv{\varphi}{\psi}\eta M$ if and only if $\psi$ is a trace,
+        \item $\dv{\varphi}{\psi}\eta Z(M)$ if and only if both $\varphi$ and $\psi$ are traces.
+    \end{enumerate}
+\end{corollary}
+\begin{theorem}
+    Let $\varphi$ and $\psi$ be normal faithful semifinite weights on $M$ and $M'$, respectively. Then
+    \[
+        \left( \dv{\varphi}{\psi} \right)^{-1}=\dv{\psi}{\varphi}.
+    \]
+\end{theorem}
+Property (ii) in Theorem \ref{Chap3: Thm: 26} characterizes operators having the form $\dv{\varphi}{\psi}$:
+\begin{theorem}\label{Chap3: Thm: 29}
+    Let $\psi$ be a normal faithful semifinite weight on $M'$, and let $a$ be a positive self-adjoint operator on $H$. Then the following are equivalent:
+    \begin{enumerate}[(i)]
+        \item $a=\dv{\varphi}{\psi}$ for some (necessarily unique) normal semifinite weight $\varphi$ on $M$,
+        \item $\forall y\in M'\forall t\in \mathbb{R}:\sigma_{-t}^{\psi}(y)a^{it}=a^{it}y$.
+    \end{enumerate}
+\end{theorem}
+Note that $\varphi\mapsto\dv{\varphi}{\psi}$ is injective by \eqref{Chap3: Eqn: 9} combined with [1,
+        Proposition 3].
+\begin{corollary}
+    There is a bijective correspondence, characterized by the equation
+    \begin{equation}\label{Chap3: Eqn: 17}
+        \dv{\tau}{\tau'}=1,
+    \end{equation}
+    between the sets of normal faithful semifinite traces $\tau$ and $\tau'$ on $M$ and $M'$, respectively. (In particular, $M$ is semifinite if and only if $M'$ is semifinite.)
+\end{corollary}
+\begin{proof}
+    Given $\tau$, there exists by Theorem \ref{Chap3: Thm: 26} and \ref{Chap3: Thm: 29} a weight $\tau'$ on $M'$ such that $\dv{\tau}{\tau'}=1$. By Corollary \ref{Chap3: Coro: 27}, $\tau'$ is a trace. Conversely, given $\tau'$, by the same arguments, we can define $\tau$.
+\end{proof}
+In case of algebras on standard form, this correspondence reduces to the usual correspondence given by $J$:
+\begin{corollary}
+    Suppose that $(M,H,J,P)$ is a standard form of $M$ in the sense of [4, Definition 2.1]. Then for all normal faithful semifinite traces $\tau$ on $M$ we have
+    \[
+        \tau'=\tau(J\cdot J).
+    \]
+\end{corollary}
+\begin{proof}
+    Let $u$ be the (unique) unitary carrying $(M,H,J,P)$ onto $(M,H_\tau,J_\tau,P_\tau)$. In $H_\tau$ we have by Example \ref{Chap3: Eg: 23}
+    \[
+        \dv{\tau}{\tau(J\cdot J)}=\Delta_\tau=1.
+    \]
+    Hence, by Proposition \ref{Chap3: Prop: 24}, also
+    \[
+        \dv{\tau}{\tau(J\cdot J)}=1.
+    \]
+    in $H$, whence $\tau'=\tau(J\cdot J)$.
+\end{proof}
+\begin{corollary}
+    Suppose that $M$ is semifinite and that $\tau$ and $\tau'$ are normal faithful semifinite traces on $M$ and $M'$ related by \eqref{Chap3: Eqn: 17}. Then for all normal semifinite weights $\varphi$ on $M$, we have
+    \[
+        \forall t\in \mathbb{R}:\left( \dv{\varphi}{\tau'} \right)^{it}=(D\varphi:D\tau)_t.
+    \]
+    Otherwise stated, for all positive self-adjoint operators $h\eta M$, we have
+    \[
+        \dv{\tau(h\cdot)}{\tau'}=h.
+    \]
+\end{corollary}
+Finally, we recall the notion of $\gamma$-homogeneity.
+\begin{definition}
+    Let $\psi$ be a normal faithful semifinite weight on $M'$, and let $\gamma\in \mathbb{R}$. A closed densely defined operator $a$ on $H$ with polar decomposition $a=u\abs{a}$ is called $\gamma$-homogeneous with respect to $\psi$ if
+    \begin{equation}
+        u\in M \text{ and } \forall y\in M' \forall t\in \mathbb{R}: \sigma_{\gamma t}^\psi(y)\abs{a}^{it}=\abs{a}^{it}y.
+    \end{equation}
+\end{definition}
 % \end{document}
