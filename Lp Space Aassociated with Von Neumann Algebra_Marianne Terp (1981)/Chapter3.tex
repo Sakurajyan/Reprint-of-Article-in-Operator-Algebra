@@ -544,8 +544,21 @@ In case of algebras on standard form, this correspondence reduces to the usual c
 Finally, we recall the notion of $\gamma$-homogeneity.
 \begin{definition}
     Let $\psi$ be a normal faithful semifinite weight on $M'$, and let $\gamma\in \mathbb{R}$. A closed densely defined operator $a$ on $H$ with polar decomposition $a=u\abs{a}$ is called $\gamma$-homogeneous with respect to $\psi$ if
-    \begin{equation}
+    \begin{equation}\label{Chap3: Eqn: 18}
         u\in M \text{ and } \forall y\in M' \forall t\in \mathbb{R}: \sigma_{\gamma t}^\psi(y)\abs{a}^{it}=\abs{a}^{it}y.
     \end{equation}
 \end{definition}
+One can show (see [20, Proposition (1.1.6)]) that \eqref{Chap3: Eqn: 18} is equivalent to requiring
+\begin{equation}
+    ya\subset a\sigma_{i\gamma}^\psi(y)
+\end{equation}
+for all $y\in M'$ analytic with respect to $\sigma^\psi$.\par
+Note that the 0-homogeneous operators are precisely the operators affiliated with $M$, and the $(-1)$-homogeneous positive self-adjoint operators are precisely the $\dv{\varphi}{\psi}$. As a corollary of Theorem \ref{Chap3: Thm: 29}, we have
+\begin{corollary}
+    Let $\psi$ be a normal faithful semifinite weight on $M'$, and let $p\in [1,\infty]$. Let $a$ be a closed densely defined operator on $H$ with polar decomposition $a=u\abs{a}$. Then the following are equivalent:
+    \begin{enumerate}[(i)]
+        \item $u\in M$ and $\abs{a}^p=\dv{\varphi}{\psi}$ for some normal semifinite weight $\varphi$ on $M$,
+        \item $a$ is $(-1/p)$-homogeneous.
+    \end{enumerate}
+\end{corollary}
 % \end{document}
