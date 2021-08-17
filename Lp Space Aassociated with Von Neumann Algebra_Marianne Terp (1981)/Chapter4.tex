@@ -167,7 +167,7 @@ For the definition and properties of tensor products of closed operators we refe
         \end{split}
     \]
 \end{proof}
-\begin{corollary}
+\begin{corollary}\label{Chap4: Coro: 5}
     The mapping
     \[
         a\mapsto u_0^*(a\otimes T)u_0
@@ -185,7 +185,7 @@ For the definition and properties of tensor products of closed operators we refe
 \begin{proof}
     Since the mapping in question is nothing but $\dv{\varphi}{\psi_0}\mapsto h_\varphi$, it is a bijection by Proposition \ref{Chap2: Prop: 4} in Chapter II. By definition, we have $\int \dv{\varphi}{\psi_0}\dd \psi_0=\varphi(1)=\tr(h_\varphi)$.
 \end{proof}
-\begin{corollary}
+\begin{corollary}\label{Chap4: Coro: 6}
     Let $p\in [1,\infty[$. Let $a$ be a closed densely defined operator on $H$. Then\par
     1) $a\in \overline{M}_{-1/p}$ if and only if
     \[
@@ -200,7 +200,7 @@ For the definition and properties of tensor products of closed operators we refe
         \norm{a}_p=\norm{u_0^*(a\otimes T^{1/p})u_0}_p.
     \]
 \end{corollary}
-\begin{corollary}
+\begin{corollary}\label{Chap4: Coro: 7}
     Let $p\in [1,\infty[$. Then the mapping
     \begin{equation}
         a\mapsto u_0^*(a\otimes T^{1/p})u_0
@@ -210,4 +210,132 @@ For the definition and properties of tensor products of closed operators we refe
         \forall s\in \mathbb{R}:\theta_s h=e^{-s/p}h.
     \end{equation}
 \end{corollary}
+\begin{proof}[Proof of Corollary \ref{Chap4: Coro: 6} and \ref{Chap4: Coro: 7}]
+    Let $a$ be a closed densely defined operator on $H$ with polar decomposition $a=u\abs{a}$. Then
+    \[
+        h=u_0^*(u\otimes 1)u_0(u_0^*(\abs{a}\otimes T)u_0)^{1/p}
+    \]
+    is the polar decomposition of $h = u_0^*(a\otimes T^{1/p})u_0$. Corollary \ref{Chap4: Coro: 6}, 1), and Corollary \ref{Chap4: Coro: 7} now follow from Corollary \ref{Chap4: Coro: 5} and Proposition \ref{Chap4: Prop: 3}, 1) (and the fact that $a\mapsto a\otimes T^{1/p}$ is injective). The rest of Corollary \ref{Chap4: Coro: 6} follows from the equation $\int\abs{a}^p \dd \psi_0=\tr(\abs{u_0^*(\abs{a}\otimes T^{1/p})u_0}^p)$.
+\end{proof}
+\begin{proposition}\label{Chap4: Prop: 8}
+    Let $p\in [1,\infty]$. Then for all $a\in L^p(\psi_0)$, we have $a^*\in L^p(\psi_0)$ and
+    \[
+        \norm{a^*}_p=\norm{a}_p.
+    \]
+\end{proposition}
+\begin{proof}
+    Let $a\in L^p(\psi_0)$. Then $a\otimes T^{1/p}\in u_0L^p(M)u_0^*$. Hence also $a^*\otimes T^{1/p}=(a\otimes T^{1/p})^*\in u_0 L^p(M)u_0^*$. Thus $a^*\in L^p(\psi_0)$ by Corollary \ref{Chap4: Coro: 6} and $\norm{a^*}_p = \norm{u_0^*(a^*\otimes T^{1/p})u_0}_p=\norm{u_0^*(a\otimes T^{1/p})u_0}_p=\norm{a}_p$.
+\end{proof}
+If we identify $L^2(\mathbb{R})$ with $L^2(\mathbb{R})$ via Fourier transformation, $T$ is simply the multiplication operator in $L^2(\mathbb{R})$ given by multiplication by $t\mapsto e^t$, and similarly, for each $p\in [1,\infty[$, $T^{1/p}$ is simply multiplication by $t\mapsto e^{t/p}$. This observation will permit us to obtain information about operators $a$ on $H$ from information about the tensor products $a\otimes T^{1/p}$. First we have:
+\begin{lemma}\label{Chap4: Lemma: 9}
+    Let $a$ be a closed densely defined operator on $H$ and $f$ a Borel function on $\mathbb{R}$, and denote by $m_f$ the corresponding multiplication operator on $L^2(\mathbb{R})$. Write
+    \[
+        \begin{split}
+            D = \{\xi\in L^2(\mathbb{R},H)|&\xi(t)\in D(a) \text{{\color{red} for  a.a.}} t\in \mathbb{R}\\
+            &\text{ and }\int \norm{f(t)a\xi(t)}^2\dd t <\infty\}.
+        \end{split}
+    \]
+    Then $D(a\otimes m_f)=D$ and
+    \[
+        ((a\otimes m_f)\xi)(t)=f(t)a\xi(t),\xi\in D,t\in \mathbb{R}.
+    \]
+\end{lemma}
+\begin{proof}
+    Denote by $m(a,f)$ the operator in $L^2(\mathbb{R},H)$ given by
+    \[
+        D(m(a,f)) = D
+    \]
+    and
+    \[
+        (m(a,f)\xi)(t)=f(t)a\xi(t), \xi\in D, t\in \mathbb{R}.
+    \]
+    Then $m(a,f)$ is a closed operator and
+    \[
+        m(a^*,\bar{f})\subset m(a,f)^*
+    \]
+    (in fact, equality holds). Now evidently
+    \[
+        a\odot m_f\subset m(a,f),
+    \]
+    where $a\odot m_f$ denotes the algebraic tensor product of $a$ and $m_f$, and hence
+    \[
+        a\otimes m_f=[a\odot m_f]\subset m(a,f).
+    \]
+    Applying this to $a^*$ and $\bar{f}$, we get
+    \[
+        a^*\otimes m_{\bar{f}}\subset m(a^*,\bar{f}).
+    \]
+    Combining this, and using that $(A\otimes B)^*=A^*\otimes B^*$, we find that
+    \[
+        m(a,f)\subset m(a^*,\bar{f})^*\subset (a^*\otimes m_{\bar{f}})^*=a\otimes m_f.
+    \]
+    In all, we have shown that $a\otimes m_f=m(a,f)$.
+\end{proof}
+\begin{lemma}
+    Let $p\in [1,\infty]$ and $a,b\in L^p(\psi_0)$.
+    Then $a+b$ is densely defined and preclosed, and
+    \[
+        [a+b]\in L^p(\psi_0).
+    \]
+\end{lemma}
+\begin{proof}
+    1) Denote by $e$ the projection onto $\overline{D(a)\cap D(b)}$. Then
+    \[
+        \begin{split}
+            &(e\otimes 1)L^2(\mathbb{R},H)\\
+            =&\{\xi\in L^2(\mathbb{R},H)|\xi(t)=e\xi(t) \text{ for a.a. } t\in \mathbb{R}\}\\
+            \supset &\{\xi\in L^2(\mathbb{R},H)|\xi(t)\in D(a)\cap D(b)\text{ for a.a. } t\in \mathbb{R}\}
+        \end{split}
+    \]
+    By Lemma \ref{Chap4: Lemma: 9}, this set contains
+    \[
+        D(a\otimes T^{1/p})\cap D(b\otimes T^{1/p}).
+    \]
+    Now since $a\otimes T^{1/p},b\otimes T^{1/p}\in u_0L^p(\psi)u_0^*$, their sum is densely defined. Hence $D(a\otimes T^{1/p})\cap D(b\otimes T^{1/p})$ is dense in $L^2(\mathbb{R},H)$. It follows that $e = 1$. Hence $D(a+b) = D(a)\cap D(b)$ is dense in $H$.\par
+    2) Now let us show that $a+b$ is preclosed. By Proposition \ref{Chap4: Prop: 8}, $a^*$ and $b^*$ are in $L^p(\psi_0)$ and hence by the first part of proof, $a^*+ b^*$ is densely defined. Since $a+b \subset (a^*+b^*)^*$, $a+b$ is preclosed.\par
+    3) Finally, let us show that
+    \begin{equation}\label{Chap4: Eqn: 14}
+        [a+b]\otimes T^{1/p}=[(a\otimes T^{1/p})+(b\otimes T^{1/p})].
+    \end{equation}
+    First, by the characterization of $a\otimes T^{1/p}$ given in Lemma \ref{Chap4: Lemma: 9} we obviously have
+    \[
+        (a\otimes T^{1/p})+(b\otimes T^{1/p})\subset [a+b]\otimes T^{1/p},
+    \]
+    whence
+    \[
+        [(a\otimes T^{1/p})+(b\otimes T^{1/p})]\subset [a+b]\otimes T^{1/p}.
+    \]
+    On the other hand, again by that characterization,
+    \[
+        [a+b]\otimes T^{1/p}\subset ((a^*\otimes T^{1/p})+(b^*\otimes T^{1/p}))^*,
+    \]
+    and finally
+    \[
+        ((a^*\otimes T^{1/p})+(b^*\otimes T^{1/p}))^*=[(a\otimes T^{1/p})+(b\otimes T^{1/p})]
+    \]
+    since * is an involution in $L^p(M)$ (and hence respects the strong sum). In all, we have proved \eqref{Chap4: Eqn: 14}. Now the right hand side of \eqref{Chap4: Eqn: 14} is in $u_0L^p(M)u_0^*$. Hence by Corollary \ref{Chap4: Coro: 6}, $[a+b]\in L^p(\psi_0)$.
+\end{proof}
+\begin{lemma}
+    Let $p,p_1,p_2\in [1,\infty]$ such that $1/p = 1/p_1 + 1/p_2$. Let $a\in L^{p_1}(\psi_0)$ and $b \in L^{p_2}(\psi_0)$. Then $ab$ is densely defined and preclosed and
+    \[
+        [ab]\in L^p(\psi_0).
+    \]
+\end{lemma}
+\begin{proof}
+    1) Denote by $e$ the projection onto $D(ab)$. Then, using Lemma \ref{Chap4: Lemma: 9}, we have
+    \[
+        \begin{split}
+            &D((a\otimes T^{1/p})(b\otimes T^{1/p}))\\
+            \subset& \{\xi\in D(b\otimes T^{1/p})|b\xi(t)\in D(a) \text{ for a.a. }t\in \mathbb{R}\}\\
+            \subset& \{\xi\in L^2(\mathbb{R},H)|\xi(t)\in D(b) \text{ for a.a. }t\in \mathbb{R}\\
+            &\quad \text{ and } b\xi(t)\in D(a) \text{ for a.a. }t\in \mathbb{R}\}\\
+            \subset& \{\xi\in L^2(\mathbb{R},H)|\xi(t)\in D(ab) \text{ for a.a. }t\in \mathbb{R}\}\\
+            \subset& \{\xi\in L^2(\mathbb{R},H)|\xi(t)=e\xi(t) \text{ for a.a. }t\in \mathbb{R}\}\\
+            =&(e\otimes 1)L^2(\mathbb{R},H).
+        \end{split}
+    \]
+
+    Hence $e = 1$ and $ab$ is densely defined. \par
+    2) By 1) applied to $b^*$ and $a^*$, $b^*a^*$ is densely defined. Since $ab\subset (b^*a^*)^*$, $ab$ is preclosed.
+\end{proof}
 % \end{document}
