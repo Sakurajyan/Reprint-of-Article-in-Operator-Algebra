@@ -129,7 +129,7 @@ We denote by $T$ the unique positive self-adjoint operator in $L^2(\mathbb{R})$ 
     \forall s\in \mathbb{R}: T^{is}=\ell(s).
 \end{equation}
 For the definition and properties of tensor products of closed operators we refer to [17, Section 9.33].
-\begin{proposition}
+\begin{proposition}\label{Chap4: Prop: 4}
     For all normal semifinite weights $\varphi$ on $M$ we have
     \begin{equation}\label{Chap4: Eqn: 9}
         u_0h_\varphi u_0^*=\dv{\varphi}{\psi_0}\otimes T.
@@ -451,4 +451,36 @@ For positive injective $a\in L^p(\psi_0)$, we have $\Phi(a)=b$, where $b$ is the
 \begin{equation}
     \forall t\in \mathbb{R}: b^{p~it} = d_1^{it}d_0^{-it} a^{p~it}.
 \end{equation}
+Indeed , if $\varphi$ is the normal faithful semifinite weight given by $a^p=\dv{\varphi}{\psi_0}$, then for all $t\in \mathbb{R}$ we have
+\[
+    \left( \dv{\varphi}{\psi_1} \right)^{it}=(D\psi_1:D\psi_0)_{-t}\left( \dv{\varphi}{\psi_0} \right)^{it}=\left( \dv{\varphi_0}{\psi_1} \right)^{it}\left( \dv{\varphi_0}{\psi_0} \right)^{-it}a^{p~it}=d_1^{it}d_0^{-it}a^{p~it}
+\]
+and
+\[
+    \begin{split}
+        u_1^*\left( \left( \dv{\varphi}{\psi_1} \right)^{1/p}\otimes T^{1/p} \right)u_1=&\left( u_1^*\left( \dv{\varphi}{\psi_1}\otimes T \right)u_1 \right)^{1/p}\\
+        =&h_\varphi^{1/p}\\
+        =&\left( u_0^*\left( \dv{\varphi}{\psi_0}\otimes T \right) u_0 \right)^{1/p}\\
+        =&u_0^*(a\otimes T^{1/p})u_0.
+    \end{split}
+\]
+\section{Note}
+The operators $h_\varphi$ from Chapter II are themselves spatial derivatives of $\varphi$ with respect to a certain weight $\chi_0$ on the commutant $u_0^*(M'\otimes B(L^2(\mathbb{R})))u_0$ of $\pi(M)$ (where $\pi(M)\subset R(M,\sigma^{\varphi_0})$ is acting on $L^2(\mathbb{R},H)$). Indeed, by Chapter III, Theorem \ref{Chap3: Thm: 29}, there exists a unique normal faithful semifinite weight $\chi_0$ on this commutant such that
+\begin{equation}
+    \forall t\in \mathbb{R}:\left( \dv{\varphi_0}{\chi_0} \right)^{it}=\lambda(t)=h_{\varphi_0}^{it}.
+\end{equation}
+It follows by Chapter III, Theorem \ref{Chap3: Thm: 25}, that
+\[
+    \forall t\in \mathbb{R}:\left( \dv{\varphi}{\chi_0} \right)^{it}=h_\varphi^{it}
+\]
+for all normal faithful semifinite weights $\varphi$ on $M$, and hence
+\begin{equation}
+    h_\varphi=\dv{\varphi}{\chi_0}
+\end{equation}
+for all such $\varphi$. By the usual methods (cf. the proofs of Chapter II, Lemma \ref{Chap2: lemma: 1}, and this chapter, Proposition \ref{Chap4: Prop: 4}), this also holds for all normal semifinite not necessarily faithful weights.\par
+One can show that if $(M,H,J,P)$ is a standard form of $M$, then
+\[
+    \chi_0=u_0^*\cdot(\varphi_0(J\cdot J)\otimes \tr(T^{-1}\cdot))\cdot u_0,
+\]
+where $\tr$ is the usual trace on $B(L^2(\mathbb{R}))$.
 % \end{document}
