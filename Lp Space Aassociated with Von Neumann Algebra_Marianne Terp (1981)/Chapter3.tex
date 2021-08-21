@@ -29,7 +29,7 @@
 % \begin{document}
 % \tableofcontents
 \chapter{Spatial Derivatives}
-Spatial derivatives were introduced by A. Connes in [1]. In this chapter, we give an alternative definition (equivalent to that given in [1]) suggested to us by U. Haagerup, based on the notion of the extended positive part of a von Neumann algebra. This definition permits us to obtain very easily some elementary properties of spatial derivatives. After this, we recall their main modular properties and the characterization as (-1)-homogeneous operators.\par
+Spatial derivatives were introduced by A. Connes in \cite{1}. In this chapter, we give an alternative definition (equivalent to that given in \cite{1}) suggested to us by U. Haagerup, based on the notion of the extended positive part of a von Neumann algebra. This definition permits us to obtain very easily some elementary properties of spatial derivatives. After this, we recall their main modular properties and the characterization as (-1)-homogeneous operators.\par
 \section{Definition and elementary properties of spatial derivatives}
 Let $M$ be a von Neumann algebra acting on a Hilbert space $H$, and let $\psi$ be a normal faithful semifinite weight on the commutant $M'$ of $M$.\par
 We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\infty\}$, $H_\psi$ the Hilbert space completion of $n_\psi$ with respect to the inner product $(y_1,y_2)\mapsto \psi(y_2^*y_1)$, $\Lambda_\psi$ the canonical injection of $n_\psi$ into $H_\psi$, $\pi_\psi$ the canonical representation of $M'$ on $H_\psi$.
@@ -74,7 +74,7 @@ We shall use the following standard notation: $n_\psi=\{y\in M'|\psi(y^*y)<\inft
     \]
     so that $\zeta_i\in D(H,\psi)$ and hence $e\zeta_i = \zeta_i$. This is a contradiction. Hence we must have $e = 1$ and $D(H,\psi)$ is dense in $H$.
 \end{proof}
-Let $\xi\in H$. By Proposition \ref{Chap3: Prop: 2}, (iii)*, $D(R^\psi(\xi)^*)$ is invariant under the action of $M'$. Hence the projection $p$ onto $\overline{D(R^\psi(\xi)^*)}$ is in $M$. Considered as an operator from $pH$ to $H_\psi$, $R^\psi(\xi)^*$ is closed and densely defined and hence $\abs{R^\psi(\xi)^*}^2$ exists as a positive self-adjoint operator on $pH$ which by Proposition \ref{Chap3: Prop: 2}, (iii)*, is affiliated with $pMp$. We denote by $\theta^\psi(\xi,\xi)$ the element of $\widehat{M}_+$ (the extended positive part of $M$) associated with the couple $(pH,\abs{R^\psi(\xi)^*}^2)$ as in [7, Example 1.2 and Lemma 1.4], i.e.
+Let $\xi\in H$. By Proposition \ref{Chap3: Prop: 2}, (iii)*, $D(R^\psi(\xi)^*)$ is invariant under the action of $M'$. Hence the projection $p$ onto $\overline{D(R^\psi(\xi)^*)}$ is in $M$. Considered as an operator from $pH$ to $H_\psi$, $R^\psi(\xi)^*$ is closed and densely defined and hence $\abs{R^\psi(\xi)^*}^2$ exists as a positive self-adjoint operator on $pH$ which by Proposition \ref{Chap3: Prop: 2}, (iii)*, is affiliated with $pMp$. We denote by $\theta^\psi(\xi,\xi)$ the element of $\widehat{M}_+$ (the extended positive part of $M$) associated with the couple $(pH,\abs{R^\psi(\xi)^*}^2)$ as in \cite[Example 1.2 and Lemma 1.4]{7}, i.e.
 \begin{definition}\label{Chap3: Def: 5}
     For each $\xi\in H$, we denote by
     \[
@@ -111,7 +111,7 @@ Let $\xi\in H$. By Proposition \ref{Chap3: Prop: 2}, (iii)*, $D(R^\psi(\xi)^*)$ 
     \]
     where the last equality simply follows from the definition of the operation $m\mapsto x\cdot m\cdot x^*$ in $\widehat{M}_+$.
 \end{proof}
-Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique extension, also denoted $\varphi$, to a normal weight on $\widehat{M}_+$.
+Recall that by \cite[Proposition 1.10]{7}, every normal weight $\varphi$ has a unique extension, also denoted $\varphi$, to a normal weight on $\widehat{M}_+$.
 \begin{definition}
     Let $\varphi$ be a normal weight on $M$. We define
     \[
@@ -169,7 +169,7 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
     \[
         \varphi=\sum_{i\in I}\omega_{\eta_i,\eta_i}
     \]
-    and thus (cf. the proof of [7, Proposition 1.10])
+    and thus (cf. the proof of \cite[Proposition 1.10]{7})
     \[
         \forall \xi\in H:  q_\varphi(\xi)=\inner{\varphi,\theta^\psi(\xi,\xi)}=\sum_{i=I}\inner{\omega_{\eta_i,\eta_i},\theta^\psi(\xi,\xi)}.
     \]
@@ -200,7 +200,7 @@ Recall that by [7, Proposition 1.10], every normal weight $\varphi$ has a unique
         \forall \xi\in H: \inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}=\inner{\varphi,\theta^\psi(\xi,\xi)}.
     \end{equation}
 \end{definition}
-The existence of $\dv{\varphi}{\psi}$ follows from Proposition \ref{Chap3: Prop: 9} and [7, proof of Lemma 1.4].
+The existence of $\dv{\varphi}{\psi}$ follows from Proposition \ref{Chap3: Prop: 9} and \cite[proof of Lemma 1.4]{7}.
 \begin{remark}
     If $\varphi$ is semifinite, $\dv{\varphi}{\psi}$ is simply a positive self-adjoint operator on $H$ (since in this case, $\{\xi\in H|\inner{\omega_{\xi,\xi},\dv{\varphi}{\psi}}<\infty\}=\Dom(q_\varphi)$ is dense in $H$). Note that
     \begin{equation}\label{Chap3: Eqn: 10}
@@ -210,7 +210,7 @@ The existence of $\dv{\varphi}{\psi}$ follows from Proposition \ref{Chap3: Prop:
         \end{cases}.
     \end{equation}
 \end{remark}
-We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\dv{\varphi}{\psi}$ given here agrees with that given in [1]. (This is not quite obvious. Note that in [1, Lemma 6], the quadratic form $q$ is only defined on the subspace $D(H,\psi)$, and then extended by [1, Lemma 5] to the whole of $H$.)
+We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\dv{\varphi}{\psi}$ given here agrees with that given in \cite{1}. (This is not quite obvious. Note that in \cite[Lemma 6]{1}, the quadratic form $q$ is only defined on the subspace $D(H,\psi)$, and then extended by \cite[Lemma 5]{1} to the whole of $H$.)
 \begin{lemma}\label{Chap3: Lemma: 13}
     Let $\varphi_1,\varphi_2,(\varphi_i)_{i\in I}$, and $\varphi$ be normal weights on $M$ and let $x\in M$. Then
     \begin{enumerate}[(i)]
@@ -220,7 +220,7 @@ We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\d
     \end{enumerate}
 \end{lemma}
 \begin{proof}
-    (i) and (ii) are immediate consequences of [7, Proposition 1.10] (or its proof). As for (iii), we have by the proof of [7, Proposition 1.10], using the notation from there,
+    (i) and (ii) are immediate consequences of \cite[Proposition 1.10]{7} (or its proof). As for (iii), we have by the proof of \cite[Proposition 1.10]{7}, using the notation from there,
     \[
         \begin{split}
             \inner{\varphi_i,m}=&\sup_n\inner{\varphi_i,\int_0^n \lambda\dd e_\lambda}+\infty\cdot\varphi_i(p)\\
@@ -239,7 +239,7 @@ We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\d
     The sums and products occurring at the right hand side of (a) and (b) are to be understood in the sense of the operations in $\widehat{B(H)}_+$. In particular, if $\varphi_1$, $\varphi_2$, $\varphi_1+\varphi_2$ are semifinite, $\dv{\varphi_1}{\psi}+\dv{\varphi_2}{\psi}$ is the form sum of the positive self-adjoint operators $\dv{\varphi_1}{\psi}$ and $\dv{\varphi_2}{\psi}$. Similarly, if $x\cdot\varphi\cdot x^*$ is semifinite, $x\cdot\dv{\varphi}{\psi}\cdot x^*$ is the form product.
 \end{remark}
 \begin{remark}
-    In [1], the sum property is simply stated without proof. It seems to be difficult to give a proof using only the methods of [1] (one only gets "$\geq$"). - The product property is stated (and proved) only for invertible $x\in M$.
+    In \cite{1}, the sum property is simply stated without proof. It seems to be difficult to give a proof using only the methods of \cite{1} (one only gets "$\geq$"). - The product property is stated (and proved) only for invertible $x\in M$.
 \end{remark}
 \begin{proof}[Proof of Theorem 14]
     Let $\xi\in H$. Then, using successively Definition \ref{Chap3: Def: 11}, Lemma \ref{Chap3: Lemma: 13}, Definition \ref{Chap3: Def: 11} again, and the definition of the sum in $\widehat{B(H)}_+$, we get
@@ -385,7 +385,7 @@ We shall see below (Proposition \ref{Chap3: Prop: 22} that the definition of $\d
         \end{split}
     \]
 \end{proof}
-Using Proposition \ref{Chap3: Prop: 21}, we can now prove that our definition of $\dv{\varphi}{\psi}$ agrees with Connes' [1]. Note that we also prove the existence of a biggest positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13} below so that we do not need [1, Lemma 5].
+Using Proposition \ref{Chap3: Prop: 21}, we can now prove that our definition of $\dv{\varphi}{\psi}$ agrees with Connes' \cite{1}. Note that we also prove the existence of a biggest positive self-adjoint operator satisfying \eqref{Chap3: Eqn: 13} below so that we do not need \cite[Lemma 5]{1}.
 \begin{proposition}\label{Chap3: Prop: 22}
     Let $\varphi$ be a normal semifinite weight on $M$.\par
     1) The operator $\dv{\varphi}{\psi}$ is the biggest positive self-adjoint operator $d$ satisfying
@@ -440,7 +440,7 @@ Using Proposition \ref{Chap3: Prop: 21}, we can now prove that our definition of
     \]
     Finally, \eqref{Chap3: Eqn: 16} implies that $\dv{\varphi}{\psi}\leq d$, whence $\dv{\varphi}{\psi}=d$ by 1).
 \end{proof}
-We recall [1, proof of Theorem 9]:
+We recall \cite[proof of Theorem 9]{1}:
 \begin{example}\label{Chap3: Eg: 23}
     Let $M$ be the left algebra associated with a left Hilbert algebra $\mathfrak{A}$ in $H$. Let $\varphi_0$, resp. $\psi_0$, be the canonical weight on $M$, resp. $M'$, associated with $\mathfrak{A}''$, resp. $\mathfrak{A}'$. Then
     \[
@@ -465,7 +465,7 @@ Spatial derivatives are preserved by spatial isomorphisms:
 \end{proposition}
 The proof is left to the reader.
 \section{Modular properties of spatial derivatives}
-Here, we first recall, without proof, some main results from [1] and then state some immediate corollaries. For the first theorems, recall that the spatial derivatives occurring in them are injective by Theorem \ref{Chap3: Thm: 20}.
+Here, we first recall, without proof, some main results from \cite{1} and then state some immediate corollaries. For the first theorems, recall that the spatial derivatives occurring in them are injective by Theorem \ref{Chap3: Thm: 20}.
 \begin{theorem}\label{Chap3: Thm: 25}
     Let $\varphi_1$ and $\varphi_2$ be normal faithful semifinite weights on $M$, and let $\psi$ be a normal faithful semifinite weight on $M'$. Then
     \[
@@ -501,8 +501,7 @@ Property (ii) in Theorem \ref{Chap3: Thm: 26} characterizes operators having the
         \item $\forall y\in M'\forall t\in \mathbb{R}:\sigma_{-t}^{\psi}(y)a^{it}=a^{it}y$.
     \end{enumerate}
 \end{theorem}
-Note that $\varphi\mapsto\dv{\varphi}{\psi}$ is injective by \eqref{Chap3: Eqn: 9} combined with [1,
-        Proposition 3].
+Note that $\varphi\mapsto\dv{\varphi}{\psi}$ is injective by \eqref{Chap3: Eqn: 9} combined with \cite[Proposition 3]{1}.
 \begin{corollary}
     There is a bijective correspondence, characterized by the equation
     \begin{equation}\label{Chap3: Eqn: 17}
@@ -515,7 +514,7 @@ Note that $\varphi\mapsto\dv{\varphi}{\psi}$ is injective by \eqref{Chap3: Eqn: 
 \end{proof}
 In case of algebras on standard form, this correspondence reduces to the usual correspondence given by $J$:
 \begin{corollary}
-    Suppose that $(M,H,J,P)$ is a standard form of $M$ in the sense of [4, Definition 2.1]. Then for all normal faithful semifinite traces $\tau$ on $M$ we have
+    Suppose that $(M,H,J,P)$ is a standard form of $M$ in the sense of \cite[Definition 2.1]{4}. Then for all normal faithful semifinite traces $\tau$ on $M$ we have
     \[
         \tau'=\tau(J\cdot J).
     \]
@@ -548,7 +547,7 @@ Finally, we recall the notion of $\gamma$-homogeneity.
         u\in M \text{ and } \forall y\in M' \forall t\in \mathbb{R}: \sigma_{\gamma t}^\psi(y)\abs{a}^{it}=\abs{a}^{it}y.
     \end{equation}
 \end{definition}
-One can show (see [20, Proposition (1.1.6)]) that \eqref{Chap3: Eqn: 18} is equivalent to requiring
+One can show (see \cite[Proposition (1.1.6)]{20}) that \eqref{Chap3: Eqn: 18} is equivalent to requiring
 \begin{equation}
     ya\subset a\sigma_{i\gamma}^\psi(y)
 \end{equation}
